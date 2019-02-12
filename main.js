@@ -5,18 +5,15 @@
 // possibles
 // mathjax - for making it look pretty
 // http://docs.mathjax.org/en/latest/advanced/typeset.html
-// http://mathquill.com/ - for typing maths into the browser
-// requires JQuery
+// http://mathquill.com/ - for typing maths into the browser (requires JQuery)
 
 // global varibles
 // Have a look at whats in the html file and then in the data folder.
 // This variable will be moved later
 
 // functions
-function define(obj) {
-  console.log(obj);
-  // Here we're going to let the parser know about a new thing we've defined
-  // i.e. have a scope object for the page
+function sayHi(name) {
+  console.log(`Hey ${name}`);
 }
 
 const TheMatrix = new Vue({
@@ -24,17 +21,16 @@ const TheMatrix = new Vue({
   data: {
     name: 'The Matrix',
     
-    showContext: false,
-    contextType: 'main',
-    
-    // The next ID to be used if there are no freeobjectIDs left
-    nextID: 0,
-    // if an object is ever removed. its id is added here
-    freeObjectID: [],
-    // The id of the currently selected object
-    selectedObj: null,
-    // An array of objects which describe the scene
-    objects: DATA_objects,
+    nextID: 0, // The next ID to be used if there are no freeobjectIDs left
+    freeObjectID: [], // if an object is ever removed. its id is added here
+    selectedObj: '', // The id of the currently selected object
+    initObjects: [], // An array of objects which describe initialized objects
+
+    // maths globals
+    globalScope: {},
+
+    // Style and misc data
+    showContextMenu: false,
     styleObj: {
       width: '100%',
       height: '100%'
@@ -47,9 +43,17 @@ const TheMatrix = new Vue({
   },
   created: function () {
     // for the moment we're going to manually bring our scene ids up to speed with the loaded scene
-    this.nextID = 9
+    let x = 0
+    for (let i = 0; i < DATA_objects.length; i++) {
+      this.createObj(DATA_objects[i])
+      x += 1
+    }
+    this.nextID = x
+    //console.log(x);
+    //console.log(this.nextID);
   },
   methods: {
+    // Organizing the scene
     getNewObjectID: function () {
       let id = this.freeObjectID.pop()
       if (id == undefined) {
@@ -58,38 +62,29 @@ const TheMatrix = new Vue({
       }
       return id.toString()
     },
-    getCurrentObjData: function () {
-      for (let i = 0; i < this.objects.length; i++) {
-        if (this.objects[i].id == this.selectedObj) {
-          return this.objects[i]
-        }
-      }
-    },
     getObjectByID: function (id) {
-      for (let i = 0; i < this.objects.length; i++) {
-        if (this.objects[i].id == id) {
-          return [this.objects[i], i]
+      for (let i = 0; i < this.initObjects.length; i++) {
+        if (this.initObjects[i].id == id) {
+          return [this.initObjects[i], i]
         }
       }
     },
-    getAllFunctions: function () {
+    getVueObjectbyID: function (id) {
+      for (let i = 0; i < this.$children.length; i++) {
+        if (this.$children[i].$attrs.id == id) {
+          return this.$children[i]
+        }
+      }
+    },
+    getAllObjectsOfType: function (type) {
       let x = []
-      for (let i = 0; i < this.objects.length; i++) {
-        if (this.objects[i].type == "math-function") {
-          x.push(this.objects[i])
+      for (let i = 0; i < this.$children.length; i++) {
+        //console.log(this.$children[i]);
+        if (this.$children[i].$attrs.type == type) {
+          x.push(this.$children[i])
         }
       }
       return x
-    },
-    getFunctionString: function (symbol) {
-      //console.log(symbol);
-      // the idea here is to match the symbol to a function and return the function string
-      let x = this.getAllFunctions()
-      for (let i = 0; i < x.length; i++) {
-        if (x[i].data.name == symbol) {
-          return x[i].data.expression
-        }
-      }
     },
     createObj: function (options) {
       //console.log("creating an object");
@@ -97,68 +92,70 @@ const TheMatrix = new Vue({
       switch (options.type) {
         case 'math-matrix':
         {
-          this.objects.push({
-            id: this.getNewObjectID(),
+          this.initObjects.push({
+            id: options.id || this.getNewObjectID(),
             type: options.type,
-            data: {
-              position: options.data.position,
-              entries: options.data.entries
-            }
+            position: options.position,
+            entries: options.entries
           })
           break;
         }
         case 'math-function':
         {
-          this.objects.push({
-            id: this.getNewObjectID(),
+          this.initObjects.push({
+            id: options.id || this.getNewObjectID(),
             type: options.type,
-            data: {
-              position: options.data.position,
-              result: options.data.result,
-              variables: options.data.variables,
-              name: options.data.name,
-              expression: options.data.expression
-            }
+            position: options.position,
+            result: options.result,
+            variables: options.variables,
+            name: options.name,
+            expression: options.expression
           })
           break;
         }
         case 'math-variable':
         {
-          this.objects.push({
-            id: this.getNewObjectID(),
+          this.initObjects.push({
+            id: options.id || this.getNewObjectID(),
             type: options.type,
-            data: {
-              position: options.data.position,
-              name: options.data.name || 'x',
-              type: options.data.valueType || 'number',
-              value: options.data.value || 0
-            }
+            position: options.position,
+            name: options.name || 'x',
+            valueType: options.valueType || 'number',
+            value: options.value || 0
           })
+          if (options.name) {
+            if (options.value) {
+              this.updateGlobalScope(options.name, options.value)
+            } else {
+              this.updateGlobalScope(options.name, 0)
+            }
+          } else {
+            this.updateGlobalScope('x', 0)
+          }
           break;
         }
         case 'base-text':
         {
-          this.objects.push({
-            id: this.getNewObjectID(),
+          this.initObjects.push({
+            id: options.id || this.getNewObjectID(),
             type: options.type,
-            data: {
-              position: options.data.position,
-              value: options.data.value || ''
-            }
+            position: options.position,
+            width: options.width,
+            height: options.height,
+            value: options.value || ''
           })
           break;
         }
         case 'math-table':
         {
-          this.objects.push({
-            id: this.getNewObjectID(),
+          this.initObjects.push({
+            id: options.id || this.getNewObjectID(),
             type: options.type,
-            data: {
-              position: options.data.position,
-              headers: options.data.headers || ['?', '?'],
-              tableInput: options.data.tableInput || [1,2,3,4,5],
-              tableOutput: options.data.tableOutput || ['', '', '', '', ''],
-            }
+            position: options.position,
+            inputHeaders: options.inputHeaders || ['x'],
+            inputTable: options.inputTable || [[1],[2],[3],[4],[5]],
+            outputHeaders: options.outputHeaders || ['?'],
+            outputTable: options.outputTable || [['?'], ['?'], ['?'], ['?'], ['?']]
           })
           break;
         }
@@ -169,7 +166,7 @@ const TheMatrix = new Vue({
       }
     },
     userCreateObj: function (event) {
-      let obj = prompt("What would you like to create? Type one of the following...\nmatrix\nfunction\nvariable\ntext\ntable", '')
+      let obj = prompt("What would you like to create? Type one of the following...\nfunction\nvariable\ntext\ntable", '')
       
       switch (obj) {
         case 'matrix':
@@ -196,10 +193,8 @@ const TheMatrix = new Vue({
           }
           this.createObj({
             type: 'math-matrix',
-            data: {
-              position:[`${event.x}px`, `${event.y}px`],
-              entries: defaultEntries
-            }
+            position:[`${event.x}px`, `${event.y}px`],
+            entries: defaultEntries
           })
           break;
         }
@@ -207,13 +202,9 @@ const TheMatrix = new Vue({
         {
           this.createObj({
             type: 'math-function',
-            data: {
-              position:[`${event.x}px`, `${event.y}px`],
-              name: "function?",
-              variables: {},
-              expression: "...",
-              result: ''
-            }
+            name: 'f',
+            expression: 'x',
+            position:[`${event.x}px`, `${event.y}px`]
           })
           break;
         }
@@ -221,12 +212,9 @@ const TheMatrix = new Vue({
         {
           this.createObj({
             type: 'math-variable',
-            data: {
-              position:[`${event.x}px`, `${event.y}px`],
-              name: 'x',
-              valueType: 'number',
-              value: 0
-            }
+            name: 'x',
+            value: 0,
+            position:[`${event.x}px`, `${event.y}px`]
           })
           break;
         }
@@ -234,10 +222,7 @@ const TheMatrix = new Vue({
         {
           this.createObj({
             type: 'base-text',
-            data: {
-              position:[`${event.x}px`, `${event.y}px`],
-              value: ''
-            }
+            position:[`${event.x}px`, `${event.y}px`]
           })
           break;
         }
@@ -245,12 +230,7 @@ const TheMatrix = new Vue({
         {
           this.createObj({
             type: 'math-table',
-            data: {
-              position:[`${event.x}px`, `${event.y}px`],
-              headers: ['x', '?'],
-              tableInput: [1,2,3,4,5],
-              tableOutput: ['', '', '', '', '']
-            }
+            position:[`${event.x}px`, `${event.y}px`]
           })
           break;
         }
@@ -262,7 +242,7 @@ const TheMatrix = new Vue({
         }
       }
       // we're assuming the function was called from a context menu
-      this.showContext = false
+      this.showContextMenu = false
     },
     deleteCurrentObj: function () {
       // We can assume that selectedObj has the obj id we want to delete
@@ -270,8 +250,8 @@ const TheMatrix = new Vue({
       // Using a for loop is also an option.
       //console.log("delete function");
       let newObjs = []
-      while (this.objects.length > 0) {
-        let x = this.objects.pop()
+      while (this.initObjects.length > 0) {
+        let x = this.initObjects.pop()
         if (x.id != this.selectedObj) {
           newObjs.push(x)
         } else {
@@ -282,69 +262,51 @@ const TheMatrix = new Vue({
           this.freeObjectID.push(x.id)
         }
       }
-      this.objects = newObjs
-      this.objects.slice()
+      this.initObjects = newObjs
       // and we must close the context menu once the operation finishes
-      this.showContext = false
+      this.showContextMenu = false
     },
     deleteObjByID: function (id) {
-      let newObjs = []
-      while (this.objects.length > 0) {
-        let x = this.objects.pop()
-        if (x.id != id) {
-          newObjs.push(x)
-        } else {
-          // because we've found the obj that we want to del
-          // we must add its index to free indices.
-          // this is so we can guarantee that all object ids are unquie
-          this.freeObjectID.push(x.id)
-        }
-      }
-      this.objects = newObjs
-      this.objects.slice()
+      let x = this.getObjectByID(id)
+      //console.log(x);
+      this.initObjects.splice(x[1], 1)
+
       // and we must close the context menu once the operation finishes
-      this.showContext = false
+      this.showContextMenu = false
     },
     deleteAllObjects: function () {
-      // if all objects are being deleted we can reset the unique ids
-      this.objects = []
+      // if all initObjects are being deleted we can reset the unique ids
+      this.initObjects.splice(0, this.initObjects.length, [])
       this.nextID = 0
       this.freeObjectID = []
     },
-    selectObj: function (event, id) {
+    toJSON: function () {
+      let output = []
+      for (let i = 0; i < this.$children.length; i++) {
+        let x = this.$children[i].toObject()
+        output.push(x)
+      }
+      return JSON.stringify(output)
+    },
+
+    // events
+    selectObj: function (id) {
       // if we just selected an obj, make sure we close the context menu
-      this.showContext = false
+      this.showContextMenu = false
       //console.log("select obj function called");
       //console.log(id);
       this.selectedObj = id
     },
-    onContextMenu: function (event, type) {
-      //console.log("onContextMenu change");
-      this.showContext = true
-      this.contextType = type
-      this.contextMenuStyle.left = `${event.x}px`
-      this.contextMenuStyle.top = `${event.y}px`
-      if (this.contextType === 'main') {
-        // we right clicked someonewhere else so we need to make sure a selected object is de-selected
-        this.selectObj(event, '')
-        // because at the moment, selecting an obj hides the context, we need to turn it back on
-        this.showContext = true
-      }
+    onClick: function () {
+      this.selectObj('')
+      this.showContextMenu = false
     },
-    updateData: function (id, key, value) {
-      //console.log("Update function called.");
-      let obj = this.getObjectByID(id)
-      if (obj) {
-        // the second item in the array is the index of the object
-        this.objects[obj[1]].data[key] = value
-        /*if (Array.isArray(this.objects[obj[1]].data[key])) {
-          console.log('there was an array updated');
-          this.objects[obj[1]].data[key].slice()
-        }*/
-      } else {
-        console.log(`Did not find the following pair to update: (id:${id}, key:${key}) trying to update it with:`);
-        console.log(value);
-      }
+    onRightClick: function (event) {
+      this.selectObj('')
+      //console.log(event);
+      this.contextMenuStyle.left = `${event.layerX}px`
+      this.contextMenuStyle.top = `${event.layerY}px`
+      this.showContextMenu = true
     },
     dropData: function (id, updateObj) {
       //console.log("dropData called.");
@@ -358,11 +320,8 @@ const TheMatrix = new Vue({
       // first update the object that was just dropped on
       this.deleteObjByID(id)
     },
-    toJSON: function () {
-      return JSON.stringify(this.objects)
-    },
     onLoad: function () {
-      this.showContext = false
+      this.showContextMenu = false
       let x = prompt("what would you like to load in? Type on of the following:\nscene\nobject")
       let y = prompt("paste all of the JSON data here:")
       switch (x) {
@@ -392,85 +351,79 @@ const TheMatrix = new Vue({
     },
     saveObjects: function () {
       console.log(`Copy the following into the Load function:\n${this.toJSON()}`)
+      this.showContextMenu = false
+    },
+
+    // Helper functions for maths
+    getFunctionString: function (symbol) {
+      //console.log(symbol);
+      // the idea here is to match the symbol to a function and return the function string
+      let x = this.getAllObjectsOfType('math-function')
+      for (let i = 0; i < x.length; i++) {
+        if (x[i].name == symbol) {
+          return x[i].expression
+        }
+      }
+    },
+    evaluteTableWithID: function (id) {
+      // we assume that a table is already selected in order to get to this piece of code
+      let vueObj = this.getVueObjectbyID(id)
+      if (vueObj) {
+        //console.log(vueObj);
+        vueObj.evaluateAllRows()
+      }
+      this.showContextMenu = false
+    },
+    updateAllTables: function () {
+      let tables = this.getAllObjectsOfType("math-table")
+      for (let i = 0; i < tables.length; i++) {
+        tables[i].evaluateAllRows()
+      }
+    },
+    updateTablesWithSymbol: function (symbol) {
+      //console.log(`updating tables with: ${symbol}`);
+      let tables = this.getAllObjectsOfType("math-table")
+      for (let i = 0; i < tables.length; i++) {
+        // first does the table have the symbol
+        if (tables[i].outputHeaders.includes(symbol)) {
+          // if we did find it then we can call evaluate
+          tables[i].evaluateAllRows()
+        }
+      }
+    },
+    removeFromGlobalScope: function (symbol) {
+      delete this.globalScope[symbol]
+    },
+    updateGlobalScope: function (symbol, value) {
+      this.globalScope[symbol] = value
+      // There is a better way to do this
+      // however for the moment, when a symbol is updated
+      // We will update every table
+      this.updateAllTables()
+    },
+    getGlobalScope: function () {
+      return this.globalScope
     }
   },
   template: `<div ondragover="event.preventDefault()"
-v-on:click.self="selectObj($event, null)"
-v-on:contextmenu.self.prevent="onContextMenu($event, 'main')"
+v-on:click.self.prevent="selectObj('')"
+v-on:contextmenu.self.prevent="onRightClick"
 v-bind:style="styleObj">
-  <component v-for="(obj, key) in objects"
+  <component v-for="(obj, key) in initObjects"
   v-bind:key="obj.id"
   v-bind:id="obj.id"
-  v-bind:initData="obj.data"
+  v-bind:initData="obj"
   v-bind:is="obj.type"
-  v-bind:selected="obj.id === selectedObj"
-  v-bind:style="{ position: 'absolute', left: obj.data.position[0], top: obj.data.position[1]}">
+  v-bind:type="obj.type"
+  v-bind:selected="obj.id === selectedObj">
   </component>
-  <ol v-on:contextmenu.prevent="0"
-  v-bind:class="{menu: true}"
-  v-show="showContext && contextType == 'main'"
-  v-bind:style="contextMenuStyle">
+  <ol v-on:contextmenu.prevent="onRightClick"
+  v-show="showContextMenu && selectedObj == ''"
+  v-bind:style="contextMenuStyle"
+  v-bind:class="{menu: true}">
     <li v-on:click="onLoad" v-bind:class="{menu: true}">Load</li>
     <li v-on:click="saveObjects" v-bind:class="{menu: true}">Save</li>
     <li v-on:click="userCreateObj" v-bind:class="{menu: true}">Create</li>
   </ol>
-  <ol v-on:contextmenu.prevent="0"
-  v-bind:class="{menu: true}"
-  v-show="showContext && contextType == 'matrix'"
-  v-bind:style="contextMenuStyle">
-    <li v-on:click="deleteCurrentObj" v-bind:class="{menu: true}">Delete</li>
-    <li v-bind:class="{menu: false}">-----</li>
-    <li v-bind:class="{menu: true}">Add</li>
-    <li v-bind:class="{menu: true}">Subtract</li>
-    <li v-bind:class="{menu: true}">Multiply</li>
-  </ol>
-  <ol v-on:contextmenu.prevent="0"
-  v-bind:class="{menu: true}"
-  v-show="showContext && contextType == 'variable'"
-  v-bind:style="contextMenuStyle">
-    <li v-on:click="deleteCurrentObj" v-bind:class="{menu: true}">Delete</li>
-  </ol>
-  <ol v-on:contextmenu.prevent="0"
-  v-bind:class="{menu: true}"
-  v-show="showContext && contextType == 'function'"
-  v-bind:style="contextMenuStyle">
-    <li v-on:click="deleteCurrentObj" v-bind:class="{menu: true}">Delete</li>
-  </ol>
 </div>`
 })
-
-window.onload = function () {
-  //console.log(TheMatrix);
-  /*let f = math.parse('2x^2+x')
-  console.log(f)
-  let g = math.compile('2x^2+x')
-  console.log(g);
-  let x = g.eval({x:2})
-  console.log(x);
-
-  console.log("-------------");
-  console.log(JSON.stringify(f)); // can stringify an expression tree
-  console.log(JSON.stringify(g)); // cannot stringify a function
-
-  console.log("-------------");
-  console.log(JSON.parse('{"mathjs":"OperatorNode","op":"+","fn":"add","args":[{"mathjs":"OperatorNode","op":"*","fn":"multiply","args":[{"mathjs":"ConstantNode","value":2},{"mathjs":"OperatorNode","op":"^","fn":"pow","args":[{"mathjs":"SymbolNode","name":"x"},{"mathjs":"ConstantNode","value":2}],"implicit":false}],"implicit":true},{"mathjs":"SymbolNode","name":"x"}],"implicit":false}', math.json.reviver));
-  // bringing an expression tree back in is easy
-
-  console.log("-------------");
-  let h = f._compile(math) // expression trees must be compiled using the math library
-  console.log(h({x:2})) // before they can be called with a scope obj
-
-  console.log("-------------");
-  // question can we define a variable == anotherVaraible
-  let parser = math.parser()
-  parser.set('x', 3)
-  console.log(parser);
-  console.log(parser.eval("x+2"));*/
-}
-
-// Got a library library from the internet.
-// console.log(math);
-// vs
-// console.log(Math);
-// i.e.
-//let x = math.matrix([[1,0],[0,1]])

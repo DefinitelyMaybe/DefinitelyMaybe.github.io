@@ -7,8 +7,21 @@ Vue.component("base-text", {
     return {
       // some default settings
       value: '',
-      width: "300px",
-      height: "150px",
+
+      // styling and misc data
+      styleObj: {
+        'position': 'absolute',
+        'left': '0px',
+        'top': '0px',
+        'width': "300px",
+        'height': "150px"
+      },
+      showContextMenu: false,
+      contextMenuStyle : {
+        'position': 'absolute',
+        'left': '0px',
+        'top': '0px',
+      },
       dragOffsetX: 0,
       dragOffsetY: 0
     }
@@ -17,41 +30,47 @@ Vue.component("base-text", {
     if (this.initData) {
       //console.log(this.initData);
       this.value = this.initData.value
-      this.width = this.initData.width
-      this.height = this.initData.height
+      this.styleObj.width = this.initData.width
+      this.styleObj.height = this.initData.height
+      this.styleObj.left = this.initData.position[0]
+      this.styleObj.top = this.initData.position[1]
     }
   },
   methods: {
-    updateValue: function (event) {
-      if (this.selected) {
-        // find the element and 
-        if (this.value != event.srcElement.value) {
-          this.value = event.srcElement.value
-          this.$root.updateData(this.$attrs.id, 'value', this.value)
-        }
+    toObject: function () {
+      return {
+        "value": this.value,
+        "width": this.styleObj.width,
+        "height": this.styleObj.height,
+        "position": [this.styleObj.left, this.styleObj.top],
+        "type": 'base-text',
+        "id": this.$attrs.id
       }
     },
+    deleteText: function () {
+      this.$root.deleteObjByID(this.$attrs.id)
+    },
     onDragEnd: function (event) {
-      //console.log("onDragEnd function says...");
-      //console.log(event);
       let x = event.x - this.dragOffsetX
       let y = event.y - this.dragOffsetY
-      this.$root.updateData(this.$attrs.id, 'position', [`${x}px`, `${y}px`])
-      // updating the class appropriately
+      this.styleObj.left = `${x}px`
+      this.styleObj.top = `${y}px`
     },
     onDragStart: function (event) {
-      //console.log("onDragStart function says...");
-      //console.log(event);
-      this.onClick(event)
+      this.onClick()
       this.dragOffsetX = event.offsetX
       this.dragOffsetY = event.offsetY
     },
-    onClick: function (event) {
-      this.$root.selectObj(event, this.$attrs.id)
+    onClick: function () {
+      this.$root.selectObj(this.$attrs.id)
+      this.showContextMenu = false
     },
     onRightClick: function (event) {
-      this.$root.selectObj(event, this.$attrs.id)
-      this.$root.onContextMenu(event, 'variable')
+      this.$root.selectObj(this.$attrs.id)
+      //console.log(event);
+      this.contextMenuStyle.left = `${event.x}px`
+      this.contextMenuStyle.top = `${event.y}px`
+      this.showContextMenu = true
     },
     onResizeTextBox: function (event) {
       // check whether the text box size changed
@@ -59,21 +78,28 @@ Vue.component("base-text", {
       let w = event.srcElement.style.width
       let h = event.srcElement.style.height
       if (w != this.width || h != this.height) {
-        this.width = w
-        this.height = h
-        this.$root.updateData(this.$attrs.id, 'width', w)
-        this.$root.updateData(this.$attrs.id, 'height', h)
+        this.styleObj.width = w
+        this.styleObj.height = h
       }
     }
   },
-  template: `<textarea draggable="true"
-v-on:dragend="onDragEnd"
-v-on:dragstart="onDragStart"
-v-on:click.prevent="onClick"
-v-on:contextmenu.prevent="onRightClick($event, 'matrix')"
-v-on:mouseup="onResizeTextBox"
-v-on:keyup="updateValue"
-v-bind:class="{text:true, selected:selected}"
-v-bind:style="{width:width, height:height}">{{value}}
-</textarea>`,
+  template: `<div>
+  <textarea draggable="true"
+  v-on:dragend="onDragEnd"
+  v-on:dragstart="onDragStart"
+  v-on:click.prevent="onClick"
+  v-on:contextmenu.prevent="onRightClick"
+  v-on:mouseup="onResizeTextBox"
+
+  v-bind:class="{text:true, selected:selected}"
+  v-bind:style="styleObj"
+  v-model:value="value">
+  </textarea>
+  <ol v-on:contextmenu.prevent="0"
+    v-bind:class="{menu: true}"
+    v-show="showContextMenu && selected"
+    v-bind:style="contextMenuStyle">
+      <li v-on:click="deleteText" v-bind:class="{menu: true}">Delete</li>
+  </ol>
+</div>`,
 })
