@@ -6,17 +6,29 @@ Vue.component("math-matrix", {
   data: function () {
     return {
       entries: [[1,0,0],[0,1,0],[0,0,1]],
+
+      // styling and misc data
+      styleObj: {
+        'position': 'absolute',
+        'left': '0px',
+        'top': '0px'
+      },
+      showContextMenu: false,
+      contextMenuStyle: {
+        'position': 'absolute',
+        'left': '0px',
+        'top': '0px'
+      },
       dragOffsetX: 0,
       dragOffsetY: 0
     }
   },
   created: function () {
     if (this.initData) {
-      // assuming there is entires
-      //console.log("matrix created method");
       //console.log(this.initData);
-      this.entries = this.initData.entries
-      this.entries.slice()
+      this.entries.splice(0, this.entries.length, this.initData.entries)
+      this.styleObj.left = this.initData.position[0]
+      this.styleObj.top = this.initData.position[1]
     }
   },
   methods: {
@@ -49,35 +61,55 @@ Vue.component("math-matrix", {
         this.onClick(event)
       }
     },
+    toObject: function () {
+      return {
+        "entries": this.entries,
+        "position": [this.styleObj.left, this.styleObj.top],
+        "type": 'math-matrix',
+        "id": this.$attrs.id
+      }
+    },
+    deleteMatrix: function () {
+      this.$root.deleteObjByID(this.$attrs.id)
+    },
     onDragEnd: function (event) {
-      //console.log("onDragEnd function says...");
-      //console.log(event);
       let x = event.x - this.dragOffsetX
       let y = event.y - this.dragOffsetY
-      // its possible to get here and for this object to be deleted first.
-      this.$root.updateData(this.$attrs.id, 'position', [`${x}px`, `${y}px`])
+      this.styleObj.left = `${x}px`
+      this.styleObj.top = `${y}px`
     },
     onDragStart: function (event) {
-      //console.log("onDragStart function says...");
-      //console.log(event);
-      this.onClick(event)
+      this.onClick()
       this.dragOffsetX = event.offsetX
       this.dragOffsetY = event.offsetY
     },
-    onClick: function (event) {
-      this.$root.selectObj(event, this.$attrs.id)
+    onClick: function () {
+      this.$root.selectObj(this.$attrs.id)
+      this.showContextMenu = false
     },
     onRightClick: function (event) {
-      this.$root.selectObj(event, this.$attrs.id)
-      this.$root.onContextMenu(event, 'matrix')
-    }
+      this.$root.selectObj(this.$attrs.id)
+      //console.log(event);
+      this.contextMenuStyle.left = `${event.layerX}px`
+      this.contextMenuStyle.top = `${event.layerY}px`
+      this.showContextMenu = true
+    },
   },
   template: `<div draggable="true"
 v-on:dragend="onDragEnd"
 v-on:dragstart="onDragStart"
 v-bind:class="{ matrix: true, selected: selected}"
+v-bind:style="styleObj"
+
 v-on:click.prevent="onClick"
-v-on:contextmenu.prevent="onRightClick($event, 'matrix')">{{entries}}
+v-on:contextmenu.prevent="onRightClick">
+  <p>{{entries}}</p>
+  <ol v-on:contextmenu.prevent="0"
+    v-bind:class="{menu: true}"
+    v-show="showContextMenu && selected"
+    v-bind:style="contextMenuStyle">
+      <li v-on:click="deleteMatrix" v-bind:class="{menu: true}">Delete</li>
+  </ol>
 </div>`,
 })
 
