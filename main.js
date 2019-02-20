@@ -4,7 +4,6 @@
 // mathquill - http://mathquill.com/ (requires JQuery)
 // lodash - https://lodash.com/ make js great again.
 
-
 // global varibles
 // Have a look at whats in the html file and then in the data folder.
 // This variable will be moved later
@@ -462,9 +461,3 @@ v-bind:style="styleObj">
   </ol>
 </div>`
 })
-
-/*
-window.onload = function () {
-  console.log(MathQuill);
-}
-*/

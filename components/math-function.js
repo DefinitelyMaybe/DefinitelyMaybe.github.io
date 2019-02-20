@@ -185,6 +185,26 @@ Vue.component("math-function", {
 
       return newString
     },
+    changeExpression: function () {
+      if (this.selected) {
+        let newExpression = prompt("what would you like to change the name to?", this.expression)
+        if (newExpression && this.expression != newExpression) {
+          this.expression = newExpression
+          this.$root.updateTablesWithSymbol(this.name)
+        } 
+      } else {
+        this.onClick(event)
+      }
+    },
+    toObject: function () {
+      return {
+        "name": this.name,
+        "expression": this.expression,
+        "position": [this.styleObj.left, this.styleObj.top],
+        "type": 'math-function',
+        "id": this.$attrs.id
+      }
+    },
     deleteFunction: function () {
       this.$root.deleteObjByID(this.$attrs.id)
     },

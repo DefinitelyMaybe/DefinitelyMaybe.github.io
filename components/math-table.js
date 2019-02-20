@@ -259,7 +259,6 @@ Vue.component("math-table", {
       set: function (row) {
         // First get the whole scenes scope object
         let scope = this.$root.getGlobalScope()
-
         // Override the scope values with the ones from the table
         for (let i = 0; i < this.inputHeaders.length; i++) {
           scope[this.inputHeaders[i]] = this.inputTable[row][i]
@@ -278,7 +277,6 @@ Vue.component("math-table", {
               let g = math.compile(func)
               // Setting up a default value
               
-
               outputValue = g.eval(scope)
               // a simple check for strange values
               if (outputValue == "Infinity") {
