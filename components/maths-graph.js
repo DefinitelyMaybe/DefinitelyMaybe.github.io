@@ -17,44 +17,40 @@ Vue.component("math-graph", {
         }
       ],
       layout: {
-        title: 'My Graph',
+        title: ' ',
         width: 300,
         height: 300,
         autosize: false,
         xaxis: {
           range: [-10, 10],
-          title: {
-            text:'x'
-          },
-          //dtick: 1,
+          title: 'x',
           gridcolor: '#000000',
           zerolinecolor: '#000000',
-          zerolinewidth: 2,
+          zerolinewidth: 2
         },
         yaxis: {
           range: [-10, 10],
-          title: {
-            text:'f'
-          },
+          title: 'f',
           gridcolor: '#000000',
           zerolinecolor: '#000000',
-          zerolinewidth: 2,
-          //dtick: 1,
+          zerolinewidth: 2
         },
         //paper_bgcolor: 'rgba(0,0,0,0)',
         //plot_bgcolor: 'rgba(0,0,0,0)'
       },
       options: {
-        zoomscroll: true,
-        //displayModeBar: true,
+        scrollZoom: true,
+        displayModeBar: false,
+        editable: true,
+        showAxisDragHandles: false,
+        //displaylogo:false,
         //showLink: true,
         //linkText: "edit",
         //save button?
         //showSendToCloud: true,
         //lanuage
         //locale: 'fr'
-        displaylogo:false,
-        modeBarButtons: [
+        /*modeBarButtons: [
           // Can also do custom buttons too
           // https://codepen.io/etpinard/pen/pLOMXR?editors=0010
           // custom buttons look like this: 
@@ -67,11 +63,10 @@ Vue.component("math-graph", {
             }
           ],
           ['autoScale2d']
-        ],
+        ],*/
         //modeBarButtonsToRemove: ['toImage', 'lasso2d', 'zoom2d'],
-        editable: true,
         //staticPlot: true, //negates editibility
-        responsive: true // window resizing
+        //responsive: true // window resizing
       },
 
       // styling and misc data
@@ -92,68 +87,101 @@ Vue.component("math-graph", {
   },
   created: function () {
     if (this.initData) {
-      //console.log(this.initData);
+      console.log(this.initData);
       this.layout.width = this.initData.width
       this.layout.height = this.initData.height
-      this.layout.title = this.initData.title
-      this.layout.xaxis.title.text = this.initData.xaxis
-      this.layout.yaxis.title.text = this.initData.yaxis
+      this.layout.xaxis.title = this.initData.xaxis
+      this.layout.yaxis.title = this.initData.yaxis
       this.styleObj.left = this.initData.position[0]
       this.styleObj.top = this.initData.position[1]
     }
   },
   mounted() {
-    this.graph = this.$refs.graph
-    this.initPlot()
-    this.$root.updateAllGraphs()
-    this.manualGraphUpdate()
+    this.graph = this.$refs.graph 
+    this.updateTrace(this) // What in the heck??? why does scope change for this function?
+    Plotly.plot(this.graph, this.trace, this.layout, this.options);
   },
   methods: {
     // Graph specific
-    initPlot: function () {
-      Plotly.plot(this.graph, this.trace, this.layout, this.options);
-    },
-    update: function () {
-      // Do not call Plotly.update() here. that would cause an infinite loop
-      console.log("Graph update function called");
-      //console.log(this.trace);
-      //console.log(this.layout);
-      // get the type of graph first
-      let graphType = this.trace[0].type
-      if (graphType == "scatter") {
-        console.log("updating a scatter plot");
+    updateTrace: function (vueEl) {
+      // Do not call Plotly.updateTrace() here. that would cause an infinite loop
+      //console.log("Graph updateTrace function called");
+      function evaluateFunction(funcString, scope) {
+        try {
+          return math.eval(funcString, scope)
+        } catch (error) {
+          console.log("Graph threw error.");
+          //console.log(error);
+        }
+        // if the above failed then we will return an empty array
+      }
+      function getGraphRange() {
         // get the input range
-        let range = this.layout.xaxis.range
-
-        // getting the function string
-        let func = this.$root.getFunctionString(this.layout.yaxis.title.text)
+        let range = vueEl.layout.xaxis.range
+        let delta = Math.abs(range[1]-range[0])/100;
+        return _.range(range[0], range[1]+delta, delta)
+      }
+      function getAxisLabels() {
+        let obj = {}
+        //console.log(vueEl.layout);
+        console.log(vueEl);
+        if (vueEl.layout.xaxis.title) {
+          obj["xaxis"] = vueEl.layout.xaxis.title
+        } else {
+          obj["xaxis"] = vueEl.layout.xaxis.title.text
+        }
+        if (vueEl.layout.yaxis.title) {
+          obj["yaxis"] = vueEl.layout.yaxis.title
+        } else {
+          obj["yaxis"] = vueEl.layout.yaxis.title.text
+        }
+        return obj
+      }
+      // get the type of graph first
+      let graphType = vueEl.trace[0].type
+      if (graphType == "scatter") {
+        // getting the function string using the yaxis label
+        let axisLabels = getAxisLabels()
+        let func = vueEl.$root.getFunctionString(axisLabels.yaxis)
 
         // If found do the evaluation
         if (func) {
-          try {
-            let g = math.compile(func)
-            // setup the scope variable for eval
-            let delta = Math.abs(range[1]-range[0])/10;
-            let newXaxis = _.range(range[0], range[1]+delta, delta)
-            let scope = {};
-            scope[this.layout.xaxis.title.text] = newXaxis
-            console.log(scope);
-            // do the eval
-            let outputs = g.eval(scope)
-
-            // update the data
-            let data = this.trace[0]
-            data.x = newXaxis
-            data.y = outputs
-            this.trace.splice(0, 1, data)
-            console.log(this.trace);
-          } catch (error) {
-            console.log("Graph threw error.");
-            console.log(error);
+          //console.log("Function found. Doing eval on scope");
+          let inputs = getGraphRange()
+          let realInputs = []
+          let realOutputs = []
+          let complexInputs = []
+          let complexOutputs = []
+          let scope = {}
+          // now lets deal with complex numbers, naively
+          for (let i = 0; i < inputs.length; i++) {
+            scope[axisLabels.xaxis] = inputs[i]
+            let x = evaluateFunction(func, scope)
+            if (x) {
+              if (x.im) {
+                complexInputs.push(inputs[i])
+                complexOutputs.push(x.re)
+              } else {
+                realInputs.push(inputs[i])
+                realOutputs.push(x)
+              } 
+            }
           }
-        } else {
-          // set to nothing
-          this.trace[0].y.splice(0, this.trace[0].y.length)
+
+          // finally update the trace
+          vueEl.trace.splice(0, vueEl.trace.length)
+          vueEl.trace.push({
+            type: 'scatter',
+            name: 'real',
+            x: realInputs,
+            y: realOutputs
+          })
+          vueEl.trace.push({
+            type: 'scatter',
+            name: 'complex',
+            x: complexInputs,
+            y: complexOutputs
+          })
         }
       }
     },
@@ -162,11 +190,12 @@ Vue.component("math-graph", {
     },
     onGraphClick: function () {
       console.log("hello world");
-      this.update()
+      //this.updateTrace(this)
+      //Plotly.newPlot(this.graph, this.trace, this.layout)
     },
-    manualGraphUpdate: function () {
-      console.log("this is a custom vue call");
-      Plotly.update(this.graph, this.trace, this.layout)
+    update: function () {
+      this.updateTrace(this)
+      Plotly.newPlot(this.graph, this.trace, this.layout)
     },
     
 
@@ -177,7 +206,9 @@ Vue.component("math-graph", {
         "width": this.layout.width,
         "height": this.layout.height,
         "type": 'math-graph',
-        "id": this.$attrs.id
+        "id": this.$attrs.id,
+        "xaxis": this.layout.xaxis.title.text,
+        "yaxis": this.layout.yaxis.title.text
       }
     },
 
@@ -219,7 +250,7 @@ Vue.component("math-graph", {
   v-bind:style="styleObj">
     <div ref="graph"
     v-on:click="onGraphClick"
-    v-on:keyup="manualGraphUpdate"></div>
+    v-on:keyup="update"></div>
     <ol v-on:contextmenu.prevent="0"
     v-bind:class="{menu: true}"
     v-show="showContextMenu && selected"

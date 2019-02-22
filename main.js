@@ -4,6 +4,7 @@
 // mathquill - http://mathquill.com/ (requires JQuery)
 // lodash - https://lodash.com/ make js great again.
 
+
 // global varibles
 // Have a look at whats in the html file and then in the data folder.
 // This variable will be moved later
@@ -16,10 +17,8 @@ function sayHi(name) {
 const MQ = MathQuill.getInterface(2);
 
 const TheMatrix = new Vue({
-  el: '#TheMatrix',
-  data: {
-    name: 'The Matrix',
-    
+  el: '#VueContainer',
+  data: {    
     nextID: 0, // The next ID to be used if there are no freeobjectIDs left
     freeObjectID: [], // if an object is ever removed. its id is added here
     selectedObj: '', // The id of the currently selected object
@@ -416,6 +415,17 @@ const TheMatrix = new Vue({
         }
       }
     },
+    updateGraphsWithSymbol: function (symbol) {
+      //console.log(`updating graphs with: ${symbol}`);
+      let graphs = this.getAllObjectsOfType("math-graph")
+      for (let i = 0; i < graphs.length; i++) {
+        // first does the table have the symbol
+        if (graphs[i].layout.yaxis.title == symbol || graphs[i].layout.yaxis.title.text == symbol) {
+          // if we did find it then we can call evaluate
+          graphs[i].update()
+        }
+      }
+    },
     removeFromGlobalScope: function (symbol) {
       delete this.globalScope[symbol]
     },
@@ -461,3 +471,9 @@ v-bind:style="styleObj">
   </ol>
 </div>`
 })
+
+/*
+window.onload = function () {
+  console.log(MathQuill);
+}
+*/

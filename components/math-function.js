@@ -41,7 +41,7 @@ Vue.component("math-function", {
       this.styleObj.top = this.initData.position[1]
     }
   },
-  mounted: function () {
+  mounted () {
     // the MQ variable is defined in main.js and is equal to: MathQuill.getInterface(2);
     this.mathq =  MQ.MathField(this.$refs.quillspan, {
       handlers: {
@@ -77,6 +77,7 @@ Vue.component("math-function", {
       this.latex = this.mathq.latex()
       this.expression = this.expressionFromLatex(this.latex);
       this.$root.updateTablesWithSymbol(this.name)
+      this.$root.updateGraphsWithSymbol(this.name)
       console.log(`latex: ${this.latex}\nexpression: ${this.expression}`);
     },
     expressionFromLatex: function (latexString) {
@@ -153,7 +154,21 @@ Vue.component("math-function", {
         string = firstHalf + `sqrt(${expo})` + lastHalf
         return string
       }
-      
+      function parseTrigFunctions(string) {
+        let trigf = 'sin'
+        let i = string.lastIndexOf('\\sin')
+        if (i == -1) {
+          i = string.lastIndexOf('\\cos')
+          trigf = 'cos'
+        }
+        
+        // hardcoding the length of the match
+        let firstHalf = string.slice(0, i)
+        let lastHalf = string.slice(i + 4)
+
+        string = firstHalf + trigf + lastHalf
+        return string
+      }
       // find \left( and \right)
       let newString = latexString.replace(/\\left\(/g, '(')
       newString = newString.replace(/\\right\)/g, ')')
@@ -179,31 +194,16 @@ Vue.component("math-function", {
       while (newString.match(/\\sqrt{/g) != null) {
         newString = parseSqrt(newString)
       }
+
+      // basic trig functions
+      while (newString.match(/\\sin/g) != null || newString.match(/\\cos/g) != null) {
+        newString = parseTrigFunctions(newString)
+      }
       
       // spaces
       newString = newString.replace(/\\ /g, '')
 
       return newString
-    },
-    changeExpression: function () {
-      if (this.selected) {
-        let newExpression = prompt("what would you like to change the name to?", this.expression)
-        if (newExpression && this.expression != newExpression) {
-          this.expression = newExpression
-          this.$root.updateTablesWithSymbol(this.name)
-        } 
-      } else {
-        this.onClick(event)
-      }
-    },
-    toObject: function () {
-      return {
-        "name": this.name,
-        "expression": this.expression,
-        "position": [this.styleObj.left, this.styleObj.top],
-        "type": 'math-function',
-        "id": this.$attrs.id
-      }
     },
     deleteFunction: function () {
       this.$root.deleteObjByID(this.$attrs.id)
