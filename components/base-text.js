@@ -1,3 +1,5 @@
+// Add links within text or as a separate object or both.
+
 Vue.component("base-text", {
   props: {
     initData: Object,
@@ -12,13 +14,16 @@ Vue.component("base-text", {
       styleObj: {
         'position': 'absolute',
         'left': '0px',
-        'top': '0px',
+        'top': '0px'
+      },
+      textStyle: {
         'width': "300px",
         'height': "150px"
       },
       showContextMenu: false,
       contextMenuStyle : {
         'position': 'absolute',
+        'width': '175px',
         'left': '0px',
         'top': '0px',
       },
@@ -30,8 +35,8 @@ Vue.component("base-text", {
     if (this.initData) {
       //console.log(this.initData);
       this.value = this.initData.value
-      this.styleObj.width = this.initData.width
-      this.styleObj.height = this.initData.height
+      this.textStyle.width = this.initData.width
+      this.textStyle.height = this.initData.height
       this.styleObj.left = this.initData.position[0]
       this.styleObj.top = this.initData.position[1]
     }
@@ -67,9 +72,8 @@ Vue.component("base-text", {
     },
     onRightClick: function (event) {
       this.$root.selectObj(this.$attrs.id)
-      //console.log(event);
-      this.contextMenuStyle.left = `${event.x}px`
-      this.contextMenuStyle.top = `${event.y}px`
+      this.contextMenuStyle.left = `${event.layerX}px`
+      this.contextMenuStyle.top = `${event.layerY}px`
       this.showContextMenu = true
     },
     onResizeTextBox: function (event) {
@@ -83,17 +87,15 @@ Vue.component("base-text", {
       }
     }
   },
-  template: `<div>
-  <textarea draggable="true"
+  template: `<div draggable="true"
   v-on:dragend="onDragEnd"
   v-on:dragstart="onDragStart"
   v-on:click.prevent="onClick"
-  v-on:contextmenu.prevent="onRightClick"
   v-on:mouseup="onResizeTextBox"
-
-  v-bind:class="{text:true, selected:selected}"
-  v-bind:style="styleObj"
-  v-model:value="value">
+  v-on:contextmenu.prevent="onRightClick"
+  v-bind:style="styleObj">
+  <textarea v-bind:class="{text:true, selected:selected}"
+  v-model:value="value" v-bind:style="textStyle">
   </textarea>
   <ol v-on:contextmenu.prevent="0"
     v-bind:class="{menu: true}"

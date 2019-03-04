@@ -7,13 +7,6 @@
 
 // global varibles
 // Have a look at whats in the html file and then in the data folder.
-// This variable will be moved later
-
-// functions
-function sayHi(name) {
-  console.log(`Hey ${name}`);
-}
-
 const MQ = MathQuill.getInterface(2);
 
 const TheMatrix = new Vue({
@@ -35,6 +28,7 @@ const TheMatrix = new Vue({
     },
     contextMenuStyle: {
       position: 'absolute',
+      width: '175px',
       left: '0px',
       top: '0px'
     },
@@ -104,10 +98,7 @@ const TheMatrix = new Vue({
             id: options.id || this.getNewObjectID(),
             type: options.type,
             position: options.position,
-            result: options.result,
-            variables: options.variables,
             name: options.name,
-            expression: options.expression,
             latex: options.latex
           })
           break;
@@ -166,9 +157,19 @@ const TheMatrix = new Vue({
             position: options.position,
             width: options.width,
             height: options.height,
-            title: options.title,
             xaxis: options.xaxis,
-            yaxis: options.yaxis
+            yaxis: options.yaxis,
+            xrange: options.xrange || [-10, 10],
+            yrange: options.yrange || [-10, 10],
+          })
+          break;
+        }
+        case 'form-create':
+        {
+          this.initObjects.push({
+            id: options.id || this.getNewObjectID(),
+            type: options.type,
+            position: options.position
           })
           break;
         }
@@ -179,92 +180,10 @@ const TheMatrix = new Vue({
       }
     },
     userCreateObj: function (event) {
-      let obj = prompt("What would you like to create? Type one of the following...\nfunction\nvariable\ntext\ntable\ngraph", '')
-      
-      switch (obj) {
-        case 'matrix':
-        {
-          let rows = prompt("how many rows?", "1")
-          let cols = prompt("how many columns?", "1")
-
-          try {
-            rows = parseInt(rows)
-            cols = parseInt(cols)
-          } catch (error) {
-            alert("sorry, not sure how many rows and columns you wanted. default values are going to be used.")
-            rows = 1
-            cols = 1
-          }
-
-          let defaultEntries = []
-          for (let i = 0; i < rows; i++) {
-            let row = []
-            for (let j = 0; j < cols; j++) {
-              row.push(0)
-            }
-            defaultEntries.push(row)
-          }
-          this.createObj({
-            type: 'math-matrix',
-            position:[`${event.x}px`, `${event.y}px`],
-            entries: defaultEntries
-          })
-          break;
-        }
-        case 'function':
-        {
-          this.createObj({
-            type: 'math-function',
-            name: 'f',
-            expression: 'x+1',
-            latex: 'x+1',
-            position:[`${event.x}px`, `${event.y}px`]
-          })
-          break;
-        }
-        case 'variable':
-        {
-          this.createObj({
-            type: 'math-variable',
-            name: 'x',
-            value: 0,
-            position:[`${event.x}px`, `${event.y}px`]
-          })
-          break;
-        }
-        case 'text':
-        {
-          this.createObj({
-            type: 'base-text',
-            position:[`${event.x}px`, `${event.y}px`]
-          })
-          break;
-        }
-        case 'table':
-        {
-          this.createObj({
-            type: 'math-table',
-            position:[`${event.x}px`, `${event.y}px`]
-          })
-          break;
-        }
-        case 'graph':
-        {
-          this.createObj({
-            type: 'math-graph',
-            position:[`${event.x}px`, `${event.y}px`],
-            width: 500,
-            height: 500
-          })
-          break;
-        }
-        default:
-        {
-          // default is to say that what the user entered wasn't an object that can be created
-          alert("Sorry, not sure what you were wanting to create.")
-          break
-        }
-      }
+      this.createObj({
+        type: 'form-create',
+        position:[`${event.x}px`, `${event.y}px`]
+      })
       // we're assuming the function was called from a context menu
       this.showContextMenu = false
     },
@@ -389,15 +308,6 @@ const TheMatrix = new Vue({
         }
       }
     },
-    evaluteTableWithID: function (id) {
-      // we assume that a table is already selected in order to get to this piece of code
-      let vueObj = this.getVueObjectbyID(id)
-      if (vueObj) {
-        //console.log(vueObj);
-        vueObj.evaluateAllRows()
-      }
-      this.showContextMenu = false
-    },
     updateAllTables: function () {
       let tables = this.getAllObjectsOfType("math-table")
       for (let i = 0; i < tables.length; i++) {
@@ -430,19 +340,18 @@ const TheMatrix = new Vue({
       delete this.globalScope[symbol]
     },
     updateGlobalScope: function (symbol, value) {
+      //console.log(`updating global scope with: (${symbol}, ${value})`);
       this.globalScope[symbol] = value
       // There is a better way to do this
       // however for the moment, when a symbol is updated
       // We will update every table
       this.updateAllTables()
+      this.updateAllGraphs()
     },
     getGlobalScope: function () {
-      return this.globalScope
+      return Object.assign({}, this.globalScope)
     },
-
-    // Plotly graph events are weird
-    updateAllGraphs: function(event) {
-      console.log("Going to update all graphs");
+    updateAllGraphs: function() {
       let graphs = this.getAllObjectsOfType('math-graph')
       for (let i = 0; i < graphs.length; i++) {
         graphs[i].update()

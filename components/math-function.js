@@ -23,6 +23,7 @@ Vue.component("math-function", {
       showContextMenu: false,
       contextMenuStyle : {
         'position': 'absolute',
+        'width': '175px',
         'left': '0px',
         'top': '0px',
       },
@@ -35,7 +36,6 @@ Vue.component("math-function", {
     if (this.initData) {
       //console.log(this.initData);
       this.name = this.initData.name
-      this.expression = this.initData.expression
       this.latex = this.initData.latex
       this.styleObj.left = this.initData.position[0]
       this.styleObj.top = this.initData.position[1]
@@ -43,6 +43,7 @@ Vue.component("math-function", {
   },
   mounted () {
     // the MQ variable is defined in main.js and is equal to: MathQuill.getInterface(2);
+    // TODO: this is throwing the two error messages at the start. Why?
     this.mathq =  MQ.MathField(this.$refs.quillspan, {
       handlers: {
         edit: this.spanEdit
@@ -51,7 +52,7 @@ Vue.component("math-function", {
     this.mathq.latex(this.latex)
   },
   methods: {
-    changeName: function () {
+    renameFunction: function () {
       if (this.selected) {
         let newName = prompt("what would you like to change the name to?", this.name)
         if (newName && this.name != newName) {
@@ -239,13 +240,14 @@ v-bind:class="{ function: true, selected: selected}"
 
 v-on:click.prevent="onClick"
 v-on:contextmenu.prevent="onRightClick">
-  <p v-on:click.prevent="changeName">{{name}}</p>
+  <p>{{name}}</p>
   <p>:</p>
-  <span ref="quillspan"></span>
+  <span ref="quillspan" v-bind:class="{functionQuill: true}"></span>
   <ol v-on:contextmenu.prevent="0"
   v-bind:class="{menu: true}"
   v-show="showContextMenu && selected"
   v-bind:style="contextMenuStyle">
+    <li v-on:click="renameFunction" v-bind:class="{menu: true}">Rename</li>
     <li v-on:click="deleteFunction" v-bind:class="{menu: true}">Delete</li>
   </ol>
 </div>`,
