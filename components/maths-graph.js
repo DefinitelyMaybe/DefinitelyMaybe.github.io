@@ -87,7 +87,7 @@ Vue.component("math-graph", {
   },
   created: function () {
     if (this.initData) {
-      console.log(this.initData);
+      //console.log(this.initData);
       this.layout.width = this.initData.width
       this.layout.height = this.initData.height
       this.layout.xaxis.title = this.initData.xaxis
@@ -124,16 +124,16 @@ Vue.component("math-graph", {
       function getAxisLabels() {
         let obj = {}
         //console.log(vueEl.layout);
-        console.log(vueEl);
-        if (vueEl.layout.xaxis.title) {
-          obj["xaxis"] = vueEl.layout.xaxis.title
-        } else {
+        //console.log(vueEl);
+        if (vueEl.layout.xaxis.title.text) {
           obj["xaxis"] = vueEl.layout.xaxis.title.text
-        }
-        if (vueEl.layout.yaxis.title) {
-          obj["yaxis"] = vueEl.layout.yaxis.title
         } else {
+          obj["xaxis"] = vueEl.layout.xaxis.title
+        }
+        if (vueEl.layout.yaxis.title.text) {
           obj["yaxis"] = vueEl.layout.yaxis.title.text
+        } else {
+          obj["yaxis"] = vueEl.layout.yaxis.title
         }
         return obj
       }
@@ -190,8 +190,8 @@ Vue.component("math-graph", {
     },
     onGraphClick: function () {
       console.log("hello world");
-      //this.updateTrace(this)
-      //Plotly.newPlot(this.graph, this.trace, this.layout)
+      console.log(this.layout.yaxis.title.text)
+      this.update()
     },
     update: function () {
       this.updateTrace(this)
