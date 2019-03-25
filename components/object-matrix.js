@@ -1,27 +1,12 @@
-Vue.component("math-matrix", {
+Vue.component("object-matrix", {
+  mixins: [mixin_moveable, mixin_contextmenu],
   props: {
     initData: Object,
     selected: Boolean
   },
   data: function () {
     return {
-      entries: [[1,0,0],[0,1,0],[0,0,1]],
-
-      // styling and misc data
-      styleObj: {
-        'position': 'absolute',
-        'left': '0px',
-        'top': '0px'
-      },
-      showContextMenu: false,
-      contextMenuStyle: {
-        'position': 'absolute',
-        'width': '175px',
-        'left': '0px',
-        'top': '0px'
-      },
-      dragOffsetX: 0,
-      dragOffsetY: 0
+      entries: [[1,0,0],[0,1,0],[0,0,1]]
     }
   },
   created: function () {
@@ -33,6 +18,17 @@ Vue.component("math-matrix", {
     }
   },
   methods: {
+    save: function () {
+      return {
+        "entries": this.entries,
+        "position": [this.styleObj.left, this.styleObj.top],
+        "type": 'object-matrix',
+        "id": this.$attrs.id
+      }
+    },
+    deleteObject: function () {
+      this.$root.deleteObjByID(this.$attrs.id)
+    },
     newEntry: function (row, col, value) {
       try {
         let newRow = this.entries[row]
@@ -61,40 +57,7 @@ Vue.component("math-matrix", {
       } else {
         this.onClick(event)
       }
-    },
-    toObject: function () {
-      return {
-        "entries": this.entries,
-        "position": [this.styleObj.left, this.styleObj.top],
-        "type": 'math-matrix',
-        "id": this.$attrs.id
-      }
-    },
-    deleteMatrix: function () {
-      this.$root.deleteObjByID(this.$attrs.id)
-    },
-    onDragEnd: function (event) {
-      let x = event.x - this.dragOffsetX
-      let y = event.y - this.dragOffsetY
-      this.styleObj.left = `${x}px`
-      this.styleObj.top = `${y}px`
-    },
-    onDragStart: function (event) {
-      this.onClick()
-      this.dragOffsetX = event.offsetX
-      this.dragOffsetY = event.offsetY
-    },
-    onClick: function () {
-      this.$root.selectObj(this.$attrs.id)
-      this.showContextMenu = false
-    },
-    onRightClick: function (event) {
-      this.$root.selectObj(this.$attrs.id)
-      //console.log(event);
-      this.contextMenuStyle.left = `${event.layerX}px`
-      this.contextMenuStyle.top = `${event.layerY}px`
-      this.showContextMenu = true
-    },
+    }
   },
   template: `<div draggable="true"
 v-on:dragend="onDragEnd"
@@ -109,8 +72,14 @@ v-on:contextmenu.prevent="onRightClick">
     v-bind:class="{menu: true}"
     v-show="showContextMenu && selected"
     v-bind:style="contextMenuStyle">
-      <li v-on:click="deleteMatrix" v-bind:class="{menu: true}">Delete</li>
+    <li v-on:click="deleteObject" v-bind:class="{menu: true}">Edit</li>
+    <li v-on:click="deleteObject" v-bind:class="{menu: true}">Delete</li>
   </ol>
+  <component v-bind:is="'form-function'"
+    v-bind:class="{CreateForm:true}"
+    v-if="editing && selected"
+    v-bind:initData="{name:name,latex:latex}"
+    v-bind:style="contextMenuStyle"></component>
 </div>`,
 })
 

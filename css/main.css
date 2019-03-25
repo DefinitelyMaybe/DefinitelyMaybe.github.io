@@ -65,6 +65,7 @@ li.menu:hover {
 }
 
 .table {
+  background: white;
   border: 1px dashed black;
   border-collapse: collapse;
 }
@@ -84,6 +85,8 @@ li.menu:hover {
   font-size: 17px;
   border: none;
   resize: none;
+  padding: 2px;
+  background: white;
   border: 1px dashed black;
   cursor: pointer;
 }
@@ -92,8 +95,11 @@ li.menu:hover {
   resize: both;
 }
 
-.variable:hover {
+.variable {
   cursor: pointer;
+  padding: 2px;
+  background: white;
+  border: 1px dashed black;
 }
 
 /*
@@ -113,6 +119,9 @@ li.menu:hover {
   display: flex;
   flex-direction: row;
   cursor: pointer;
+  padding: 2px;
+  background: white;
+  border: 1px dashed black;
 }
 
 .functionQuill {
