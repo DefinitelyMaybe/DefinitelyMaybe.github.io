@@ -4,6 +4,7 @@ Reveal.initialize({
   progress: true,
   center: true,
   hash: true,
+  navigationMode: 'linear',
 
   transition: 'none', // none/fade/slide/convex/concave/zoom
   
