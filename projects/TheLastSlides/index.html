@@ -37,72 +37,10 @@
         <section id="maincontents">
           <h2>Contents:</h2>
           <ul>
-            <li><a href="#/compsci">Computer Science</a></li>
             <li><a href="#/enggen">Engineering (General)</a></li>
+            <li><a href="#/compsci">Computer Science</a></li>
             <li><a href="#/phil">Philosophy</a></li>
           </ul>
-        </section>
-        <section id="compsci">
-          <h2>Computer Science:</h2>
-          <ul>
-            <li><a href="#/dividestart">Divide&Conuer Algorithms</a></li>
-            <li><a href="#/greedystart">Greedy Algorithms</a></li>
-            <li><a href="#/randomstart">Random Algorithms</a></li>
-            <li><a href="#/dynamicstart">Dynamic Programming</a></li>
-            <li><a href="#/NPstart">P vs NP</a></li>
-          </ul><br>
-          <br>
-          <a href="#/maincontents">contents</a>
-        </section>
-        <section>
-          <section id="dividestart">
-            <h2>Divide&Conuer Algorithms</h2>
-            <br><br><br>
-            <a href="#/compsci">back</a>
-          </section>
-          <section>
-            <h3>The main algorithms</h3>
-            <ul>
-              <li>Merge sort</li>
-              <li>Quick sort</li>
-            </ul>
-          </section>
-        </section>
-        <section>
-          <section id="greedystart">
-            <h2>Greedy Algorithms</h2>
-            <br><br><br>
-            <a href="#/compsci">back</a>
-          </section>
-        </section>
-        <section>
-          <section id="randomstart">
-            <h2>Random Algorithms</h2>
-            <br><br><br>
-            <a href="#/compsci">back</a>
-          </section>
-          <section>
-            <h3>Best Thus far</h3>
-            <ul>
-              <li>Hash table</li>
-              <li>randomized quicksort</li>
-              <li>stochastic gradient descent</li>
-            </ul>
-          </section>
-        </section>
-        <section>
-          <section id="dynamicstart">
-            <h2>Dynamic Programming</h2>
-            <br><br><br>
-            <a href="#/compsci">back</a>
-          </section>
-        </section>
-        <section>
-          <section id="NPstart">
-            <h2>P vs NP</h2>
-            <br><br><br>
-            <a href="#/compsci">back</a>
-          </section>
         </section>
         <section id="enggen">
           <h2>Engineering (General)</h2>
@@ -362,26 +300,15 @@
           <section>
             <h3>Additive Manufacturing</h3>
             <p>
-              How is material layed down?
-            </p>
-            <ul>
-              <li>Deposition - ...</li>
-              <li>Binding - ...</li>
-              <li>Light Curing - ...</li>
-              <li>Lamination - ...</li>
-            </ul>
-          </section>
-          <section>
-            <h3>Additive Manufacturing</h3>
-            <p>
               Common methods:
             </p>
             <ul>
-              <li>Fused Deposition modelling</li>
+              <li>Fused Deposition modelling (FDM/FFF)</li>
               <li>Inkjet printing</li>
               <li>Powder bed printing</li>
-              <li>Stereolithography</li>
+              <li>Stereolithography (SLA/SL)</li>
               <li>Laminated Object</li>
+              <li>Selective Laser Sintering (SLS/SLM)</li>
             </ul>
           </section>
           <section>
@@ -475,6 +402,41 @@
               for data collection i.e. air pollution
             </p>
           </section>
+        </section>
+        <section id="compsci">
+          <h2>Computer Science:</h2>
+          <ul>
+            <li><a href="#/masteralgorithm">Master Algorithm</a></li>
+          </ul><br>
+          <br>
+          <a href="#/maincontents">contents</a>
+        </section>
+        <section id="masteralgorithm">
+          <p>
+            Suppose you have a recurrence relation: <br>
+            <b>T(n) = a*T(n/b)+ f(n^c)</b> <br>
+          </p>
+        </section>
+        <section>
+          <p><b>T(n) = a*T(n/b)+ f(n^c)</b></p>
+          <p>
+            Case 1: a > b^c<br>
+            then T(n) = O(n^(log_b(a)))
+          </p>
+        </section>
+        <section>
+          <p><b>T(n) = a*T(n/b)+ f(n^c)</b></p>
+          <p>
+            Case 2: a = b^c<br>
+            then T(n) = O(n^c * log(n))
+          </p>
+        </section>
+        <section>
+          <p><b>T(n) = a*T(n/b)+ f(n^c)</b></p>
+          <p>
+            Case 3: a < b^c<br>
+            then T(n) = O(n^c)
+          </p>
         </section>
         <section id="phil">
             <h2>Philosophy</h2>
