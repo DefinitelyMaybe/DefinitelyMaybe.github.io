@@ -1,16 +1,15 @@
 /*jshint esversion: 6*/
-var ctx = document.querySelector("canvas").getContext("2d");
+var ctx;
 
 // The game state
 var state = {
   view: "playing",
   dt: 0,
-  fpsCount: 0,
   inittime: 0,
   totaltime: 0,
   player: {
-    x: ctx.canvas.width/2,
-    y: ctx.canvas.height/2,
+    x: 0,
+    y: 0,
     size: 10,
     colour: "#0080ff",
     shoot: function () {
@@ -29,10 +28,6 @@ var state = {
   },
   freeindices: []
 };
-
-function init() {
-  state.inittime = Date.now();
-}
 
 function update() {
   // update delta time
@@ -80,14 +75,7 @@ function update() {
   var seconds = Math.floor(state.totaltime/1000);
   var minutes = Math.floor(seconds / 60);
   seconds -= 60 * minutes;
-  timertext = `${minutes}:${seconds}`;
-  var fpstext = window.document.getElementById("fps");
-  if (timertext == timetext.innerText) {
-    state.fpsCount += 1;
-  } else {
-    fpstext.innerText = state.fpsCount.toString();
-    state.fpsCount = 0;
-  }
+  timertext = `Time: ${minutes}:${seconds}`;
   timetext.innerText = timertext;
 
   // Add more asteroids over time
@@ -206,7 +194,6 @@ function gamereset() {
   state = {
     view: "playing",
     dt: 0,
-    fpsCount: 0,
     inittime: 0,
     totaltime: 0,
     player: {
@@ -239,5 +226,19 @@ function gamereset() {
   draw();
 }
 
-init();
-draw();
+window.onload = function (event) {
+  canvas = document.querySelector("canvas")
+  ctx = canvas.getContext("2d");
+  ctx.canvas.width = window.innerWidth
+  ctx.canvas.height = window.innerHeight
+  state.player.x = ctx.canvas.width/2,
+  state.player.y = ctx.canvas.height/2,
+  state.inittime = Date.now();
+
+  gui = document.querySelector("div")
+  gui.width = window.innerWidth
+  gui.height = window.innerHeight
+  console.log(gui.width, gui.height);
+  
+  draw()
+}
