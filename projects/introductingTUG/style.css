@@ -19,10 +19,18 @@ body {
 
 .middle {
   width: 90%;
-  text-align: center;
 }
 
-@media screen and (min-width: 1000px) {
+@media screen and (min-width: 700px) and (max-width: 999px) {
+  .middle {
+    width: 80%;
+  }
+  .right {
+    width: 15%;
+  }
+}
+
+@media screen and (min-width: 1000px) and (max-width: 1199px) {
   .left, .right {
     width: 15%;
   }
@@ -35,5 +43,15 @@ body {
 @media screen and (min-width: 600px) {
   #tugupdate {
     content:url("../../images/TUG/TUGupdate.jpg");
+  }
+}
+
+@media screen and (min-width: 1200px) {
+  .left, .right {
+    width: 20%;
+  }
+  
+  .middle {
+    width: 60%;
   }
 }

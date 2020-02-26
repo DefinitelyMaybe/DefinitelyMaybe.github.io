@@ -19,15 +19,54 @@ body {
 
 .middle {
   width: 90%;
-  text-align: center;
 }
 
-@media screen and (min-width: 1000px) {
+@media screen and (max-width: 699px) {
+  iframe {
+    width: 400px;
+    height: 300px;
+  }
+}
+
+@media screen and (min-width: 700px) and (max-width: 999px) {
+  iframe {
+    width: 600px;
+    height: 400px;
+  }
+  .middle {
+    width: 80%;
+  }
+  .right {
+    width: 15%;
+  }
+}
+
+@media screen and (min-width: 1000px) and (max-width: 1199px) {
   .left, .right {
     width: 15%;
   }
   
   .middle {
     width: 70%;
+  }
+
+  iframe {
+    width: 600px;
+    height: 400px;
+  }
+}
+
+@media screen and (min-width: 1200px) {
+  .left, .right {
+    width: 20%;
+  }
+  
+  .middle {
+    width: 60%;
+  }
+  
+  iframe {
+    width: 800px;
+    height: 600px;
   }
 }
