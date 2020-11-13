@@ -1,23 +1,58 @@
 html {
   margin: 0;
+  /* display: flex; */
   overflow: hidden;
+  height: 100%;
 }
 
 body {
   margin: 0;
+  height: 100%;
+}
+
+canvas {
+  z-index: -1;
+  position: absolute;
 }
 
 main {
-  position: absolute;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
 }
 
 label {
   background: white;
 }
 
+h1 {
+  margin: 0px;
+}
+
+h1#dead {
+  display: none;
+  color: rgb(87, 0, 0);
+}
+
+h1#restart {
+  display: none;
+}
+
+a {
+  color: rgb(35, 25, 128);
+}
+
 button {
   min-width: 100px;
   min-height: 30px;
+}
+
+button#startbtn {
+  background-color: whitesmoke;
+  min-width: 200px;
+  min-height: 60px;
 }
 
 table {
