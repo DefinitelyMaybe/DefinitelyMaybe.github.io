@@ -48,7 +48,8 @@ class PlayerControls {
     this.acceleration = 12;
     this.canMove = true
 
-    document.addEventListener("mousedown", async () => {
+    document.addEventListener("mousedown", async (e) => {
+      e.stopPropagation()
       this.onMouseDown();
     });
 

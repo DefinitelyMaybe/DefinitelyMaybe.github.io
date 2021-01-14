@@ -31,13 +31,17 @@ h1 {
   margin: 0px;
 }
 
-h1#dead {
+#dead {
   display: none;
   color: rgb(87, 0, 0);
 }
 
-h1#restart {
+#restart {
   display: none;
+}
+
+#score {
+  text-align: center;
 }
 
 a {

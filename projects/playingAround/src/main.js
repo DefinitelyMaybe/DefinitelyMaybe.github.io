@@ -2,24 +2,19 @@ import {
   Body,
   Box,
   BoxGeometry,
-  BufferGeometry,
   Clock,
   Color,
   DirectionalLight,
   HemisphereLight,
-  Line,
-  LineBasicMaterial,
   Mesh,
   MeshStandardMaterial,
   NaiveBroadphase,
   PerspectiveCamera,
   Plane,
   PlaneBufferGeometry,
-  Quaternion,
   Scene,
   Vec3,
   Vector2,
-  Vector3,
   WebGLRenderer,
   World,
 } from "./deps.js";
@@ -28,9 +23,11 @@ import { spawnCubes } from "./helpers.js"
 
 // state
 export const state = {
-  running: false,
-  displayRestart: false,
+  running: false
 }
+
+// score
+let score = 0
 
 // time
 export const clock = new Clock(true);
@@ -60,9 +57,6 @@ directionalLight.shadow.camera.right = d;
 directionalLight.shadow.camera.top = d;
 directionalLight.shadow.camera.bottom = -d;
 scene.add(directionalLight);
-
-// const directionalLightHelper = new DirectionalLightHelper(directionalLight);
-// scene.add(directionalLightHelper);
 
 const hemisphereLight = new HemisphereLight(0xaaaaaa, 0xaaaaaa, 0.7);
 scene.add(hemisphereLight);
@@ -110,66 +104,11 @@ world.addBody(cubeBody);
 // controls
 export const controls = new PlayerControls(cubeBody, camera, renderer.domElement);
 
-// raycasting for fun
-const geo = new BufferGeometry();
-const mat = new LineBasicMaterial({ color: 0xff00ff });
-const prevRay = new Line(geo, mat);
-scene.add(prevRay);
-
 // data structures
-export const redCubesArray = [];
+export let redCubesArray = [];
 
-// UI & Events
-const dead = document.querySelector("h1#dead")
-const restart = document.querySelector("h1#restart")
-
-window.addEventListener("visibilitychange", () => {
-  // https://developer.mozilla.org/en-US/docs/Web/API/Page_Visibility_API
-  if (document.visibilityState === "hidden") {
-    state.running = false;
-    clock.stop();
-  } else {
-    // get ready to run again
-    clock.start();
-    state.running = true;
-  }
-});
-
-window.addEventListener("resize", () => {
-  camera.aspect = window.innerWidth / window.innerHeight;
-  camera.updateProjectionMatrix();
-
-  renderer.setSize(window.innerWidth, window.innerHeight);
-});
-
-window.onresize = () => {
-  camera.aspect = window.innerWidth / window.innerHeight;
-  camera.updateProjectionMatrix();
-
-  renderer.setSize(window.innerWidth, window.innerHeight);
-};
-
-document.addEventListener("player", (e) => {
-  const object = e.detail.object
-  const color = object.material.color
-
-  if (object.name === "floor") {
-    // restart
-    dead.style.display = "block"
-    setTimeout(() => {
-      restart.style.display = "block"
-    }, 3000 );
-    // document.dispatchEvent(new Event("lose"))
-  } else if (object.name === "randomCube") {
-    // make the cube start falling through the ground
-    if (color.r > 0.5) {
-      object.material = new MeshStandardMaterial({color:0x333333})
-    }
-  }
-  
-})
-
-// game loop
+// -----------------------------------------------------
+// functions
 function animate() {
   requestAnimationFrame(animate);
 
@@ -224,26 +163,115 @@ function animate() {
   }
 }
 
-// finially start renderering
-state.running = true
-spawnCubes();
-// also create a cube underneath the player when the game begins
-material = new MeshStandardMaterial({ color: 0xaaaaaa });
-const underBox = new Mesh(geometry, material);
-underBox.position.y += 1
-underBox.castShadow = true;
-underBox.receiveShadow = true;
-underBox.name = "randomCube"
-scene.add(underBox);
-const undercube = new Box(new Vec3(1, 1, 1));
-const undercubeBody = new Body({ mass: 0 });
-undercubeBody.position.set(0, 1, 0);
-undercubeBody.addShape(undercube);
-world.addBody(undercubeBody);
-underBox.userData.physics = undercubeBody
+function restart() {
+  // start 
+  state.running = true
+  controls.canMove = true
+  score = 0
+  redCubesArray.forEach(obj => {
+    world.removeBody(obj.userData.physics)
+    scene.remove(obj)
+  })
+  cubeBody.position.set(0, 10, 0)
+  spawnCubes()
 
-redCubesArray.push(underBox)
+  // also create a cube underneath the player when the game begins
+  createUnderCube()
+
+  // remove some ui if it was there
+  deadElement.style.display = "none"
+  restartElement.style.display = "none"
+
+  updateScore()
+}
+
+function createUnderCube() {
+  material = new MeshStandardMaterial({ color: 0xaaaaaa });
+  const underBox = new Mesh(geometry, material);
+  underBox.position.y += 1
+  underBox.castShadow = true;
+  underBox.receiveShadow = true;
+  underBox.name = "randomCube"
+  scene.add(underBox);
+
+  // under cube
+  const undercube = new Box(new Vec3(1, 1, 1));
+  const undercubeBody = new Body({ mass: 0 });
+  undercubeBody.position.set(0, 1, 0);
+  undercubeBody.addShape(undercube);
+  world.addBody(undercubeBody);
+  underBox.userData.physics = undercubeBody
+
+  redCubesArray.push(underBox)
+}
+
+function updateScore() {
+  scoreElement.innerHTML = `${score}`
+}
+
+// -----------------------------------------------------
+// UI & Events
+const scoreElement = document.querySelector('#score')
+const deadElement = document.querySelector("#dead")
+const restartElement = document.querySelector("#restart")
+
+window.addEventListener("visibilitychange", () => {
+  // https://developer.mozilla.org/en-US/docs/Web/API/Page_Visibility_API
+  if (document.visibilityState === "hidden") {
+    state.running = false;
+    clock.stop();
+  } else {
+    // get ready to run again
+    clock.start();
+    state.running = true;
+  }
+});
+
+window.addEventListener("resize", () => {
+  camera.aspect = window.innerWidth / window.innerHeight;
+  camera.updateProjectionMatrix();
+
+  renderer.setSize(window.innerWidth, window.innerHeight);
+});
+
+window.onresize = () => {
+  camera.aspect = window.innerWidth / window.innerHeight;
+  camera.updateProjectionMatrix();
+
+  renderer.setSize(window.innerWidth, window.innerHeight);
+};
+
+document.addEventListener("player", (e) => {
+  const object = e.detail.object
+  const color = object.material.color
+
+  if (object.name === "floor") {
+    // restart
+    deadElement.style.display = "block"
+    setTimeout(() => {
+      restartElement.style.display = "block"
+    }, 3000 );
+    // document.dispatchEvent(new Event("lose"))
+  } else if (object.name === "randomCube") {
+    // make the cube start falling through the ground
+    if (color.r > 0.5) {
+      // add to score
+      score += 1
+      updateScore()
+      object.material = new MeshStandardMaterial({color:0x333333})
+    }
+  }
+  
+})
+
+restartElement.addEventListener('click', () => {
+  restart()
+})
+
+// -----------------------------------------------------
+// initialization
+restart();
 
 animate();
-// state.running = false
+
 
