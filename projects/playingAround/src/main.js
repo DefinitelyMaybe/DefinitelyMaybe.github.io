@@ -134,7 +134,7 @@ function animate() {
     box.quaternion.z = cubeBody.quaternion.z
     box.quaternion.w = cubeBody.quaternion.w
 
-    redCubesArray.forEach((cube) => {
+    redCubesArray.forEach(cube => {
       const cPos = cube.userData.physics.position;
       cube.position.x = cPos.x;
       cube.position.y = cPos.y;
@@ -147,6 +147,7 @@ function animate() {
       if (cube.material.color.r < 0.5) {
         if (cPos.y < -2) {
           // destory the cube
+          scene.remove(cube)
         } else {
           cPos.y -= 0.01
         }
