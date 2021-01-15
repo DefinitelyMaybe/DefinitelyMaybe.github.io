@@ -10,17 +10,12 @@ self.addEventListener('install', e => {
 self.addEventListener('fetch', e => {
   e.respondWith(
     caches.match(e.request).then( res => {
-      if (res) {
-        console.log(`cache found: ${res.url}`);
-        return res
-      } else {
-        console.log(`fetching: ${res.url}`);
-        return fetch(e.request).then(res => {
-          caches.open(CACHE).then( cache => {
-            cache.add(res.url)
-          })
+      return res || fetch(e.request).then( Netres => {
+        caches.open(CACHE).then( cache => {
+          console.log(Netres);
+          cache.put(e.request, Netres)
         })
-      }
+      })
     })
   )
 });
