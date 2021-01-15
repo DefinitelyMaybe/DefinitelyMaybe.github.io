@@ -269,6 +269,12 @@ restartElement.addEventListener('click', () => {
 })
 
 // -----------------------------------------------------
+// service worker
+if (navigator) {
+  navigator.serviceWorker.register('sw.js');
+}
+
+// -----------------------------------------------------
 // initialization
 restart();
 
