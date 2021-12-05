@@ -24,7 +24,4 @@ jobs:
       - name: Testing
         run: pnpm run lint
       - name: CI / CD
-      - if: ${{ job.status == 'cancelled'}}
-        run: echo "🍏 The workflow was ${{ job.status }}."
-      - if: ${{ job.status != 'cancelled'}}
         run: echo "🍏 The workflow was a ${{ job.status }}."
