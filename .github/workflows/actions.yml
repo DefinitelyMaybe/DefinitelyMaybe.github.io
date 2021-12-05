@@ -1,0 +1,24 @@
+name: GitHub Actions Demo
+on: [push, pull_request]
+jobs:
+  GitHub-Actions:
+    runs-on: windows-latest
+    steps:
+      - run: echo "🎉 The job was automatically triggered by a ${{ github.event_name }} event."
+      - run: echo "🐧 This job is now running on a ${{ runner.os }} server hosted by GitHub!"
+      - run: echo "🔎 The ${{ github.ref }} branch of ${{ github.repository }} is being used."
+      - name: Check out repository code
+        uses: actions/checkout@v2
+      - run: echo "💡 The repo has been cloned to the runner."
+      - run: echo "🖥️ The workflow is now ready to test your code on the runner."
+      - name: List files in the repository
+        run: |
+          ls ${{ github.workspace }}
+      - name: Setup node
+        uses: actions/setup-node@v2
+        with:
+          node-version: '16'
+      - run: pnpm install
+      - run: echo "🎉 pnpm installed the repo"
+      - run: pnpm run lint
+      - run: echo "🍏 This job's status is ${{ job.status }}."
