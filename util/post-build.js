@@ -36,15 +36,18 @@ for (const entry of walkSync(mainFolder)) {
   const filename = entry.entry.name
   const path = entry.dir
   const relpath = join(path, filename);
-  if (!relpath.startsWith(join(mainFolder, ignoreFolder))) {
-    try {
-      console.log(relpath, "was deleted");
-      // console.log(parse(relpath));
-      rmSync(relpath, {recursive:true, force:true})
-    } catch (error) {
-      console.log(error);
-    // catch the error because of rmSync might've already removed a file/folder
-    }
+  if (!relpath.startsWith(ignoreFolder)) {
+    console.log("Going to delete:", relpath);
+  //   try {
+  //     console.log(relpath, "was deleted");
+  //     // console.log(parse(relpath));
+  //     rmSync(relpath, {recursive:true, force:true})
+  //   } catch (error) {
+  //     console.log(error);
+  //   // catch the error because of rmSync might've already removed a file/folder
+  //   }
+  } else {
+    console.log("leaving:", relpath);
   }
 }
 
@@ -54,14 +57,16 @@ for (const entry of walkSync(`${join(mainFolder, ignoreFolder)}`)) {
   const path = entry.dir
   const relPath = join(path, filename);
   const newPath = relPath.replace(ignoreFolder, destinationFolder)
-  try {
-    mkdirSync(dirname(newPath), {recursive:true})
-    renameSync(relPath, newPath) 
-  } catch (error) {
-    console.log("failed on:", newPath);
-    console.log(error);
-  }
+  console.log(`Renaming: ${relPath}\nto: ${newPath}`);
+  // try {
+  //   mkdirSync(dirname(newPath), {recursive:true})
+  //   renameSync(relPath, newPath) 
+  // } catch (error) {
+  //   console.log("failed on:", newPath);
+  //   console.log(error);
+  // }
 }
 
 // lastly remove the empty ignoredFolder
-rmSync(join(mainFolder, ignoreFolder), {recursive:true, force:true})
+console.log("deleting:", ignoreFolder);
+// rmSync(ignoreFolder, {recursive:true, force:true})
