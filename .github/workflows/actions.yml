@@ -24,8 +24,8 @@ jobs:
         run: |
           pnpm install
           echo "🎉 installed the repo"
-      - name: run tests
-        run: pnpm run lint
+      # - name: run tests
+      #   run: pnpm run lint
       - name: build the repo
         run: |
           pnpm run build
