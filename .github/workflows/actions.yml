@@ -34,6 +34,6 @@ jobs:
       - name: setup for github pages
         run: |
           node ./util/post-build.js
-          ls ${{ github.workspace }
+          ls ${{ github.workspace }}
       - name: fin
         run: echo "🍏 ${{ job.status }}."
