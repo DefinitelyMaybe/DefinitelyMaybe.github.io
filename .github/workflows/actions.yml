@@ -23,8 +23,13 @@ jobs:
       - name: install the repo
         run: |
           pnpm install
-          echo "🎉 pnpm installed the repo"
+          echo "🎉 installed the repo"
       - name: run tests
         run: pnpm run lint
+      - name: build the repo
+        run: |
+          pnpm run build
+          echo "🎉 built website"
+          ls ${{ github.workspace }}
       - name: fin
         run: echo "🍏 ${{ job.status }}."
