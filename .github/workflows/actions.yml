@@ -9,14 +9,14 @@ jobs:
           echo "🐧 running on a ${{ runner.os }} server hosted by GitHub" &&
           echo "🔎 ${{ github.ref_name }} branch from ${{ github.repository }} is being used."
       - name: Check out repository code
-        uses: actions/checkout@v2
+      - uses: actions/checkout@v2
         run: echo "💡 The repo has been cloned to the runner." &&
           echo "🖥️ The workflow is now ready to test your code on the runner."
       - name: List files in the repository
         run: |
           ls ${{ github.workspace }}
       - name: Setup node and pnpm
-        uses: pnpm/action-setup@v2.0.1
+      - uses: pnpm/action-setup@v2.0.1
         with:
           version: 6.0.2
         run: pnpm install && echo "🎉 pnpm installed the repo"
