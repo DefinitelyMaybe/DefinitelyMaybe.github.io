@@ -2,7 +2,7 @@ import { renameSync, readdirSync, mkdirSync, rmSync } from "fs";
 import { join, dirname } from "path";
 // import { exit } from "process";
 
-const mainFolder = ""
+const mainFolder = "."
 const ignoreFolder = "build"
 const destinationFolder = ""
 
@@ -56,7 +56,7 @@ for (const entry of walkSync(`${join(mainFolder, ignoreFolder)}`)) {
   const filename = entry.entry.name
   const path = entry.dir
   const relPath = join(path, filename);
-  const newPath = relPath.replace(ignoreFolder, destinationFolder)
+  const newPath = relPath.replace(ignoreFolder + "/", destinationFolder)
   console.log(`Renaming: ${relPath}\nto: ${newPath}`);
   // try {
   //   mkdirSync(dirname(newPath), {recursive:true})
