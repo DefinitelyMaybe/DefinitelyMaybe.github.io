@@ -18,28 +18,25 @@
 	<title>About</title>
 </svelte:head>
 
-<div class="content">
-	<h1>About this app</h1>
+<section class="content">
+
+	<h1>
+		Code Wrangler | BSc Graduate | Seeker of the Longest Path
+	</h1>
+
+	<h1>Hi there!</h1>
 
 	<p>
-		This is a <a href="https://kit.svelte.dev">SvelteKit</a> app. You can make your own by typing the
-		following into your command line and following the prompts:
-	</p>
-
-	<!-- TODO lose the @next! -->
-	<pre>npm init svelte@next</pre>
-
-	<p>
-		The page you're looking at is purely static HTML, with no client-side interactivity needed.
-		Because of that, we don't need to load any JavaScript. Try viewing the page's source, or opening
-		the devtools network panel and reloading.
+		You've found my website! It's simply a place to show
+		the projects that I've worked on. My
+		interests tend towards the web, graphics, maths
+		and games but not exclusively.
 	</p>
 
 	<p>
-		The <a href="/todos">TODOs</a> page illustrates SvelteKit's data loading and form handling. Try using
-		it with JavaScript disabled!
+		Current interests: three.js, Deno, svelte, svelte-cubed
 	</p>
-</div>
+</section>
 
 <style>
 	.content {

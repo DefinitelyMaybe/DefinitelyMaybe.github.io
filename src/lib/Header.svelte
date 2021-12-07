@@ -1,14 +1,17 @@
 <script>
 	import { page } from '$app/stores';
-	import logo from './svelte-logo.svg';
+	import svLogo from "$lib/assets/images/svelte-logo.svg";
+	import ghLogo from "$lib/assets/images/GitHub-Mark-32px.png";
+	// import ghLogo from 'static/images/GitHub-Mark-32px.png';
 </script>
 
 <header>
-	<div class="corner">
+	<h1>Aaron Dekker</h1>
+	<!-- <div class="corner">
 		<a href="https://kit.svelte.dev">
-			<img src={logo} alt="SvelteKit" />
+			<img src={svLogo} alt="SvelteKit" />
 		</a>
-	</div>
+	</div> -->
 
 	<nav>
 		<svg viewBox="0 0 2 3" aria-hidden="true">
@@ -17,7 +20,6 @@
 		<ul>
 			<li class:active={$page.path === '/'}><a sveltekit:prefetch href="/">Projects</a></li>
 			<li class:active={$page.path === '/about'}><a sveltekit:prefetch href="/about">About</a></li>
-			<li class:active={$page.path === '/todos'}><a sveltekit:prefetch href="/todos">Todos</a></li>
 		</ul>
 		<svg viewBox="0 0 2 3" aria-hidden="true">
 			<path d="M0,0 L0,3 C0.5,3 0.5,3 1,2 L2,0 Z" />
@@ -25,14 +27,16 @@
 	</nav>
 
 	<div class="corner">
-		<!-- TODO put something else here? github link? -->
+		<a href="https://github.com/DefinitelyMaybe">
+			<img src={ghLogo} alt="SvelteKit" />
+		</a>
 	</div>
 </header>
 
 <style>
 	header {
 		display: flex;
-		justify-content: space-between;
+		justify-content: space-evenly;
 	}
 
 	.corner {
