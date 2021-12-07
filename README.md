@@ -1,3 +1,16 @@
+# Next Steps
+
+- A grid of Projects and things I'd like to show off
+  - various sized "cards" to show off grid css
+- A light-dark theme switch (use of cookies and local storage)
+- A project about how I made the website
+- Use defer scripts if needed
+- Try out <a href:external href="https://www.npmjs.com/package/seolint">seolint</a>
+- Do a small svelte-cubed project
+- Try out some nice <a href:external href="https://www.youtube.com/watch?v=lPJVi797Uy0">curves</a>
+- Image sizing for different viewports
+- Show off an API
+
 # Deploying svelte.kit builds to github-pages
 
 I followed a couple of googled options but ended up with:
