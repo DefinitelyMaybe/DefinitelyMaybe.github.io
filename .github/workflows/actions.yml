@@ -1,5 +1,5 @@
 name: GitHub Actions
-on: [push, pull_request]
+on: [pull_request]
 jobs:
   github-actions:
     runs-on: ubuntu-latest
@@ -16,24 +16,24 @@ jobs:
           echo "💡 The repo has been cloned to the runner."
           echo "🖥️ ready to test your code on the runner."
           ls ${{ github.workspace }}
-      - name: Setup pnpm
-        uses: pnpm/action-setup@v2.0.1
-        with:
-          version: 6.0.2
-      - name: install the repo
-        run: |
-          pnpm install
-          echo "🎉 installed the repo"
+      # - name: Setup pnpm
+      #   uses: pnpm/action-setup@v2.0.1
+      #   with:
+      #     version: 6.0.2
+      # - name: install the repo
+      #   run: |
+      #     pnpm install
+      #     echo "🎉 installed the repo"
       # - name: run tests
       #   run: pnpm run lint
-      - name: build the repo
-        run: |
-          pnpm run build
-          echo "🎉 built website"
-          ls ${{ github.workspace }}
-      - name: setup for github pages
-        run: |
-          node ./util/post-build.js
-          ls ${{ github.workspace }}
+      # - name: build the repo
+      #   run: |
+      #     pnpm run build
+      #     echo "🎉 built website"
+      #     ls ${{ github.workspace }}
+      # - name: setup for github pages
+      #   run: |
+      #     node ./util/post-build.js
+      #     ls ${{ github.workspace }}
       - name: fin
         run: echo "🍏 ${{ job.status }}."
