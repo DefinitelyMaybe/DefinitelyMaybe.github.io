@@ -10,9 +10,6 @@
 </main>
 
 <footer>
-	<a href="https://github.com/DefinitelyMaybe" target="_blank">
-		<i class="fa fa-github" aria-hidden="true">github</i>
-	</a>
 	<a href="mailto:aaron.dekker01@gmail.com" target="_blank">
 		<i class="fa fa-envelope" aria-hidden="true">Email</i>
 	</a>

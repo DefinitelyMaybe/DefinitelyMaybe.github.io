@@ -1,17 +1,17 @@
 <script>
 	import { page } from '$app/stores';
-	import svLogo from "$lib/assets/images/svelte-logo.svg";
+	import svLogo from "./svelte-logo.svg";
 	import ghLogo from "$lib/assets/images/GitHub-Mark-32px.png";
 	// import ghLogo from 'static/images/GitHub-Mark-32px.png';
 </script>
 
 <header>
-	<h1>Aaron Dekker</h1>
-	<!-- <div class="corner">
-		<a href="https://kit.svelte.dev">
+	<!-- <h1>Aaron Dekker</h1> -->
+	<div class="corner">
+		<!-- <a href="https://kit.svelte.dev">
 			<img src={svLogo} alt="SvelteKit" />
-		</a>
-	</div> -->
+		</a> -->
+	</div>
 
 	<nav>
 		<svg viewBox="0 0 2 3" aria-hidden="true">
@@ -36,7 +36,7 @@
 <style>
 	header {
 		display: flex;
-		justify-content: space-evenly;
+		justify-content: space-between;
 	}
 
 	.corner {
