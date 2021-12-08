@@ -1,5 +1,4 @@
 <script context="module">
-	import { page } from '$app/stores';
 	import { browser, dev } from '$app/env';
 
 	// we don't need any JS on this page, though we'll load
@@ -19,7 +18,7 @@
 	<title>Aaron Dekker - About</title>
 </svelte:head>
 
-<section class="content">
+<section>
 
 	<h1>Aaron Dekker</h1>
 	<h2>
@@ -40,11 +39,3 @@
 		or if you'd like to get in contact <a href="mailto:aaron.dekker01@gmail.com">email me</a>
 	</p>
 </section>
-
-<style>
-	.content {
-		width: 100%;
-		max-width: var(--column-width);
-		margin: var(--column-margin-top) auto 0 auto;
-	}
-</style>
