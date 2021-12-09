@@ -1,17 +1,27 @@
 <script context="module">
+	import { theme } from '$lib/Header.svelte';
 	export const prerender = true;
 </script>
 
 <script>
-	// import Counter from '$lib/Counter.svelte';
 	import Box from '$lib/Box.svelte';
 	import simonImg from '$lib/assets/images/simondev.png';
-	import threejsImg from '$lib/assets/images/threejslogo.png';
+	import threejsdarkImg from '$lib/assets/images/threejslogodark.png';
 	import threejswhiteImg from '$lib/assets/images/threejslogowhite.png';
 	import lavaCubeImg from '$lib/assets/images/cubes.png';
 	import revealjsImg from '$lib/assets/images/revealjs.png';
 	import mathsImg from '$lib/assets/images/mathsplayground.png';
 	import tugImg from '$lib/assets/images/TUG/TUGconceptArtmini.jpg';
+
+	let threeSrc = threejswhiteImg;
+
+	theme.subscribe((val) => {
+		if (val === 'light') {
+			threeSrc = threejswhiteImg;
+		} else {
+			threeSrc = threejsdarkImg;
+		}
+	});
 </script>
 
 <svelte:head>
@@ -19,15 +29,17 @@
 </svelte:head>
 
 <section>
-	<ul class="grid grid-cols-1 gap-2">
+	<ul class="grid grid-cols-1 gap-4">
 		<Box src={simonImg} alt="Simon Dev thumbnail">
 			<h2 class="font-bold">Simons World - The Remix</h2>
 			<p>
 				A 5 week sprint refactoring a huge proportion of simondev's original <a
-					href="https://github.com/simondevyoutube/Quick_3D_MMORPG">source code (github logo)</a
-				>. He made
-				<a href="https://www.youtube.com/watch?v=IptkgFOoci0"
-					>a great video explaining his project here</a
+					href="https://github.com/simondevyoutube/Quick_3D_MMORPG">source code</a
+				>. My remixed source code is
+				<a href="https://github.com/DefinitelyMaybe/Not_So_Quick_3D_MMORPG_The_Remix">here</a>.
+				Simon made a
+				<a href="https://www.youtube.com/watch?v=IptkgFOoci0">
+					great video explaining his project here</a
 				>.
 			</p>
 			<a class="font-bold" href="https://wonderful-stonebraker-0b161a.netlify.app/"
@@ -35,7 +47,7 @@
 			>
 			<p class="text-xs">(Desktop only)</p>
 		</Box>
-		<Box src={threejswhiteImg} alt="threejs logo">
+		<Box src={threeSrc} alt="threejs logo">
 			<h2 class="font-bold">Now with more fetch!</h2>
 			<p>
 				Another good effort to bring three.js up to speed with modern javascript. specifically by
@@ -46,7 +58,7 @@
 			</p>
 			<a class="font-bold" href="https://github.com/mrdoob/three.js/pull/22510">Github PR</a>
 		</Box>
-		<Box src={threejsImg} alt="threejs logo">
+		<Box src={threeSrc} alt="threejs logo">
 			<h2 class="font-bold">We're doing it with class</h2>
 			<p>
 				This was a substantial multi-year effort to bring three.js into the future with modern
@@ -60,7 +72,7 @@
 			<a class="font-bold" href="/">TODO: link to lava project</a>
 			<p class="text-xs">(Desktop only)</p>
 		</Box>
-		<Box src={threejsImg} alt="threejs logo">
+		<Box src={threeSrc} alt="threejs logo">
 			<h2 class="font-bold">Parsing Three.js</h2>
 			<p>One does not simply parse three.js 🤷‍♂️ Getting things wrong and keeping on going 🕵️‍♂️</p>
 			<a class="font-bold" href="/">TODO: link to write-up</a>
