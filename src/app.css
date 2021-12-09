@@ -1,10 +1,36 @@
-@import "tailwindcss/base";
-@import "tailwindcss/components";
-@import "tailwindcss/utilities";
+@import 'tailwindcss/base';
+@import 'tailwindcss/components';
+@import 'tailwindcss/utilities';
 
-html, body, div {
-	height: 100%;
+#svelte {
+	@apply min-h-screen
+	dark:bg-black dark:text-white;
 }
+
+h1 {
+	@apply text-4xl;
+}
+
+h2 {
+	@apply text-2xl;
+}
+
+h3 {
+	@apply text-xl;
+}
+
+a {
+	@apply text-blue-500 visited:text-blue-700 hover:underline dark:text-blue-300 dark:visited:text-blue-500;
+}
+
+p {
+	@apply leading-snug pt-1 pb-1;
+}
+
+section {
+	@apply dark:bg-black dark:text-white;
+}
+
 /* @import '@fontsource/fira-mono';
 
 :root {
