@@ -19,7 +19,6 @@
 </svelte:head>
 
 <section>
-	<h1 class="text-center">Aaron Dekker</h1>
 	<h2 class="text-center">
 		<a href="https://github.com/DefinitelyMaybe">@DefinitelyMaybe</a> |
 		<a
