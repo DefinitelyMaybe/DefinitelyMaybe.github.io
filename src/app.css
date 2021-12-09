@@ -3,7 +3,6 @@
 @import 'tailwindcss/utilities';
 @import 'tailwindcss/variants';
 
-
 #svelte {
 	@apply min-h-screen flex flex-col text-[#374054] bg-[#f5f5f5]
 		dark:text-[#adbac7];
