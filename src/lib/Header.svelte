@@ -36,7 +36,7 @@
 </script>
 
 <header
-	class="flex flex-row text-center justify-between h-10 px-2 pb-2
+	class="flex flex-row justify-between px-2 pb-2
  dark:bg-black dark:text-white"
 >
 	<div>
