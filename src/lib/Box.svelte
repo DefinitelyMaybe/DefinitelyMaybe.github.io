@@ -6,9 +6,9 @@
 	let shape; // export
 </script>
 
-<div class="{shape} bg-gray-800 rounded-md">
-	<img {src} {alt} />
-	<slot name="text" />
+<div class="{shape} rounded-md text-center">
+	<img {src} {alt} class="w-full rounded-md"/>
+	<slot/>
 </div>
 
 <!-- <style>
