@@ -27,10 +27,6 @@ p {
 	@apply leading-snug pt-1 pb-1;
 }
 
-section {
-	@apply dark:bg-black dark:text-white;
-}
-
 /* @import '@fontsource/fira-mono';
 
 :root {
