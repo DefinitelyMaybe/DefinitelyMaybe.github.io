@@ -19,23 +19,25 @@
 </svelte:head>
 
 <section>
-
-	<h1>Aaron Dekker</h1>
-	<h2>
-		<a href="https://github.com/DefinitelyMaybe">Code Wrangler</a> | <a href="https://www.auckland.ac.nz/en/for/current-students/cs-academic-information/cs-graduation-information/cs-graduation-search-and-confirmation.html">BSc Graduate</a> | <a href="https://www.youtube.com/watch?v=a3ww0gwEszo">Seeker of the Longest Path</a>
+	<h1 class="text-center">Aaron Dekker</h1>
+	<h2 class="text-center">
+		<a href="https://github.com/DefinitelyMaybe">@DefinitelyMaybe</a> |
+		<a
+			href="https://www.auckland.ac.nz/en/for/current-students/cs-academic-information/cs-graduation-information/cs-graduation-search-and-confirmation.html"
+			>BSc Graduate</a
+		>
+		<!--| <a href="https://www.youtube.com/watch?v=a3ww0gwEszo">Seeker of the Longest Path</a> -->
 	</h2>
 
-	<h2>Hi there!</h2>
+	<h3>Hi there!</h3>
 
 	<p>
-		You've found my website! It's simply a place to show
-		the projects that I've worked on. My
-		interests tend towards the web, graphics, maths
-		and games but not exclusively.
+		You've found my website! It's simply a place to show the projects that I've worked on. My
+		interests tend towards the web, graphics, maths and games but not exclusively.
 	</p>
 
 	<p>
-		Have a quick look around my <a sveltekit:prefetch href="/">projects page</a>,
-		or if you'd like to get in contact <a href="mailto:aaron.dekker01@gmail.com">email me</a>
+		If you'd like to get in contact, there's <a href="https://twitter.com/0Rawr">twitter</a> or my
+		<a href="mailto:aaron.dekker01@gmail.com">email</a>.
 	</p>
 </section>
