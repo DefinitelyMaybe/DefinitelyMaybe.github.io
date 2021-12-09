@@ -7,8 +7,8 @@
 </script>
 
 <div class="{shape} rounded-md text-center">
-	<img {src} {alt} class="w-full rounded-md"/>
-	<slot/>
+	<img {src} {alt} class="w-full rounded-md" />
+	<slot />
 </div>
 
 <!-- <style>

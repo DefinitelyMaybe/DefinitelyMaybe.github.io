@@ -8,80 +8,85 @@
 	import simonImg from '$lib/assets/images/simondev.png';
 	import threejsImg from '$lib/assets/images/threejslogo.png';
 	import threejswhiteImg from '$lib/assets/images/threejslogowhite.png';
-	import lavaCubeImg from "$lib/assets/images/cubes.png";
-	import revealjsImg from "$lib/assets/images/revealjs.png";
-	import mathsImg from "$lib/assets/images/mathsplayground.png";
-	import tugImg from "$lib/assets/images/TUG/TUGconceptArtmini.jpg";
+	import lavaCubeImg from '$lib/assets/images/cubes.png';
+	import revealjsImg from '$lib/assets/images/revealjs.png';
+	import mathsImg from '$lib/assets/images/mathsplayground.png';
+	import tugImg from '$lib/assets/images/TUG/TUGconceptArtmini.jpg';
 </script>
 
 <svelte:head>
 	<title>Aaron Dekker - Projects</title>
-	<meta property="og:title" content="Aaron Dekker - Developer" />
-	<meta property="og:image" content="https://definitelymaybe.github.io/images/lead-bg.jpg" />
-	<meta
-		property="og:description"
-		content="Code Wrangler | BSc Graduate | Open-Source Contributor"
-	/>
-	<meta property="og:url" content="https://definitelymaybe.github.io/" />
 </svelte:head>
 
 <section>
 	<ul class="grid grid-cols-1 gap-2">
-		<Box src="{simonImg}" alt="Simon Dev thumbnail">
+		<Box src={simonImg} alt="Simon Dev thumbnail">
 			<h2 class="font-bold">Simons World - The Remix</h2>
-			<p>A 5 week sprint refactoring a huge proportion of simondev's
-				 original <a href="https://github.com/simondevyoutube/Quick_3D_MMORPG">source code (github logo)</a>. He made <a href="https://www.youtube.com/watch?v=IptkgFOoci0">a great video explaining his project here</a>.</p>
-			<a class="font-bold" href="https://wonderful-stonebraker-0b161a.netlify.app/">Checkout the Remix here</a>
+			<p>
+				A 5 week sprint refactoring a huge proportion of simondev's original <a
+					href="https://github.com/simondevyoutube/Quick_3D_MMORPG">source code (github logo)</a
+				>. He made
+				<a href="https://www.youtube.com/watch?v=IptkgFOoci0"
+					>a great video explaining his project here</a
+				>.
+			</p>
+			<a class="font-bold" href="https://wonderful-stonebraker-0b161a.netlify.app/"
+				>Checkout the Remix here</a
+			>
 			<p class="text-xs">(Desktop only)</p>
 		</Box>
-		<Box src="{threejswhiteImg}" alt="threejs logo">
+		<Box src={threejswhiteImg} alt="threejs logo">
 			<h2 class="font-bold">Now with more fetch!</h2>
-			<p>Another good effort to bring three.js up to speed 
-				with modern javascript. specifically by implementing
-				the <a href="https://developer.mozilla.org/en-US/docs/Web/API/Fetch_API">fetch API</a> within the file loader. Previously it
-				was using XMLHttpRequest which added complexity to
-				the process.</p>
+			<p>
+				Another good effort to bring three.js up to speed with modern javascript. specifically by
+				implementing the <a href="https://developer.mozilla.org/en-US/docs/Web/API/Fetch_API"
+					>fetch API</a
+				> within the file loader. Previously it was using XMLHttpRequest which added complexity to the
+				process.
+			</p>
 			<a class="font-bold" href="https://github.com/mrdoob/three.js/pull/22510">Github PR</a>
 		</Box>
-		<Box src="{threejsImg}" alt="threejs logo">
+		<Box src={threejsImg} alt="threejs logo">
 			<h2 class="font-bold">We're doing it with class</h2>
-			<p>This was a substantial multi-year effort to
-				bring three.js into the future with modern
-				javascript 🤵👏 I'm very pleased to have helped
-				facilitate and be part of the movement.</p>
+			<p>
+				This was a substantial multi-year effort to bring three.js into the future with modern
+				javascript 🤵👏 I'm very pleased to have helped facilitate and be part of the movement.
+			</p>
 			<a class="font-bold" href="https://github.com/mrdoob/three.js/issues/19986">Github Issue</a>
 		</Box>
-		<Box src="{lavaCubeImg}" alt="lava cube world">
+		<Box src={lavaCubeImg} alt="lava cube world">
 			<h2 class="font-bold">The Floor is Lava!</h2>
 			<p>Combing three.js and cannon.js to create a age old game.</p>
 			<a class="font-bold" href="/">TODO: link to lava project</a>
 			<p class="text-xs">(Desktop only)</p>
 		</Box>
-		<Box src="{threejsImg}" alt="threejs logo">
+		<Box src={threejsImg} alt="threejs logo">
 			<h2 class="font-bold">Parsing Three.js</h2>
-			<p>One does not simply parse three.js
-				🤷‍♂️ Getting things wrong and keeping on going 🕵️‍♂️</p>
+			<p>One does not simply parse three.js 🤷‍♂️ Getting things wrong and keeping on going 🕵️‍♂️</p>
 			<a class="font-bold" href="/">TODO: link to write-up</a>
 		</Box>
-		<Box src="{revealjsImg}" alt="revealjs">
+		<Box src={revealjsImg} alt="revealjs">
 			<h2 class="font-bold">The Last Slides</h2>
-			<p>When university lecture notes meet the web.
-				Fair warning, tertairy material can be
-				rather dry and tedious.</p>
+			<p>
+				When university lecture notes meet the web. Fair warning, tertairy material can be rather
+				dry and tedious.
+			</p>
 			<a class="font-bold" href="/">TODO: link to Slides</a>
 		</Box>
-		<Box src="{mathsImg}" alt="maths playground, graph of squarewave">
+		<Box src={mathsImg} alt="maths playground, graph of squarewave">
 			<h2 class="font-bold">Maths Playground</h2>
-			<p>When frustrated at wolframalpha and matlab,
-				the only sensible thing to do would be to
-				make your own, right?</p>
+			<p>
+				When frustrated at wolframalpha and matlab, the only sensible thing to do would be to make
+				your own, right?
+			</p>
 			<a class="font-bold" href="/">TODO: link to Project</a>
 		</Box>
-		<Box src="{tugImg}" alt="TUG concept art of a golem">
+		<Box src={tugImg} alt="TUG concept art of a golem">
 			<h2 class="font-bold">TUG mod development</h2>
-			<p>A highly ambitious 3D sandbox game, aiming
-				at being a better minecraft. It was a huge
-				undertaking but fell apart in the end.</p>
+			<p>
+				A highly ambitious 3D sandbox game, aiming at being a better minecraft. It was a huge
+				undertaking but fell apart in the end.
+			</p>
 			<a class="font-bold" href="/">TODO: link to Write-up</a>
 		</Box>
 		<!-- <Box></Box> -->
