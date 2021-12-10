@@ -16,7 +16,7 @@
 <Header />
 
 <main
-	class="px-4 py-4
+	class="px-4 py-4 min-h-screen
  dark:bg-[#22272e] dark:border-b-black"
 >
 	<slot />
