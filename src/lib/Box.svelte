@@ -2,8 +2,8 @@
 	/** @type {string} */
 	export let src;
 	/** @type {string} */
-	export let alt; // export
-	let shape; // export
+	export let alt;
+	let shape;
 </script>
 
 <div
@@ -11,5 +11,7 @@
 	dark:shadow-gray-900 dark:shadow-md dark:border-[1px] dark:border-gray-900"
 >
 	<img {src} {alt} class="w-full rounded-md" />
-	<slot />
+	<div class="px-2">
+		<slot />
+	</div>
 </div>
