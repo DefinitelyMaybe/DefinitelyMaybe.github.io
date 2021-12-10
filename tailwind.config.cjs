@@ -7,8 +7,5 @@ module.exports = {
 	variants: {
 		extend: {}
 	},
-	// preset: [
-	// 	['./src/**/*.svelte', './src/**/*.css']
-	// ],
 	plugins: []
 };
