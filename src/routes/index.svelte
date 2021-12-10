@@ -39,13 +39,13 @@
 				<a href="https://github.com/DefinitelyMaybe/Not_So_Quick_3D_MMORPG_The_Remix">here</a>.
 				Simon made a
 				<a href="https://www.youtube.com/watch?v=IptkgFOoci0">
-					great video explaining his project here</a
+					great video explaining the project</a
 				>.
 			</p>
 			<a class="font-bold" href="https://wonderful-stonebraker-0b161a.netlify.app/"
 				>Checkout the Remix here</a
 			>
-			<p class="text-xs">(Desktop only)</p>
+			<p class="text-xs">(Not recommended for mobile)</p>
 		</Box>
 		<Box src={threeSrc} alt="threejs logo">
 			<h2 class="font-bold">Now with more fetch!</h2>
@@ -70,7 +70,7 @@
 			<h2 class="font-bold">The Floor is Lava!</h2>
 			<p>Combing three.js and cannon.js to create a age old game.</p>
 			<a class="font-bold" href="/">TODO: link to lava project</a>
-			<p class="text-xs">(Desktop only)</p>
+			<p class="text-xs">(Not built for mobile)</p>
 		</Box>
 		<Box src={threeSrc} alt="threejs logo">
 			<h2 class="font-bold">Parsing Three.js</h2>
