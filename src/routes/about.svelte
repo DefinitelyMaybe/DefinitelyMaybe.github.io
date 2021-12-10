@@ -20,13 +20,18 @@
 
 <section>
 	<h2 class="text-center">
-		<a href="https://github.com/DefinitelyMaybe">@DefinitelyMaybe</a> |
+		<a href="https://github.com/DefinitelyMaybe">@DefinitelyMaybe</a>
+
+		<!--| <a href="https://www.youtube.com/watch?v=a3ww0gwEszo">Seeker of the Longest Path</a> -->
+	</h2>
+	<h2 class="text-center">
 		<a
 			href="https://www.auckland.ac.nz/en/for/current-students/cs-academic-information/cs-graduation-information/cs-graduation-search-and-confirmation.html"
 			>BSc Graduate</a
 		>
-		<!--| <a href="https://www.youtube.com/watch?v=a3ww0gwEszo">Seeker of the Longest Path</a> -->
 	</h2>
+
+	<br />
 
 	<h3>Hi there!</h3>
 
