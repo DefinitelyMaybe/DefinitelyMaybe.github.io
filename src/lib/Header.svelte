@@ -51,21 +51,17 @@
 
 <header
 	class="flex flex-col bg-[#f1f3f5] border-b-[1px]
-	dark:bg-[#2d333b] dark:border-gray-800"
+	dark:bg-[#2d333b] dark:border-gray-700"
 >
 	<h1 class="text-center font-bold">Aaron Dekker</h1>
-	<div class="flex flex-row justify-between px-2 pb-2">
-		<div>
-			<label for="">dark</label>
-			<Toggle checked={$theme === 'dark'} on:click={toggleTheme} />
-		</div>
+	<div class="flex flex-row justify-between items-center px-2 py-2">
+		<Toggle checked={$theme === 'dark'} on:click={toggleTheme} />
 
 		<nav>
 			<ul class="flex flex-row space-x-5 text-2xl font-bold">
-				<li class:active={$page.path === '/'} class="text-gray-400">
+				<li class:active={$page.path === '/'}>
 					<a sveltekit:prefetch href="/">Projects</a>
 				</li>
-				<li>|</li>
 				<li class:active={$page.path === '/about'}>
 					<a sveltekit:prefetch href="/about">About</a>
 				</li>
