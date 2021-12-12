@@ -75,7 +75,7 @@
 		<Box src={threeSrc} alt="threejs logo">
 			<h2 class="font-bold">Parsing Three.js</h2>
 			<p>One does not simply parse three.js 🤷‍♂️ Getting things wrong and keeping on going 🕵️‍♂️</p>
-			<a class="font-bold" href="/">TODO: link to write-up</a>
+			<a class="font-bold" href="/projects/parsingthreejs">Read the write-up</a>
 		</Box>
 		<Box src={revealjsImg} alt="revealjs">
 			<h2 class="font-bold">The Last Slides</h2>
@@ -99,7 +99,7 @@
 				A highly ambitious 3D sandbox game, aiming at being a better minecraft. It was a huge
 				undertaking but fell apart in the end.
 			</p>
-			<a class="font-bold" href="/">TODO: link to Write-up</a>
+			<a class="font-bold" href="/projects/thestoryofTUG">Read the Write-up</a>
 		</Box>
 		<!-- <Box></Box> -->
 		<!-- Images from unsplash
