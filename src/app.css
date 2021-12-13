@@ -6,33 +6,40 @@
 /* @import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap'); */
 /* font-['roboto'] */
 
-#svelte {
-	@apply flex flex-col text-[#374054] bg-[#f5f5f5] font-sans font-medium
-		dark:text-[#adbac7];
-}
-
-main {
-	@apply px-4 py-4 min-h-screen flex flex-col
-	dark:bg-[#22272e] dark:border-b-black;
-}
-
-h1 {
-	@apply text-4xl;
-}
-
-h2 {
-	@apply text-2xl;
-}
-
-h3 {
-	@apply text-xl;
-}
-
-a {
-	@apply text-[#0969da]
-		dark:text-[#539bf5];
-}
-
-p {
-	@apply leading-normal py-2;
+@layer base {
+	#svelte {
+		@apply flex flex-col text-[#374054] bg-[#f5f5f5] font-sans font-medium
+			dark:text-[#adbac7];
+	}
+	
+	main {
+		@apply px-4 py-4 min-h-screen flex flex-col
+		dark:bg-[#22272e] dark:border-b-black;
+	}
+	
+	h1 {
+		@apply text-4xl;
+	}
+	
+	h2 {
+		@apply text-2xl;
+	}
+	
+	h3 {
+		@apply text-xl;
+	}
+	
+	a {
+		@apply text-[#0969da]
+			dark:text-[#539bf5];
+	}
+	
+	p {
+		@apply leading-normal py-2;
+	}
+	
+	[type='checkbox'] {
+		@apply rounded-md ring-[#374054] focus:ring-[#374054]
+		 dark:bg-black dark:focus:bg-black
+	}
 }
