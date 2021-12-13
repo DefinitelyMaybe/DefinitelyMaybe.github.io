@@ -77,14 +77,18 @@
 </p>
 <img src={tugImg} alt="The feet of an TUG avatar surrounding by seedlings" />
 <p>
-	If you're interest here is a link to one of the <a href="https://cdn.akamai.steamstatic.com/steam/apps/256657525/movie480.webm?t=1447378587">original videos talking about TUG</a> and as well as a mod that I developed for the game called <a
-		href="https://github.com/DefinitelyMaybe/DarkAges">DarkAges</a
-	>.
+	If you're interest here is a link to one of the <a
+		href="https://cdn.akamai.steamstatic.com/steam/apps/256657525/movie480.webm?t=1447378587"
+		>original videos talking about TUG</a
+	>
+	and as well as a mod that I developed for the game called
+	<a href="https://github.com/DefinitelyMaybe/DarkAges">DarkAges</a>.
 </p>
-<hr>
+<hr />
 <p>December 2021</p>
 <p>
-  This is one of those unfortunate times when you look back on something that happened years ago. TUG is no more.
-  Apparantly there was a lot of tension between @ino and another director within the company. @ino stepped down,
-  communication was cut with the commuinity and nobody's heard anything since.
+	This is one of those unfortunate times when you look back on something that happened years ago.
+	TUG is no more. Apparantly there was a lot of tension between @ino and another director within the
+	company. @ino stepped down, communication was cut with the commuinity and nobody's heard anything
+	since.
 </p>
