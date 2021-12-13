@@ -83,7 +83,7 @@
 				When university lecture notes meet the web. Fair warning, tertairy material can be rather
 				dry and tedious.
 			</p>
-			<a class="font-bold" href="/">TODO: link to Slides</a>
+			<a class="font-bold" href="/projects/lastslides">View the slide deck</a>
 		</Box>
 		<Box src={mathsImg} alt="maths playground, graph of squarewave">
 			<h2 class="font-bold">Maths Playground</h2>
@@ -99,7 +99,7 @@
 				A highly ambitious 3D sandbox game, aiming at being a better minecraft. It was a huge
 				undertaking but fell apart in the end.
 			</p>
-			<a class="font-bold" href="/projects/thestoryofTUG">Read the Write-up</a>
+			<a class="font-bold" href="/projects/storyaboutTUG">Read the Write-up</a>
 		</Box>
 		<!-- <Box></Box> -->
 		<!-- Images from unsplash
