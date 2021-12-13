@@ -17,6 +17,7 @@
 - Show off an API
 - Make use of icons? https://github.com/antfu/unplugin-icons
 - Stylelint for Postcss? https://youtu.be/WhCXiEwdU1A?t=46
+- Double check reveal.js doesn't overwrite scrolling after returning
 
 # Not gonna happen
 
