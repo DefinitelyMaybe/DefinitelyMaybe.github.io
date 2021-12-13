@@ -6,7 +6,6 @@
 <script>
 	import { page } from '$app/stores';
 	import { onMount } from 'svelte';
-	import Toggle from '$lib/Toggle.svelte';
 	import ghLogo from '$lib/assets/images/GitHub-Mark-32px.png';
 	import ghLogoLight from '$lib/assets/images/GitHub-Mark-Light-32px.png';
 
@@ -55,7 +54,7 @@
 >
 	<h1 class="text-center font-bold">Aaron Dekker</h1>
 	<div class="flex flex-row justify-between items-center px-2 py-2">
-		<Toggle checked={$theme === 'dark'} on:click={toggleTheme} />
+		<input type="checkbox" on:click={toggleTheme} checked={$theme === 'dark'}>
 
 		<nav>
 			<ul class="flex flex-row space-x-5 text-2xl font-bold">
