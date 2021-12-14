@@ -1,25 +1,22 @@
-# Do one thing at a time
+# Project Management
+## Current focus
 
-- Resizing for different viewports
+- Merge old projects into new framework / revision
 
-# Done!
+## Next things to work on:
 
-- A light-dark theme switch (use of cookies and local storage)
-- A grid of Projects and things I'd like to show off
-  - various sized "cards" to show off grid css
+1. Resizing for bigger viewports
+2. Redo reveal.js slides as it's breaking styles
+3. Integrate <a href:external href="https://www.npmjs.com/package/seolint">seolint</a>
+4. Add a project
+   1. Do a Svelte.kit project i.e. how I made this website
+   2. Make a project talking about the algorithms from the SimonDev project
+   3. Do a small svelte-cubed project
+   4. Show off an API
+5. Make use of icons? https://github.com/antfu/unplugin-icons
+6. Stylelint for Postcss? https://youtu.be/WhCXiEwdU1A?t=46
 
-# Possible next things to work on:
-
-- Try out <a href:external href="https://www.npmjs.com/package/seolint">seolint</a>
-- A project about how I made the website (Could just leave it as this readme and repo)
-- Make a project talking about the algorithms from the SimonDev project
-- Do a small svelte-cubed project
-- Show off an API
-- Make use of icons? https://github.com/antfu/unplugin-icons
-- Stylelint for Postcss? https://youtu.be/WhCXiEwdU1A?t=46
-- Double check reveal.js doesn't overwrite scrolling after returning
-
-# Not gonna happen
+## Not gonna happen
 
 - Make a background like this one https://slinkity.dev/
 - Try out some nice <a href:external href="https://www.youtube.com/watch?v=lPJVi797Uy0">curves</a>
