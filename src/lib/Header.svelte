@@ -12,7 +12,6 @@
 	let ghLogoSrc = ghLogo;
 
 	theme.subscribe((val) => {
-		console.log(val);
 		ghLogoSrc = ghLogo;
 		if (val == 'dark') {
 			ghLogoSrc = ghLogoLight;
