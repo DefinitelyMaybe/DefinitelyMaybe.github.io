@@ -12,4 +12,4 @@ node_modules
 package-lock.json
 
 # TODO: remove once sorted
-old
+docs
