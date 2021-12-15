@@ -5,6 +5,7 @@
 
 <script>
 	import Box from '$lib/Box.svelte';
+	import fallingImg from "$lib/assets/images/010-falling.jpg";
 	import simonImg from '$lib/assets/images/simondev.png';
 	import threejsdarkImg from '$lib/assets/images/threejslogodark.png';
 	import threejswhiteImg from '$lib/assets/images/threejslogowhite.png';
@@ -29,6 +30,21 @@
 </svelte:head>
 
 <ul class="grid grid-cols-1 gap-4">
+	<Box src={fallingImg} alt="Falling 0's and 1's">
+		<h2 class="font-bold">Remaking the Portfolio</h2>
+		<p>
+			A quick story about remaking this entire website.
+		</p>
+		<a class="font-bold" href="/projects/remake">
+			Read about how I did it.</a>
+	</Box>
+	<Box src={mathsImg} alt="maths playground, graph of squarewave">
+		<h2 class="font-bold">Maths and a UI</h2>
+		<p>
+			If you've ever heard of wolframalpha or matlab, those inspired this project. It's like a graphics calculator but for your mobile.
+		</p>
+		<a class="font-bold" href="/projects/mathsplay">View Project</a>
+	</Box>
 	<Box src={simonImg} alt="Simon Dev thumbnail">
 		<h2 class="font-bold">Simons World - The Remix</h2>
 		<p>
@@ -42,7 +58,7 @@
 			>.
 		</p>
 		<a class="font-bold" href="https://wonderful-stonebraker-0b161a.netlify.app/"
-			>Checkout the Remix here</a
+			>View the Remix</a
 		>
 		<p class="text-xs">(Not recommended for mobile)</p>
 	</Box>
@@ -67,7 +83,7 @@
 	</Box>
 	<Box src={lavaCubeImg} alt="lava cube world">
 		<h2 class="font-bold">The Floor is Lava!</h2>
-		<p>Combing three.js and cannon.js to create a age old game.</p>
+		<p>An age old game remade with three.js and cannon.js</p>
 		<a class="font-bold" href="/projects/lavafloor">Play Game</a>
 		<p class="text-xs">(Not built for mobile)</p>
 	</Box>
@@ -83,14 +99,6 @@
 			dry and tedious.
 		</p>
 		<a class="font-bold" href="/projects/lastslides">View the slide deck</a>
-	</Box>
-	<Box src={mathsImg} alt="maths playground, graph of squarewave">
-		<h2 class="font-bold">Maths Playground</h2>
-		<p>
-			When frustrated at wolframalpha and matlab, the only sensible thing to do would be to make
-			your own, right?
-		</p>
-		<a class="font-bold" href="/">TODO: link to Project</a>
 	</Box>
 	<Box src={tugImg} alt="TUG concept art of a golem">
 		<h2 class="font-bold">TUG mod development</h2>
