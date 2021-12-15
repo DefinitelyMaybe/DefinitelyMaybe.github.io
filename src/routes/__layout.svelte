@@ -11,6 +11,8 @@
 		content="@DefinitelyMaybe | BSc Graduate | Open-Source Contributor"
 	/>
 	<meta property="og:url" content="https://definitelymaybe.github.io/" />
+	
+	<link rel="shortcut icon" href="/favicon.ico" type="image/x-icon" />
 </svelte:head>
 
 <Header />
