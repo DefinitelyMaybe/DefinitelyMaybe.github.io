@@ -36,7 +36,7 @@
 			<p>A quick story about remaking this entire website.</p>
 			<p>Side note: It's not finished.</p>
 		</div>
-		<a slot="link" class="font-bold" href="/projects/remake"> Read about how I did it.</a>
+		<a slot="link" class="font-bold" href="/projects/remake/"> Read about how I did it.</a>
 	</Box>
 	<Box src={mathsImg} alt="maths playground, graph of squarewave">
 		<div slot="desc">
@@ -46,7 +46,7 @@
 				graphics calculator but for your mobile.
 			</p>
 		</div>
-		<a slot="link" class="font-bold" href="/projects/mathsplay">View Project</a>
+		<a slot="link" class="font-bold" href="/projects/mathsplay/">View Project</a>
 	</Box>
 	<Box src={simonImg} alt="Simon Dev thumbnail">
 		<div slot="desc">
@@ -100,7 +100,7 @@
 			<p>An age old game remade with three.js and cannon.js</p>
 		</div>
 		<div slot="link">
-			<a class="font-bold" href="/projects/lavafloor">Play Game</a>
+			<a class="font-bold" href="/projects/lavafloor/">Play Game</a>
 			<p class="text-xs">(Not built for mobile)</p>
 		</div>
 	</Box>
@@ -109,7 +109,7 @@
 			<h2 class="font-bold">Parsing Three.js</h2>
 			<p>One does not simply parse three.js 🤷‍♂️ Getting things wrong and keeping on going 🕵️‍♂️</p>
 		</div>
-		<a slot="link" class="font-bold" href="/projects/parsingthreejs">Read the write-up</a>
+		<a slot="link" class="font-bold" href="/projects/parsingthreejs/">Read the write-up</a>
 	</Box>
 	<Box src={revealjsImg} alt="revealjs">
 		<div slot="desc">
@@ -119,7 +119,7 @@
 				dry and tedious.
 			</p>
 		</div>
-		<a slot="link" class="font-bold" href="/projects/lastslides">View the slide deck</a>
+		<a slot="link" class="font-bold" href="/projects/lastslides/">View the slide deck</a>
 	</Box>
 	<Box src={tugImg} alt="TUG concept art of a golem">
 		<div slot="desc">
@@ -129,7 +129,7 @@
 				undertaking but fell apart in the end.
 			</p>
 		</div>
-		<a slot="link" class="font-bold" href="/projects/storyaboutTUG">Read the Write-up</a>
+		<a slot="link" class="font-bold" href="/projects/storyaboutTUG/">Read the Write-up</a>
 	</Box>
 	<!-- <Box></Box> -->
 	<!-- Images from unsplash
