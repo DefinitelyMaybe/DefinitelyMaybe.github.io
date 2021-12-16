@@ -1,0 +1,64 @@
+@import 'tailwindcss/base';
+@import 'tailwindcss/components';
+@import 'tailwindcss/utilities';
+/* @import 'tailwindcss/variants'; */
+
+/* @import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap'); */
+/* font-['roboto'] */
+
+@layer base {
+	:root {
+		--primary-text: #374054;
+	}
+
+	/* .dark {
+		--primary-text:
+	} */
+
+	#svelte {
+		@apply flex flex-col text-[#374054] bg-[#f5f5f5] font-sans font-medium
+			dark:text-[#adbac7];
+	}
+
+	main {
+		@apply px-2 py-2 min-h-screen flex flex-col
+		dark:bg-[#22272e] dark:border-b-black;
+	}
+
+	h1 {
+		@apply text-4xl;
+	}
+
+	h2 {
+		@apply text-2xl;
+	}
+
+	h3 {
+		@apply text-xl;
+	}
+
+	a {
+		@apply text-[#0969da]
+			dark:text-[#539bf5];
+	}
+
+	p {
+		@apply leading-normal py-2;
+	}
+
+	img {
+		@apply object-cover w-full aspect-video;
+	}
+
+	iframe {
+		@apply w-full aspect-video;
+	}
+}
+
+/*
+for a checkout toggle:
+flex bg-white border-2 border-black w-6 h-4 rounded-lg
+  dark:bg-black dark:border-white dark:flex-row-reverse
+
+w-3 h-3 bg-black rounded-lg
+    dark:bg-white	*/
