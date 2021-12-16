@@ -1,5 +1,6 @@
 <script context="module">
 	import { browser, dev } from '$app/env';
+	import WriteUp from '$lib/WriteUp.svelte';
 
 	// we don't need any JS on this page, though we'll load
 	// it in dev so that we get hot module replacement...
@@ -18,7 +19,7 @@
 	<title>Aaron Dekker - About</title>
 </svelte:head>
 
-<section>
+<WriteUp>
 	<h2 class="text-center">
 		<a href="https://github.com/DefinitelyMaybe">@DefinitelyMaybe</a>
 
@@ -44,4 +45,4 @@
 		If you'd like to get in contact, there's <a href="https://twitter.com/0Rawr">twitter</a> or my
 		<a href="mailto:aaron.dekker01@gmail.com">email</a>.
 	</p>
-</section>
+</WriteUp>
