@@ -8,7 +8,7 @@
 
 @layer base {
 	:root {
-		--primary-text: #374054
+		--primary-text: #374054;
 	}
 
 	/* .dark {
@@ -46,9 +46,12 @@
 		@apply leading-normal py-2;
 	}
 
-	[type='checkbox'] {
-		@apply rounded-md ring-[#374054] focus:ring-[#374054]
-		 dark:bg-black dark:focus:bg-black;
+	img {
+		@apply object-cover w-full aspect-video;
+	}
+
+	iframe {
+		@apply w-full aspect-video;
 	}
 }
 
