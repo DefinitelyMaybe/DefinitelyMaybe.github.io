@@ -10,6 +10,3 @@ node_modules
 
 # use pnpm
 package-lock.json
-
-# TODO: remove once sorted
-docs
