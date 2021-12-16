@@ -19,18 +19,15 @@
    6. Show off an API
 5. Make use of icons? https://github.com/antfu/unplugin-icons
 6. Stylelint for Postcss? https://youtu.be/WhCXiEwdU1A?t=46
-
-## Not gonna happen
-
-- Make a background like this one https://slinkity.dev/
-- Try out some nice <a href:external href="https://www.youtube.com/watch?v=lPJVi797Uy0">curves</a>
+7. Make a background like this one https://slinkity.dev/
+8. Try out some nice <a href:external href="https://www.youtube.com/watch?v=lPJVi797Uy0">curves</a>
 
 # Tips for using tailwindcss
 
 - Start from a mobile design, then add media queries `sm:`, `md:`, etc... to target larger screen sizes https://tailwindcss.com/docs/responsive-design#mobile-first
 - easiest way to apply style to specific elements https://tailwindcss.com/docs/adding-base-styles#using-css
 - child element `hover` or other state change can be done using groups https://tailwindcss.com/docs/hover-focus-and-other-states#group-hover
-- combing responsive utilities is a thing https://tailwindcss.com/docs/hover-focus-and-other-states#combining-with-responsive-prefixes
+- combining responsive utilities is a thing https://tailwindcss.com/docs/hover-focus-and-other-states#combining-with-responsive-prefixes
 
 # Deploying svelte.kit builds to github-pages
 
