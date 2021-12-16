@@ -14,7 +14,6 @@ specifiers:
   postcss: ^8.4.4
   prettier: ^2.4.1
   prettier-plugin-svelte: ^2.4.0
-  reveal.js: ^4.2.1
   svelte: ^3.44.0
   svelte-preprocess: ^4.9.8
   tailwindcss: ^3.0.0
@@ -37,7 +36,6 @@ devDependencies:
   postcss: 8.4.4
   prettier: 2.5.1
   prettier-plugin-svelte: 2.5.0_prettier@2.5.1+svelte@3.44.2
-  reveal.js: 4.2.1
   svelte: 3.44.2
   svelte-preprocess: 4.9.8_postcss@8.4.4+svelte@3.44.2
   tailwindcss: 3.0.0_6b4e3d148bdcb715d5f821ed0a9c268b
@@ -1425,11 +1423,6 @@ packages:
   /reusify/1.0.4:
     resolution: {integrity: sha512-U9nH88a3fc/ekCF1l0/UP1IosiuIjyTh7hBvXVMHYgVcfGvt897Xguj2UOLDeI5BG2m7/uwyaLVT6fbtCwTyzw==}
     engines: {iojs: '>=1.0.0', node: '>=0.10.0'}
-    dev: true
-
-  /reveal.js/4.2.1:
-    resolution: {integrity: sha512-OXH4qT5Gs9di6lZPDmRuanIvdiVzltCe8W9ELz6Q3EhoWS+RjRp5HBwFHr+k1fbbP82/Z83sQiK+/ZYFBwrrsQ==}
-    engines: {node: '>=10.0.0'}
     dev: true
 
   /rimraf/2.7.1:
