@@ -1,4 +1,5 @@
 # Project Management
+
 ## Current focus
 
 - Merge old projects into new framework / revision
@@ -11,7 +12,8 @@
 4. Add a project
    1. Do a Svelte.kit project i.e. how I made this website
    2. Remake maths playground
-   3. Add images at larger screen sizes
+   3. Remake Reveal.js slides without reveal.js
+      1. https://tailwindcss.com/docs/scroll-snap-align
    4. Make a project talking about the algorithms from the SimonDev project
    5. Do a small svelte-cubed project
    6. Show off an API
