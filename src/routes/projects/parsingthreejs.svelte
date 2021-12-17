@@ -21,6 +21,7 @@
 
 <WriteUp>
 	<img src={threeSrc} alt="three.js logo" class="rounded-md" />
+	<p>Feb 2020</p>
 	<p>
 		Before going into details about what I’ve been working on for the last month or so, I’m going to
 		preempt this text with an assumption that you, dear reader, know about javascript and node.js.
@@ -49,6 +50,7 @@
 	<iframe
 		title="A fireship.io youtube video talking about the history of javascript"
 		src="https://www.youtube.com/embed/Sh6lK57Cuk4"
+		class="py-4"
 	/>
 	<p>
 		So where is C and C++ in all of this? Well, still back in system land. People were not about to
