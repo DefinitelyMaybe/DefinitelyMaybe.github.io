@@ -3,21 +3,23 @@
 	<head>
 		<meta charset="utf-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1" />
-		<meta property="og:title" content="Aaron Dekker - Developer" data-svelte="svelte-8eaqic"><meta property="og:image" content="https://definitelymaybe.github.io/images/lead-bg.jpg" data-svelte="svelte-8eaqic"><meta property="og:description" content="@DefinitelyMaybe | BSc Graduate | Open-Source Contributor" data-svelte="svelte-8eaqic"><meta property="og:url" content="https://definitelymaybe.github.io/" data-svelte="svelte-8eaqic"><link rel="shortcut icon" href="/favicon.ico" type="image/x-icon" data-svelte="svelte-8eaqic">
+		<meta property="og:title" content="Aaron Dekker - Developer" data-svelte="svelte-73oucw"><meta property="og:image" content="/app/assets/010-falling-343215c5.jpg" data-svelte="svelte-73oucw"><meta property="og:description" content="@DefinitelyMaybe | BSc Graduate | Open-Source Contributor" data-svelte="svelte-73oucw"><meta property="og:url" content="https://definitelymaybe.github.io/" data-svelte="svelte-73oucw"><link rel="shortcut icon" href="/favicon.ico" type="image/x-icon" data-svelte="svelte-73oucw">
 
 		
 
-		<link rel="modulepreload" href="/app/start-62437aee.js">
-		<link rel="modulepreload" href="/app/chunks/vendor-6b6f3546.js">
-		<link rel="modulepreload" href="/app/pages/layout.svelte-d09970d8.js">
-		<link rel="modulepreload" href="/app/chunks/Header-71f6f3c7.js">
-		<link rel="modulepreload" href="/app/pages/projects/remake.svelte-c4dc27ef.js">
-		<link rel="modulepreload" href="/app/chunks/WriteUp-df985e3f.js">
+		<link rel="modulepreload" href="/app/start-09f74189.js">
+		<link rel="modulepreload" href="/app/chunks/vendor-990aac60.js">
+		<link rel="modulepreload" href="/app/chunks/singletons-12a22614.js">
+		<link rel="modulepreload" href="/app/pages/layout.svelte-7f2f93d3.js">
+		<link rel="modulepreload" href="/app/chunks/Header-bc20f94f.js">
+		<link rel="modulepreload" href="/app/chunks/010-falling-4efabf84.js">
+		<link rel="modulepreload" href="/app/pages/projects/remake.svelte-3a6d7d41.js">
+		<link rel="modulepreload" href="/app/chunks/WriteUp-aec9b4b2.js">
 		<link rel="stylesheet" href="/app/assets/start-d5b4de3e.css">
-		<link rel="stylesheet" href="/app/assets/pages/layout.svelte-349b1fd3.css">
+		<link rel="stylesheet" href="/app/assets/pages/layout.svelte-5cc3c13b.css">
 
 		<script type="module">
-			import { start } from "/app/start-62437aee.js";
+			import { start } from "/app/start-09f74189.js";
 			start({
 				target: document.querySelector("#svelte"),
 				paths: {"base":"","assets":""},
@@ -30,8 +32,8 @@
 					status: 200,
 					error: null,
 					nodes: [
-						import("/app/pages/layout.svelte-d09970d8.js"),
-						import("/app/pages/projects/remake.svelte-c4dc27ef.js")
+						import("/app/pages/layout.svelte-7f2f93d3.js"),
+						import("/app/pages/projects/remake.svelte-3a6d7d41.js")
 					],
 					page: {
 						host: location.host, // TODO this is redundant
@@ -57,27 +59,29 @@
 
 		<div class="corner"><a href="https://github.com/DefinitelyMaybe"><img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAAyRpVFh0WE1MOmNvbS5hZG9iZS54bXAAAAAAADw/eHBhY2tldCBiZWdpbj0i77u/IiBpZD0iVzVNME1wQ2VoaUh6cmVTek5UY3prYzlkIj8+IDx4OnhtcG1ldGEgeG1sbnM6eD0iYWRvYmU6bnM6bWV0YS8iIHg6eG1wdGs9IkFkb2JlIFhNUCBDb3JlIDUuMy1jMDExIDY2LjE0NTY2MSwgMjAxMi8wMi8wNi0xNDo1NjoyNyAgICAgICAgIj4gPHJkZjpSREYgeG1sbnM6cmRmPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5LzAyLzIyLXJkZi1zeW50YXgtbnMjIj4gPHJkZjpEZXNjcmlwdGlvbiByZGY6YWJvdXQ9IiIgeG1sbnM6eG1wPSJodHRwOi8vbnMuYWRvYmUuY29tL3hhcC8xLjAvIiB4bWxuczp4bXBNTT0iaHR0cDovL25zLmFkb2JlLmNvbS94YXAvMS4wL21tLyIgeG1sbnM6c3RSZWY9Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC9zVHlwZS9SZXNvdXJjZVJlZiMiIHhtcDpDcmVhdG9yVG9vbD0iQWRvYmUgUGhvdG9zaG9wIENTNiAoTWFjaW50b3NoKSIgeG1wTU06SW5zdGFuY2VJRD0ieG1wLmlpZDpFNTE3OEEyQTk5QTAxMUUyOUExNUJDMTA0NkE4OTA0RCIgeG1wTU06RG9jdW1lbnRJRD0ieG1wLmRpZDpFNTE3OEEyQjk5QTAxMUUyOUExNUJDMTA0NkE4OTA0RCI+IDx4bXBNTTpEZXJpdmVkRnJvbSBzdFJlZjppbnN0YW5jZUlEPSJ4bXAuaWlkOkU1MTc4QTI4OTlBMDExRTI5QTE1QkMxMDQ2QTg5MDREIiBzdFJlZjpkb2N1bWVudElEPSJ4bXAuZGlkOkU1MTc4QTI5OTlBMDExRTI5QTE1QkMxMDQ2QTg5MDREIi8+IDwvcmRmOkRlc2NyaXB0aW9uPiA8L3JkZjpSREY+IDwveDp4bXBtZXRhPiA8P3hwYWNrZXQgZW5kPSJyIj8+m4QGuQAAAyRJREFUeNrEl21ojWEYx895TDPbMNlBK46IUiNmPvHBSUjaqc0H8pF5+aDUKPEBqU2NhRQpX5Rv5jWlDIWlMCv7MMSWsWwmb3tpXub4XXWdPHvc9/Gc41nu+nedc7/8r/99PffLdYdDPsvkwsgkTBwsA/PADJCnzX2gHTwBt8Hl7p537/3whn04XoDZDcpBlk+9P8AFcAghzRkJwPF4zGGw0Y9QS0mAM2AnQj77FqCzrtcwB1Hk81SYojHK4DyGuQ6mhIIrBWB9Xm7ug/6B/nZrBHBegrkFxoVGpnwBMSLR9EcEcC4qb8pP14BWcBcUgewMnF3T34VqhWMFkThLJAalwnENOAKiHpJq1FZgI2AT6HZtuxZwR9GidSHtI30jOrbawxlVX78/AbNfhHlomEUJJI89O2MqeE79T8/nk8nMBm/dK576hZgmA3cp/R4l9/UeSxiHLVIlNm4nFfT0bxyuIj7LHRTKai+zdJobwMKzcZSJb0ePV5PKN+BqAAKE47UlMnERELMM3EdYP/yrd+XYb2mOiYBiQ8OQnoRBlXrl9JZix7D1pHTazu4MoyBcnYamqAjIMTR8G4FT8LuhLsexXYYjICBiqhQBvYb6fLZIJCjPypVvaOoVAW2WcasCnL2Nq82xHJNSqlCeFcDshaPK0twkAhosjZL31QYw+1rlMpWGMArl23SBsZZO58F2tlJXmjOXS+s4WGvpMiBJT/I2PInZ6lIs9/hBsNS1hS6BG0DSqmYEDRlCXQrmy50P1oDRKTSegmNbUsA0zDMwRhPJXeCE3vWLPQMvan6X8AgIa1vcR4AkGZkDR4ejJ1UHpsaVI0g2LInpOsNFUud1rhxSV+fzC9Woz2EZkWQuja7/B+jUrgtIMpy9YCW4n4K41YfzRneW5E1KJTe4B2Zq1Q5EHEtj4U3AfEzR5SVY4l7QYQPJdN2as7RKBF0BPZqqH4VgMAMBL8Byxr7y8zCZiDlnOcEKIPmUpgB5Z2ww5RdOiiRiNajUmWda5IG6WbhsyY2fx6m8gLcoJDJFkH219M3We1+cnda93pfycZpIJEL/s/wSYADmOAwAQgdpBAAAAABJRU5ErkJggg==" alt="Github Icon" class="aspect-square"></a></div></div></header>
 
-<main><div class="sm:flex"><div class="sm:mx-10 md:mx-20 lg:mx-40"></div>
-	<div><h1 class="text-center">The Remake</h1>
+<main><div class="flex"><div class="basis-1/12"></div>
+	<div class="basis-10/12"><h1 class="text-center">The Remake</h1>
+	<p>Dec 2021</p>
 	<p>This project started taking shape really quickly. <a href="https://kit.svelte.dev/">Svelte.kit</a>
-		and <a href="https://tailwindcss.com/">Tailwindcss</a> have been the best dev tool choices I&#39;ve made
-		to date. I didn&#39;t think I had the greatest skill with html, css and javascript but it&#39;s only taken
-		me two weeks to get here. That includes messing around with configs for a couple of days, merging
-		old projects that used global scripts, responsive image sizing and plenty more. I&#39;m kinda of in shock
-		about it.
+		and <a href="https://tailwindcss.com/">Tailwindcss</a> have been the best development choices I&#39;ve ever made.
+		After doing the usual configuration and deployment checks, it was time to integrate my
+		old projects.
 	</p>
-	<p>First couple of days was making sure the crucial pieces would work. Sveltekit has a static
-		adapter that&#39;ll output the entire site for github pages <i>but</i> one does not simply deploy to
-		github pages. A short version of it is that I&#39;ve kept everything in the same repo and configured
-		github to serve the <code>docs</code> folder instead of the default.
+	<p>Nowhere can anyone find better examples of how far they&#39;ve come than by looking back at their own projects years later. To web developers out there,
+		some of my oldies used global scripts within the <code>index.html</code>... we&#39;ve come a long way. 
+		The idea of mobile first and responsive image sizing would&#39;ve been huge development efforts back then. Now I&#39;m simply in shock
+		by how quickly I could get those same things done with less effort.
 	</p>
-	<p>I let go of most of the old projects. At least in there original form. Reveal.js was basically
-		clever styling for 2013 however css has moved on since then. More to the point, because I was
-		watching a couple of tailwindcss&#39;s <a href="https://www.youtube.com/channel/UCOe-8z68tgw9ioqVvYM4ddQ">youtube videos</a>, I&#39;d just so happened to come across videos of them talking about how to implement the same
-		features, the kicker being it was simpler.
+	<p>Remaking old projects was not a straight forward decision. Doing so expands the scope of the project which in turn takes more time. It&#39;s usually easier to start from stratch. When I looked into the <code>Reveal.js</code> project all I could see was
+		some clever css styling for 2013. Good in it&#39;s own time but not as good as tailwindcss today. For the interested reader, I suggest watching tailwind&#39;s <a href="https://www.youtube.com/channel/UCOe-8z68tgw9ioqVvYM4ddQ">youtube videos</a>. The kicker for me was that implementing the same features as <code>Reveal.js</code> is simpler with tailwind.
 	</p>
-	<p>Svelte.kit and Tailwindcss, you guys are the real mvp&#39;s.</p></div>
-	<div class="sm:mx-10 md:mx-20 lg:mx-40"></div></div></main>
+	<p>Svelte&#39;s also very deserving of the lime light. Snappy navigation within the website is the default. Anyone on the internet these days has moved on from a
+		website because it took too long to load or do something. Svelte.kit is the result of years of high requirements as well as a persmise of solving common issues that plague the well known frameworks.
+		It was a no brainer for me.
+	</p>
+	<p>All in all, the remake only took me a couple of weeks including rewriting and rewording some articles. Darn good use of my time.
+	</p></div>
+	<div class="basis-1/12"></div></div></main>
 
 
 

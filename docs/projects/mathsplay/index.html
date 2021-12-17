@@ -3,20 +3,22 @@
 	<head>
 		<meta charset="utf-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1" />
-		<title>Mathy Web Thing</title><meta property="og:title" content="Aaron Dekker - Developer" data-svelte="svelte-8eaqic"><meta property="og:image" content="https://definitelymaybe.github.io/images/lead-bg.jpg" data-svelte="svelte-8eaqic"><meta property="og:description" content="@DefinitelyMaybe | BSc Graduate | Open-Source Contributor" data-svelte="svelte-8eaqic"><meta property="og:url" content="https://definitelymaybe.github.io/" data-svelte="svelte-8eaqic"><link rel="shortcut icon" href="/favicon.ico" type="image/x-icon" data-svelte="svelte-8eaqic"><meta name="The Matrix" charset="utf-8" data-svelte="svelte-hm4kpj"><link rel="shortcut icon" href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAABmJLR0QA/wD/AP+gvaeTAAAACXBIWXMAAAsTAAALEwEAmpwYAAADiklEQVRYw8WX32sjVRTHP/dmkm6zmjUglaVgIzKhKrTCFlZccPqwrAq1j9aX2gebjb4t/QPEtU/9B4RFaGr3SSh90CIaFxZFbNcflPqg9BZhCfskRghk26SrOT7kJp2m03QmFXvgwp0z955z7p3vOfM9iAj+kS8ffu7QZ0TkbRFZFpFtEdnLl2XPzj8SkSsicj6EnfZwOFn6gCngFnDumDVZO96zz1XgGrABSDfj+gTnE0AN+KSL8yB5DPgeaADP9RJAH7AMfM7p5VfgJqCCXqp8+cgNpYAf7ZWeKJXfd9rzC8+63ZbeA64A/xzSdoCkL1+WbQmQfPmoLpfLSfKpi+I4jsRiMUkkEjI8PCxLS0uB60VkI18W5ffZGcDyMRuPGJydnZVkMimgRCklFmwCSCKRkIsve7K5uRlk56bfp+4A3HTYD7uyssLu7i4gaK3R+sDU/v4+f/x8j62traCt7/uBqX2giwS4arXaghFzc3MsLi7ieR6O46CUCgNMBbTrwFQU5zs7B8BTsRi5XA7XdZmZmWF+fp5SqcR3NRgdHe1m5iVgvZUFe1Hy/MHdr/nizdeRRgOnv593HjzsJT2rwOOt8toV7Z36QqEgsVhMlFKSSD0hYbMmQH9eA6+cpsqINA59kogyooGrUXcNDg4Sj8cRER5Vq0xOTvYawGsauBx1VyaTIZ1ON9EuDSqVSq8BvKqBp6Pucl2XbDbbTsNTyAvOu38d1QbpOvXmEQiq6f+ZLL3awZKJqOgVz/NEay0oLZ7n9ZoFG9r+pc5KvtLAnTMM4EsNfHuGAfyigfuWdv3fUgUetrIgb3lfpCxoyMG8hyy45mdEfceh1xgjxhh56wfzX2eB8hOSOvBGULTT09OMjIyw4r3I+Pj4wQ0Y06JUvVz/8y267mdEa8DtoNX1ep2/93ZZX19naqpJHSqVSjMAYGBgIIrzD4HfjqPlOcD4FUNDQ8Tj8TbVWl1dJZ1OU6s1cau0ZmxsLKzzn4APurFi8mVJdVbHhYUFcfqTbfKpVJOIplIpGbh0WYwxYTCwbVn3IX9BfUGLI37sJ6nf3LhOqbhGrfxnkwklkzw5eonJz+6GOflte7v1AELRtXmc8J/IGCPFYlEKhYIUi0UxxoRB+8RpmtM1yxWngFuu655z3Y7uJzjXa7a2fBp4ap+E6Y7rtk9cBjKWwl21RKbFJUr2p3bHlvb7YVH5L4r8APrbh80EAAAAAElFTkSuQmCC" type="image/x-icon" data-svelte="svelte-hm4kpj">
+		<title>Mathy Web Thing</title><meta property="og:title" content="Aaron Dekker - Developer" data-svelte="svelte-73oucw"><meta property="og:image" content="/app/assets/010-falling-343215c5.jpg" data-svelte="svelte-73oucw"><meta property="og:description" content="@DefinitelyMaybe | BSc Graduate | Open-Source Contributor" data-svelte="svelte-73oucw"><meta property="og:url" content="https://definitelymaybe.github.io/" data-svelte="svelte-73oucw"><link rel="shortcut icon" href="/favicon.ico" type="image/x-icon" data-svelte="svelte-73oucw"><meta name="The Matrix" charset="utf-8" data-svelte="svelte-hm4kpj"><link rel="shortcut icon" href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAABmJLR0QA/wD/AP+gvaeTAAAACXBIWXMAAAsTAAALEwEAmpwYAAADiklEQVRYw8WX32sjVRTHP/dmkm6zmjUglaVgIzKhKrTCFlZccPqwrAq1j9aX2gebjb4t/QPEtU/9B4RFaGr3SSh90CIaFxZFbNcflPqg9BZhCfskRghk26SrOT7kJp2m03QmFXvgwp0z955z7p3vOfM9iAj+kS8ffu7QZ0TkbRFZFpFtEdnLl2XPzj8SkSsicj6EnfZwOFn6gCngFnDumDVZO96zz1XgGrABSDfj+gTnE0AN+KSL8yB5DPgeaADP9RJAH7AMfM7p5VfgJqCCXqp8+cgNpYAf7ZWeKJXfd9rzC8+63ZbeA64A/xzSdoCkL1+WbQmQfPmoLpfLSfKpi+I4jsRiMUkkEjI8PCxLS0uB60VkI18W5ffZGcDyMRuPGJydnZVkMimgRCklFmwCSCKRkIsve7K5uRlk56bfp+4A3HTYD7uyssLu7i4gaK3R+sDU/v4+f/x8j62traCt7/uBqX2giwS4arXaghFzc3MsLi7ieR6O46CUCgNMBbTrwFQU5zs7B8BTsRi5XA7XdZmZmWF+fp5SqcR3NRgdHe1m5iVgvZUFe1Hy/MHdr/nizdeRRgOnv593HjzsJT2rwOOt8toV7Z36QqEgsVhMlFKSSD0hYbMmQH9eA6+cpsqINA59kogyooGrUXcNDg4Sj8cRER5Vq0xOTvYawGsauBx1VyaTIZ1ON9EuDSqVSq8BvKqBp6Pucl2XbDbbTsNTyAvOu38d1QbpOvXmEQiq6f+ZLL3awZKJqOgVz/NEay0oLZ7n9ZoFG9r+pc5KvtLAnTMM4EsNfHuGAfyigfuWdv3fUgUetrIgb3lfpCxoyMG8hyy45mdEfceh1xgjxhh56wfzX2eB8hOSOvBGULTT09OMjIyw4r3I+Pj4wQ0Y06JUvVz/8y267mdEa8DtoNX1ep2/93ZZX19naqpJHSqVSjMAYGBgIIrzD4HfjqPlOcD4FUNDQ8Tj8TbVWl1dJZ1OU6s1cau0ZmxsLKzzn4APurFi8mVJdVbHhYUFcfqTbfKpVJOIplIpGbh0WYwxYTCwbVn3IX9BfUGLI37sJ6nf3LhOqbhGrfxnkwklkzw5eonJz+6GOflte7v1AELRtXmc8J/IGCPFYlEKhYIUi0UxxoRB+8RpmtM1yxWngFuu655z3Y7uJzjXa7a2fBp4ap+E6Y7rtk9cBjKWwl21RKbFJUr2p3bHlvb7YVH5L4r8APrbh80EAAAAAElFTkSuQmCC" type="image/x-icon" data-svelte="svelte-hm4kpj">
 
 		
 
-		<link rel="modulepreload" href="/app/start-62437aee.js">
-		<link rel="modulepreload" href="/app/chunks/vendor-6b6f3546.js">
-		<link rel="modulepreload" href="/app/pages/layout.svelte-d09970d8.js">
-		<link rel="modulepreload" href="/app/chunks/Header-71f6f3c7.js">
-		<link rel="modulepreload" href="/app/pages/projects/mathsplay/index.svelte-558bfe04.js">
+		<link rel="modulepreload" href="/app/start-09f74189.js">
+		<link rel="modulepreload" href="/app/chunks/vendor-990aac60.js">
+		<link rel="modulepreload" href="/app/chunks/singletons-12a22614.js">
+		<link rel="modulepreload" href="/app/pages/layout.svelte-7f2f93d3.js">
+		<link rel="modulepreload" href="/app/chunks/Header-bc20f94f.js">
+		<link rel="modulepreload" href="/app/chunks/010-falling-4efabf84.js">
+		<link rel="modulepreload" href="/app/pages/projects/mathsplay/index.svelte-3ba4e66d.js">
 		<link rel="stylesheet" href="/app/assets/start-d5b4de3e.css">
-		<link rel="stylesheet" href="/app/assets/pages/layout.svelte-349b1fd3.css">
+		<link rel="stylesheet" href="/app/assets/pages/layout.svelte-5cc3c13b.css">
 
 		<script type="module">
-			import { start } from "/app/start-62437aee.js";
+			import { start } from "/app/start-09f74189.js";
 			start({
 				target: document.querySelector("#svelte"),
 				paths: {"base":"","assets":""},
@@ -29,8 +31,8 @@
 					status: 200,
 					error: null,
 					nodes: [
-						import("/app/pages/layout.svelte-d09970d8.js"),
-						import("/app/pages/projects/mathsplay/index.svelte-558bfe04.js")
+						import("/app/pages/layout.svelte-7f2f93d3.js"),
+						import("/app/pages/projects/mathsplay/index.svelte-3ba4e66d.js")
 					],
 					page: {
 						host: location.host, // TODO this is redundant
