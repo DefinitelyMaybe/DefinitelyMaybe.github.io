@@ -2,6 +2,8 @@
 	import WriteUp from '$lib/WriteUp.svelte';
 	import golemImg from '$lib/assets/images/TUG/TUGconceptArtmini.jpg';
 	import tugImg from '$lib/assets/images/TUG/TUGupdate.jpg';
+	import tug2Img from '$lib/assets/images/TUG/TUGupdatedart.jpg';
+	import tug3Img from '$lib/assets/images/TUG/TUGmount.gif';
 </script>
 
 <svelte:head>
@@ -10,6 +12,7 @@
 
 <WriteUp>
 	<h1 class="text-center">Introducing TUG</h1>
+	<p>August 2016</p>
 	<h3>Where to begin?</h3>
 	<p>
 		We'll approach T.U.G. by circling around at the distance, gaining perspective as we go and then
@@ -50,9 +53,7 @@
 		restrictions due to OpenGL, the introduction of Javascript for scripting, node.js integration, a
 		new art style and much more.
 	</p>
-	<div class="flex justify-center">
-		<img src={golemImg} alt="TUG concept art of a golem" />
-	</div>
+	<img src={golemImg} alt="TUG concept art of a golem" />
 	<h3>Where do I come into the story?</h3>
 	<p>
 		Well, I had somehow managed to bump into NK’s Kickstarter campaign back in 2013. It caught my
@@ -79,9 +80,7 @@
 		that we should not speculate on. As a small teaser, here’s a render of the art direction for TUG
 		v2.
 	</p>
-	<div class="flex justify-center">
-		<img src={tugImg} alt="The feet of an TUG avatar surrounding by seedlings" />
-	</div>
+	<img src={tugImg} alt="The feet of an TUG avatar surrounding by seedlings" />
 	<p>
 		If you're interest here is a link to one of the <a
 			href="https://cdn.akamai.steamstatic.com/steam/apps/256657525/movie480.webm?t=1447378587"
@@ -93,9 +92,11 @@
 	<hr />
 	<p>December 2021</p>
 	<p>
-		This is one of those unfortunate times when you look back on something that happened years ago.
+		This is one of those somber times looking back on the game.
 		TUG is no more. Apparantly there was a lot of tension between @ino and another director within
-		the company. @ino stepped down, communication was cut with the commuinity and nobody's heard
-		anything since.
+		the company. @ino stepped down, communication with the commuinity was cut and nobody's heard
+		anything since. The communitty deserved better than this and the game itself was heading in the right direction.
 	</p>
+	<img class="py-2" src="{tug2Img}" alt="TUG updated artwork style">
+	<img class="py-2" src="{tug3Img}" alt="TUG mount artwork">
 </WriteUp>
