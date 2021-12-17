@@ -1,11 +1,12 @@
 <script>
 	import Header from '$lib/Header.svelte';
+	import leadSrc from "$lib/assets/images/010-falling.jpg";
 	import '../app.css';
 </script>
 
 <svelte:head>
 	<meta property="og:title" content="Aaron Dekker - Developer" />
-	<meta property="og:image" content="https://definitelymaybe.github.io/images/lead-bg.jpg" />
+	<meta property="og:image" content="{leadSrc}" />
 	<meta
 		property="og:description"
 		content="@DefinitelyMaybe | BSc Graduate | Open-Source Contributor"
