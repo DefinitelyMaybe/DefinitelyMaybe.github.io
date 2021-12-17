@@ -1,7 +1,7 @@
-<div class="sm:flex">
-	<div class="sm:mx-10 md:mx-20 lg:mx-40" />
-	<div>
+<div class="flex">
+	<div class="basis-1/12" />
+	<div class="basis-10/12">
 		<slot />
 	</div>
-	<div class="sm:mx-10 md:mx-20 lg:mx-40" />
+	<div class="basis-1/12" />
 </div>
