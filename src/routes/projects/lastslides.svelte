@@ -1,5 +1,5 @@
 <script>
-	import WriteUp from "$lib/WriteUp.svelte";
+	import Slide from "$lib/Slide.svelte";
 </script>
 
 <svelte:head>
@@ -8,9 +8,20 @@
 	<meta name="author" content="Aaron Dekker" />
 </svelte:head>
 
-<WriteUp>
+<div class="snap-x flex stretch">
+	<Slide>
+		<p>hello world</p>
+	</Slide>
+	<!-- <Slide>
+		<p>Sir Ken Robinson <a href="https://www.youtube.com/watch?v=iG9CE55wbtY&t=1s">video</a> </p>
+	</Slide>
+	<Slide>
+		<p>Ron Finely & Simon Sinek <a href="https://youtu.be/eQ0A-4DhBeA">video</a></p>
+	</Slide> -->
+</div>
+
+<!-- <WriteUp>
 	<div>
-		<!-- Any section element inside of this container is displayed as a slide -->
 		<div class="slides">
 			<section>
 				<h1>The Last Slides</h1>
@@ -427,4 +438,4 @@
 			</section>
 		</div>
 	</div>
-</WriteUp>
+</WriteUp> -->
