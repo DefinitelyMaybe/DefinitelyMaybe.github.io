@@ -62,7 +62,7 @@
 		<div slot="link">
 			<a class="font-bold" href="https://wonderful-stonebraker-0b161a.netlify.app/"
 			>View the Project</a>
-			<p class="text-xs">(Not built for mobile)</p>
+			<p class="text-xs sm:hidden">(Not built for mobile)</p>
 		</div>
 	</Box>
 	<Box src={threeSrc} alt="threejs logo" href="https://github.com/mrdoob/three.js/pull/22510">
@@ -125,7 +125,7 @@
 		</div>
 		<div slot="link">
 			<a class="font-bold" href="/projects/lavafloor/">Play Game</a>
-			<p class="text-xs">(Not built for mobile)</p>
+			<p class="text-xs sm:hidden">(Not built for mobile)</p>
 		</div>
 	</Box>
 </ul>
