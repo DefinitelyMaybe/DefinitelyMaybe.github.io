@@ -1,3 +1,3 @@
-<div class="bg-indigo-400 snap-center">
+<section class="snap-center min-w-full px-1">
   <slot></slot>
-</div>
+</section>
