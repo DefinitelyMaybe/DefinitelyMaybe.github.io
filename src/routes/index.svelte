@@ -103,7 +103,7 @@
 		<div slot="desc">
 			<h2 class="font-bold">University Lessons</h2>
 			<p>
-				There'd be large scale studies showing the importance of education right?
+				Surely there'd be large scale studies showing the importance of education... right?
 			</p>
 		</div>
 		<a slot="link" class="font-bold" href="/projects/lastslides/">Yeah, Nah.</a>
