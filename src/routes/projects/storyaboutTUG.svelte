@@ -40,7 +40,7 @@
 			be noted that even with the restriction, Minecraft’s community has built tons on-top of and
 			around the game to the point where one would call it a feature rather than anything else.
 		</p>
-		<h3>What's TUG like at the moment?</h3>
+		<h3 class="lg:break-before-column">What's TUG like at the moment?</h3>
 		<p>
 			It’s a sandbox like minecraft. You can explore an infinite world, craft weapons, tools and
 			armour, build castles, hunt down animals and more. I’m a huge fan of the subtleties that come
