@@ -8,7 +8,7 @@
 	<meta name="author" content="Aaron Dekker" />
 </svelte:head>
 
-<div class="flex snap-x overflow-x-scroll snap-mandatory">
+<div class="flex grow snap-x overflow-x-scroll snap-mandatory">
 	<Slide>
 		<p class="text-xs">to</p>
 		<h1>Sir Ken Robinson</h1>
