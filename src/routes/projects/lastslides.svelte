@@ -11,8 +11,16 @@
 <div class="flex grow snap-x overflow-x-scroll snap-mandatory">
 	<Slide>
 		<p class="text-xs">to</p>
-		<h1>Sir Ken Robinson</h1>
+		<h1 class="font-bold">Sir Ken Robinson</h1>
 		<p>without whom we'd still be thinking we could standardize our way into the future</p>
+	</Slide>
+	<Slide>
+		<h1>Contents:</h1>
+		<ol class="py-4">
+			<li>Predictability</li>
+			<li>Problems within education</li>
+			<li>Unresolvable Conflicts</li>
+		</ol>
 	</Slide>
 	<Slide>
 		<p>Crying is all right in its way while it lasts. But you have to stop sooner or later, and then you still have to decide what to do.</p>
