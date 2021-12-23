@@ -3,8 +3,8 @@
 </script>
 
 <svelte:head>
-	<title>The Last Slides</title>
-	<meta name="description" content="A deck of slides appears" />
+	<title>University Lessons</title>
+	<meta name="description" content="A wild deck of slides appears" />
 	<meta name="author" content="Aaron Dekker" />
 </svelte:head>
 
