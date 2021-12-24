@@ -63,11 +63,11 @@
 		</Slide>
 		<Slide>
 			<h2>Killing Creativity</h2>
-			<p>If kids don't know, they'll give it a go.</p>
+			<p>If kids don't know, they'll give it a go. Going through the process of education usually stops that.</p>
 			<p>If you're not prepared to be wrong, you'll never come up with anything original.</p>
 			<p>What is the product and service of education? University professors and academic ability.</p>
 			<p>Public education was designed to meet the needs of industrialism.</p>
-			<p>Degrees aren't worth anything anymore.</p>
+			<p>Degrees aren't worth much anymore.</p>
 		</Slide>
 		<Slide>
 			<h2>Unpredictability</h2>
@@ -77,8 +77,8 @@
 			<h2>Children's capcity for innovation</h2>
 			<p>We know 3 things about intellegence:</p>
 			<p>1 - It's diverse. IQ is a one dimensional measurement of a multi-dimensional space.</p>
-			<p>2 - It's dynamic. Having original idea's that have value prodominally come about through different disiplinary ways of thinking about things</p>
-			<p>3 - It's distinct. Some very intellegent people have to move to think. Calling that a learning disorder and giving them medication to calm down is a cop-out.</p>
+			<p>2 - It's dynamic. Having original idea's that have value prodominally come about through <a href="https://www.youtube.com/watch?v=MZ2GuvUWaP8">remixing</a>.</p>
+			<p>3 - It's distinct. For some very intellegent people moving is thinking. Calling that a learning disorder and giving them medication to calm down is a cop-out.</p>
 		</Slide>
 		<Slide>
 			<p>Adopting a new conception of human ecology where we reconstitue our conception of the richness of human capcity. Our current system of education has mined our minds in the same way we've strip mined the earth for a particular commodity. For the future, that system won't service. We need to rethink the fundamental principles upon which we educate our children.</p>
@@ -102,7 +102,7 @@
 		</Slide>
 		<Slide>
 			<p>Honestly, I think that's fashion saying to women we've had enough.</p>
-			<p></p>
+			<p>While women want to look attractive to their partner, there are limits. You can conceal a pocket within womens clothing easily enough but putting anything in that pocket creates a bulge. Women are concious enough already about different bulges, so do you really think the most attractive clothing will allow you to create one? Are women willing to lose a battle in the war for their partners attention? Don't count on it.</p>
 		</Slide>
 	</div>
 </div>
