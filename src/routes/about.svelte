@@ -45,5 +45,9 @@
 		If you'd like to get in contact, there's <a href="https://twitter.com/0Rawr">twitter</a> or my
 		<a href="mailto:aaron.dekker01@gmail.com">email</a>.
 	</p>
-	<img class="rounded-full py-4 px-4" src="https://images.unsplash.com/photo-1507699622108-4be3abd695ad?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1171&q=80" alt="auckland">
+	<img
+		class="rounded-full py-4 px-4"
+		src="https://images.unsplash.com/photo-1507699622108-4be3abd695ad?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1171&q=80"
+		alt="auckland"
+	/>
 </WriteUp>

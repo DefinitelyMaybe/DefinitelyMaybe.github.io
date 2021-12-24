@@ -35,7 +35,11 @@
 		</div>
 		<a slot="link" class="font-bold" href="/projects/remake/">Read the article.</a>
 	</Box>
-	<Box alt="maths playground, graph of squarewave" href="/projects/mathsplay/" src="https://images.unsplash.com/photo-1596495577886-d920f1fb7238?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1174&q=80">
+	<Box
+		alt="maths playground, graph of squarewave"
+		href="/projects/mathsplay/"
+		src="https://images.unsplash.com/photo-1596495577886-d920f1fb7238?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1174&q=80"
+	>
 		<div slot="desc">
 			<h2 class="font-bold">Maths doesn't Share</h2>
 			<p>
@@ -45,7 +49,11 @@
 		</div>
 		<a slot="link" class="font-bold" href="/projects/mathsplay/">View Project</a>
 	</Box>
-	<Box src={simonImg} alt="Simon Dev thumbnail" href="https://wonderful-stonebraker-0b161a.netlify.app/">
+	<Box
+		src={simonImg}
+		alt="Simon Dev thumbnail"
+		href="https://wonderful-stonebraker-0b161a.netlify.app/"
+	>
 		<div slot="desc">
 			<h2 class="font-bold">Simons World</h2>
 			<p>
@@ -61,7 +69,8 @@
 		</div>
 		<div slot="link">
 			<a class="font-bold" href="https://wonderful-stonebraker-0b161a.netlify.app/"
-			>View the Project</a>
+				>View the Project</a
+			>
 			<p class="text-xs sm:hidden">(Not built for mobile)</p>
 		</div>
 	</Box>
@@ -99,12 +108,14 @@
 		</div>
 		<a slot="link" class="font-bold" href="/projects/parsingthreejs/">Read the Article</a>
 	</Box>
-	<Box alt="university lecture theatre" href="/projects/lastslides/" src="https://images.unsplash.com/photo-1519452575417-564c1401ecc0?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80">
+	<Box
+		alt="university lecture theatre"
+		href="/projects/lastslides/"
+		src="https://images.unsplash.com/photo-1519452575417-564c1401ecc0?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80"
+	>
 		<div slot="desc">
 			<h2 class="font-bold">University Lessons</h2>
-			<p>
-				Surely there'd be large scale studies showing the importance of education... right?
-			</p>
+			<p>Surely there'd be large scale studies showing the importance of education... right?</p>
 		</div>
 		<a slot="link" class="font-bold" href="/projects/lastslides/">Yeah, Nah.</a>
 	</Box>

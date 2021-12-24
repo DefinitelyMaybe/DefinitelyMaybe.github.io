@@ -18,8 +18,8 @@
    6. Show off an API
 4. Make use of icons? https://github.com/antfu/unplugin-icons
 5. Stylelint for Postcss? https://youtu.be/WhCXiEwdU1A?t=46
-7. Make a background like this one https://slinkity.dev/
-8. Try out some nice <a href:external href="https://www.youtube.com/watch?v=lPJVi797Uy0">curves</a>
+6. Make a background like this one https://slinkity.dev/
+7. Try out some nice <a href:external href="https://www.youtube.com/watch?v=lPJVi797Uy0">curves</a>
 
 # Tips for using tailwindcss
 
