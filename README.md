@@ -6,20 +6,16 @@
 
 ## Next things to work on:
 
-1. Redo reveal.js slides as it's breaking styles
-2. Integrate <a href:external href="https://www.npmjs.com/package/seolint">seolint</a>
-3. Add a project
-   1. Do a Svelte.kit project i.e. how I made this website
-   2. Remake maths playground
-   3. Remake Reveal.js slides without reveal.js
-      1. https://tailwindcss.com/docs/scroll-snap-align
-   4. Make a project talking about the algorithms from the SimonDev project
-   5. Do a small svelte-cubed project
-   6. Show off an API
-4. Make use of icons? https://github.com/antfu/unplugin-icons
-5. Stylelint for Postcss? https://youtu.be/WhCXiEwdU1A?t=46
-6. Make a background like this one https://slinkity.dev/
-7. Try out some nice <a href:external href="https://www.youtube.com/watch?v=lPJVi797Uy0">curves</a>
+1. Integrate <a href:external href="https://www.npmjs.com/package/seolint">seolint</a>
+2. Add a project
+   1. Remake maths playground
+   2. Make a project talking about the algorithms from the SimonDev project
+   3. Do a small svelte-cubed project
+   4. Show off an API
+3. Make use of icons? https://github.com/antfu/unplugin-icons
+4. Stylelint for Postcss? https://youtu.be/WhCXiEwdU1A?t=46
+5. Make a background like this one https://slinkity.dev/
+6. Try out some nice <a href:external href="https://www.youtube.com/watch?v=lPJVi797Uy0">curves</a>
 
 # Tips for using tailwindcss
 
