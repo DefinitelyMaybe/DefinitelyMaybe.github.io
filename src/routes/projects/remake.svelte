@@ -7,26 +7,18 @@
 	<section class="py-2 md:columns-2 lg:columns-3">
 		<p>Dec 2021</p>
 		<p>
-			This project started taking shape really quickly. <a href="https://kit.svelte.dev/"
-				>Svelte.kit</a
-			>
-			and <a href="https://tailwindcss.com/">Tailwindcss</a> have been the best development choices I've
-			ever made. After doing the usual configuration and deployment checks, it was time to integrate
-			my old projects.
-		</p>
-		<p>
 			Nowhere can anyone find better examples of how far they've come than by looking back at their
-			own projects years later. To web developers out there, some of my oldies used global scripts
-			within the <code>index.html</code>... we've come a long way. The idea of mobile first and
-			responsive image sizing would've been huge development efforts back then. Now I'm simply in
-			shock by how quickly I could get those same things done with less effort.
+			own projects. Some of my oldies used <code>global scripts</code>
+			within the <code>index.html</code>. Web dev has come a long way. The idea of mobile first and
+			responsive image sizing would've been huge development efforts not too long ago. Now I'm
+			simply in shock by how quickly I can do those things with much less effort.
 		</p>
 		<p>
 			Remaking old projects was not a straight forward decision. Doing so expands the scope of the
-			project which in turn takes more time. It's usually easier to start from stratch. When I
+			project which in turn takes more time. It's usually easier to start from stratch and when I
 			looked into the <code>Reveal.js</code> project all I could see was some clever css styling for
-			2013. Good in it's own time but not as good as tailwindcss today. For the interested reader, I
-			suggest watching tailwind's
+			2013. Good in it's own time but not as good as <code>tailwindcss</code> today. For the
+			interested reader, I suggest watching tailwind's
 			<a href="https://www.youtube.com/channel/UCOe-8z68tgw9ioqVvYM4ddQ">youtube videos</a>. The
 			kicker for me was that implementing the same features as <code>Reveal.js</code> is simpler with
 			tailwind.
@@ -39,8 +31,8 @@
 			brainer for me.
 		</p>
 		<p>
-			All in all, the remake only took me a couple of weeks including rewriting and rewording some
-			articles. Darn good use of my time.
+			All in all, the remake only took me a couple of weeks with easy revisions as well as
+			help/user-testing with friends and family. It's been great!
 		</p>
 	</section>
 </WriteUp>
