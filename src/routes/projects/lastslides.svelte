@@ -153,7 +153,7 @@
 			</p>
 			<p>
 				Fast forward a couple of conversations and I now only see those complaints by women as
-				unresolvable conflicts.
+				an unresolvable conflict.
 			</p>
 			<p>
 				To bring it all together, we need only to watch the fabulous fairy god mother scene from <a
