@@ -1,0 +1,9 @@
+<script context="module">
+	/** @type {import('@sveltejs/kit').Load} */
+	export async function load({ params, fetch, session, stuff }) {
+		return {
+			status: 308,
+			redirect: "/"
+		};
+	}
+</script>
