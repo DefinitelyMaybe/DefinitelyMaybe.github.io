@@ -36,20 +36,6 @@
 		<a slot="link" class="font-bold" href="/projects/remake/">Read the article.</a>
 	</Box>
 	<Box
-		alt="maths playground, graph of squarewave"
-		href="/projects/mathsplay/"
-		src="https://images.unsplash.com/photo-1596495577886-d920f1fb7238?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1174&q=80"
-	>
-		<div slot="desc">
-			<h2 class="font-bold">Maths doesn't Share</h2>
-			<p>
-				If you've ever heard of wolframalpha or matlab, those inspired this project. It's like a
-				graphics calculator but for your mobile.
-			</p>
-		</div>
-		<a slot="link" class="font-bold" href="/projects/mathsplay/">View Project</a>
-	</Box>
-	<Box
 		src={simonImg}
 		alt="Simon Dev thumbnail"
 		href="https://wonderful-stonebraker-0b161a.netlify.app/"
