@@ -48,34 +48,28 @@
 		</Slide>
 		<Slide>
 			<p>
-				As with many things, giving an initial low resolution picture or metaphor is best however
-				because this is the end of 2021, we can go a bit deeper
-			</p>
-			<p>
 				Covid was and will still be a big deal going forward. Did anyone predict that before 2019?
 				The answer is yes and no.
 			</p>
 			<p>
 				To my knowledge, Bill Gates has been worried about this sort of crisis for quite some time.
-				I don't think this is something anyone likes being right about.
 			</p>
 			<p>
-				I suppose a practical option for this conundrum would be estimate the global impact and
+				Perhaps a practical option for the conundrum would be estimate the global impact and
 				multiply by the likelyhood of it happening over a given peroid of time.
 			</p>
-			<p>Doesn't sound too bad right?</p>
+			<p>...right?</p>
 		</Slide>
 		<Slide>
-			<p>Again, yes and no.</p>
+			<p>Yes and no.</p>
 			<p>
-				It'll work for known problems with known solutions. It doesn't work for things like climate
+				It'd work for known problems with known solutions. It doesn't work for things like climate
 				change or existential threats.
 			</p>
 			<p>
 				Climate change is a known problem and does have solutions but difficulty lies in the
-				predictability of the weather. Shock, horror I know but you see the point right. If no-one
-				can predict the impact of a particular solution, how on earth would you know which one to
-				pick?
+				predictability of the weather. If no-one can measure the impact a particular solution has,
+				how on earth would you know which one to pick?
 			</p>
 		</Slide>
 		<Slide id="education">
@@ -148,12 +142,8 @@
 				pockets (or none at all) and there is no lack of complaints about it.
 			</p>
 			<p>
-				When I came across the issue, my immediate thought was "what an amazing opportunity for
-				fashion".
-			</p>
-			<p>
-				Fast forward a couple of conversations and I now only see those complaints by women as
-				an unresolvable conflict.
+				Fast forward a couple of conversations and I now only see those complaints by women as an
+				unresolvable conflict.
 			</p>
 			<p>
 				To bring it all together, we need only to watch the fabulous fairy god mother scene from <a
