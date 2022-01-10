@@ -34,5 +34,10 @@
 			All in all, the remake only took me a couple of weeks with easy revisions as well as
 			help/user-testing with friends and family. It's been great!
 		</p>
+		<p>
+			Update: Goodness! So I ran a quick chrome lighthouse audit on my website verse some local web
+			studio's websites... and outperformed the lot. There was a close second with their average
+			score trailing by 1 point (out of 100).
+		</p>
 	</section>
 </WriteUp>
