@@ -55,7 +55,7 @@
 		</div>
 		<div slot="link">
 			<a class="font-bold" href="https://wonderful-stonebraker-0b161a.netlify.app/"
-				>View the Project</a
+				>Serverless Deployment via Netlify</a
 			>
 			<p class="text-xs sm:hidden">(Not built for mobile)</p>
 		</div>
@@ -103,7 +103,7 @@
 			<h2 class="font-bold">University Lessons</h2>
 			<p>Surely there'd be large scale studies showing the importance of education... right?</p>
 		</div>
-		<a slot="link" class="font-bold" href="/projects/lastslides/">Yeah, Nah.</a>
+		<a slot="link" class="font-bold" href="/projects/lastslides/">SlideShow</a>
 	</Box>
 	<Box src={tugImg} alt="TUG concept art of a golem" href="/projects/storyaboutTUG/">
 		<div slot="desc">
