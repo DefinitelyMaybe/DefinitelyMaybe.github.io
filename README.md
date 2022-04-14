@@ -3,6 +3,7 @@
 ## Current focus
 
 - use svelte-cubed
+- Add https://kids-iah.deno.dev/ to projects!
 
 ## Next things to work on:
 
