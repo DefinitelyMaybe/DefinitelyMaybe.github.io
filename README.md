@@ -31,7 +31,8 @@ I followed a couple of googled options but ended up with:
 - add `appDir: 'app'` to `svelte.config.js`
 - run `pnpm run build`
 - rename the `build` folder to `docs`
-- vs-code find-and-replace all `__layout` to `layout` within the docs folder
+- vs-code find-and-replace all `__layout` to `layout` within the `docs` folder
+  - then rename the `__layout.*` files within `docs` to `layout.*`
 - go-to repo Settings > Pages > then change to serve `docs` folder instead of default `root`
 
 # Maths remake
