@@ -18,16 +18,15 @@
 	<meta name="author" content="Aaron Dekker" />
 </svelte:head>
 
-<div class="flex grow relative">
+<div class="relative flex grow">
 	<button
 		on:click={handleBack}
-		class="absolute bottom-0 left-0 text-8xl font-mono opacity-20 sm:hover:opacity-100">&lt</button
-	>
+		class="absolute bottom-0 left-0 font-mono text-8xl opacity-20 sm:hover:opacity-100">&lt</button>
 	<button
 		on:click={handleForward}
-		class="absolute bottom-0 right-0 text-8xl font-mono opacity-20 sm:hover:opacity-100">&gt</button
-	>
-	<div bind:this={slides} class="flex snap-x overflow-x-scroll snap-mandatory">
+		class="absolute bottom-0 right-0 font-mono text-8xl opacity-20 sm:hover:opacity-100"
+		>&gt</button>
+	<div bind:this={slides} class="flex snap-x snap-mandatory overflow-x-scroll">
 		<Slide>
 			<p class="text-xs">to</p>
 			<h1 class="font-bold">Sir Ken Robinson</h1>
@@ -77,9 +76,9 @@
 			<a href="#contents">contents</a>
 		</Slide>
 		<Slide>
-			<h2 class="text-center py-2">- Killing creativity</h2>
-			<h2 class="text-center py-2">- Unpredictability</h2>
-			<h2 class="text-center py-2">- Children's capcity for innovation</h2>
+			<h2 class="py-2 text-center">- Killing creativity</h2>
+			<h2 class="py-2 text-center">- Unpredictability</h2>
+			<h2 class="py-2 text-center">- Children's capcity for innovation</h2>
 		</Slide>
 		<Slide>
 			<h2>Killing Creativity</h2>

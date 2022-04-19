@@ -88,8 +88,7 @@
 	<p class="py-4">
 		If you're interest here is a link to one of the <a
 			href="https://cdn.akamai.steamstatic.com/steam/apps/256657525/movie480.webm?t=1447378587"
-			>original videos talking about TUG</a
-		>
+			>original videos talking about TUG</a>
 		and as well as a mod that I developed for the game called
 		<a href="https://github.com/DefinitelyMaybe/DarkAges">DarkAges</a>.
 	</p>

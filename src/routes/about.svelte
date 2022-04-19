@@ -28,8 +28,7 @@
 	<h2 class="text-center">
 		<a
 			href="https://www.auckland.ac.nz/en/for/current-students/cs-academic-information/cs-graduation-information/cs-graduation-search-and-confirmation.html"
-			>BSc Graduate</a
-		>
+			>BSc Graduate</a>
 	</h2>
 
 	<br />
@@ -48,6 +47,5 @@
 	<img
 		class="rounded-full py-4 px-4"
 		src="https://images.unsplash.com/photo-1507699622108-4be3abd695ad?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1171&q=80"
-		alt="auckland"
-	/>
+		alt="auckland" />
 </WriteUp>

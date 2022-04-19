@@ -49,11 +49,10 @@
 </script>
 
 <header
-	class="flex flex-col bg-[#f1f3f5] border-b-[1px]
-	dark:bg-[#2d333b] dark:border-gray-700"
->
+	class="flex flex-col border-b-[1px] bg-[#f1f3f5]
+	dark:border-gray-700 dark:bg-[#2d333b]">
 	<h1 class="text-center font-bold">Aaron Dekker</h1>
-	<div class="flex flex-row justify-between items-center px-2 py-2">
+	<div class="flex flex-row items-center justify-between px-2 py-2">
 		<Toggle on:click={toggleTheme} />
 
 		<nav>

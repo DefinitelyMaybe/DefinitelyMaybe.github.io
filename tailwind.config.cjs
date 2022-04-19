@@ -2,10 +2,12 @@
 
 module.exports = {
 	mode: 'jit',
-	content: ['./src/**/*.svelte', './src/**/*.css'],
+	content: ['./src/**/*.{svelte,css,html}'],
 	darkMode: 'class',
 	variants: {
 		extend: {}
 	},
-	plugins: [require('@tailwindcss/forms')]
+	plugins: [
+		require('@tailwindcss/forms')
+	]
 };

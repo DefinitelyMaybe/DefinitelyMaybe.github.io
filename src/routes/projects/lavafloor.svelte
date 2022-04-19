@@ -269,8 +269,7 @@
 		if (e.key == 'r') {
 			restart();
 		}
-	}}
-/>
+	}} />
 
 <canvas bind:this={canvas} />
 <div class="absolute top-0">

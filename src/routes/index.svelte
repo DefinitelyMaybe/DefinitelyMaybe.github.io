@@ -38,8 +38,7 @@
 	<Box
 		src={simonImg}
 		alt="Simon Dev thumbnail"
-		href="https://wonderful-stonebraker-0b161a.netlify.app/"
-	>
+		href="https://wonderful-stonebraker-0b161a.netlify.app/">
 		<div slot="desc">
 			<h2 class="font-bold">Simons World</h2>
 			<p>
@@ -55,8 +54,7 @@
 		</div>
 		<div slot="link">
 			<a class="font-bold" href="https://wonderful-stonebraker-0b161a.netlify.app/"
-				>Serverless Deployment via Netlify</a
-			>
+				>Serverless Deployment via Netlify</a>
 			<p class="text-xs sm:hidden">(Not built for mobile)</p>
 		</div>
 	</Box>
@@ -66,14 +64,12 @@
 			<p>
 				Another good effort to bring three.js up to speed with modern javascript. specifically by
 				implementing the <a href="https://developer.mozilla.org/en-US/docs/Web/API/Fetch_API"
-					>fetch API</a
-				> within the file loader. Previously it was using XMLHttpRequest which added complexity to the
-				process.
+					>fetch API</a> within the file loader. Previously it was using XMLHttpRequest which added complexity
+				to the process.
 			</p>
 		</div>
 		<a slot="link" class="font-bold" href="https://github.com/mrdoob/three.js/pull/22510"
-			>Github Pull Request</a
-		>
+			>Github Pull Request</a>
 	</Box>
 	<Box src={threeSrc} alt="threejs logo" href="https://github.com/mrdoob/three.js/issues/19986">
 		<div slot="desc">
@@ -84,8 +80,7 @@
 			</p>
 		</div>
 		<a slot="link" class="font-bold" href="https://github.com/mrdoob/three.js/issues/19986"
-			>Github Issue</a
-		>
+			>Github Issue</a>
 	</Box>
 	<Box src={threeSrc} alt="threejs logo" href="/projects/parsingthreejs/">
 		<div slot="desc">
@@ -97,8 +92,7 @@
 	<Box
 		alt="university lecture theatre"
 		href="/projects/lastslides/"
-		src="https://images.unsplash.com/photo-1519452575417-564c1401ecc0?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80"
-	>
+		src="https://images.unsplash.com/photo-1519452575417-564c1401ecc0?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80">
 		<div slot="desc">
 			<h2 class="font-bold">University Lessons</h2>
 			<p>Surely there'd be large scale studies showing the importance of education... right?</p>

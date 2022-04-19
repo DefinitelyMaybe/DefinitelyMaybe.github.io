@@ -50,8 +50,7 @@
 	<iframe
 		title="A fireship.io youtube video talking about the history of javascript"
 		src="https://www.youtube.com/embed/Sh6lK57Cuk4"
-		class="py-4"
-	/>
+		class="py-4" />
 	<p>
 		So where is C and C++ in all of this? Well, still back in system land. People were not about to
 		jump up and down to rewrite all of their code in javascript. That would be silly. Instead, those
