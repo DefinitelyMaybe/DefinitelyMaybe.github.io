@@ -1,10 +1,6 @@
 @import 'tailwindcss/base';
 @import 'tailwindcss/components';
 @import 'tailwindcss/utilities';
-/* @import 'tailwindcss/variants'; */
-
-/* @import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap'); */
-/* font-['roboto'] */
 
 @layer base {
 	body {
@@ -39,11 +35,3 @@
 		@apply aspect-video w-full;
 	}
 }
-
-/*
-for a checkout toggle:
-flex bg-white border-2 border-black w-6 h-4 rounded-lg
-  dark:bg-black dark:border-white dark:flex-row-reverse
-
-w-3 h-3 bg-black rounded-lg
-    dark:bg-white	*/
