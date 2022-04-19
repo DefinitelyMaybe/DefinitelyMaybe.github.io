@@ -58,10 +58,10 @@
 
 		<nav>
 			<ul class="flex flex-row space-x-5 text-2xl font-bold">
-				<li class:active={$page.path === '/'}>
+				<li class:active={$page.url.pathname === '/'}>
 					<a sveltekit:prefetch href="/">Projects</a>
 				</li>
-				<li class:active={$page.path === '/about'}>
+				<li class:active={$page.url.pathname === '/about'}>
 					<a sveltekit:prefetch href="/about/">About</a>
 				</li>
 			</ul>
