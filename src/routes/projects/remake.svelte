@@ -2,6 +2,10 @@
 	import WriteUp from '$lib/WriteUp.svelte';
 </script>
 
+<svelte:head>
+	<title>Remixing the old</title>
+</svelte:head>
+
 <WriteUp>
 	<h1 class="text-center">The Remake</h1>
 	<section class="py-2 md:columns-2 lg:columns-3">
