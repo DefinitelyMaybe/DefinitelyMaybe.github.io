@@ -11,6 +11,7 @@
 	import threejswhiteImg from '$lib/assets/images/threejslogowhite.png';
 	import lavaCubeImg from '$lib/assets/images/cubes.png';
 	import tugImg from '$lib/assets/images/TUG/TUGconceptArtmini.jpg';
+	import iahImg from '$lib/assets/images/I_AM_HOPE_LOGO_pink.webp';
 
 	let threeSrc = threejswhiteImg;
 
@@ -28,6 +29,13 @@
 </svelte:head>
 
 <ul class="grid grid-cols-1 gap-4 sm:grid-cols-2 md:grid-cols-3  lg:grid-cols-4">
+	<Box src={iahImg} alt="I AM HOPE" href="https://kids-iah.deno.dev">
+		<div slot="desc">
+			<h2 class="font-bold">I AM HOPE</h2>
+			<p>My first IT contract! Pieced together a scene for kids to engage with animals talking emotions.</p>
+		</div>
+		<a slot="link" class="font-bold" href="https://kids-iah.deno.dev" external>Visit the site.</a>
+	</Box>
 	<Box src={fallingImg} alt="Falling 0's and 1's" href="/projects/remake/">
 		<div slot="desc">
 			<h2 class="font-bold">Remixing the Old</h2>
