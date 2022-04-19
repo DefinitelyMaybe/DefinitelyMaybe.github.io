@@ -1,0 +1,181 @@
+{
+  ".svelte-kit/runtime/client/start.js": {
+    "file": "start-37b39d51.js",
+    "src": ".svelte-kit/runtime/client/start.js",
+    "isEntry": true,
+    "imports": [
+      "_index-deee8842.js",
+      "_index-fe587174.js",
+      "_singletons-d1fb5791.js"
+    ],
+    "dynamicImports": [
+      "src/routes/layout.svelte",
+      ".svelte-kit/runtime/components/error.svelte",
+      "src/routes/about.svelte",
+      "src/routes/index.svelte",
+      "src/routes/projects/lastslides.svelte",
+      "src/routes/projects/lavafloor.svelte",
+      "src/routes/projects/parsingthreejs.svelte",
+      "src/routes/projects/remake.svelte",
+      "src/routes/projects/storyaboutTUG.svelte"
+    ]
+  },
+  "src/routes/layout.svelte": {
+    "file": "pages/layout.svelte-c480e7f1.js",
+    "src": "src/routes/layout.svelte",
+    "isEntry": true,
+    "isDynamicEntry": true,
+    "imports": [
+      "_index-deee8842.js",
+      "_Header-5af432b1.js",
+      "_010-falling-4efabf84.js",
+      "_index-fe587174.js"
+    ],
+    "css": [
+      "assets/pages/layout.svelte-434580a3.css"
+    ]
+  },
+  ".svelte-kit/runtime/components/error.svelte": {
+    "file": "error.svelte-c74613c5.js",
+    "src": ".svelte-kit/runtime/components/error.svelte",
+    "isEntry": true,
+    "isDynamicEntry": true,
+    "imports": [
+      "_index-deee8842.js"
+    ]
+  },
+  "src/routes/about.svelte": {
+    "file": "pages/about.svelte-15475cc7.js",
+    "src": "src/routes/about.svelte",
+    "isEntry": true,
+    "isDynamicEntry": true,
+    "imports": [
+      "_index-deee8842.js",
+      "_WriteUp-a37e0515.js"
+    ]
+  },
+  "src/routes/index.svelte": {
+    "file": "pages/index.svelte-790f9ded.js",
+    "src": "src/routes/index.svelte",
+    "isEntry": true,
+    "isDynamicEntry": true,
+    "imports": [
+      "_index-deee8842.js",
+      "_Header-5af432b1.js",
+      "_singletons-d1fb5791.js",
+      "_010-falling-4efabf84.js",
+      "_threejslogowhite-f8c556b8.js",
+      "_TUGconceptArtmini-7fd95fe9.js",
+      "_index-fe587174.js"
+    ],
+    "assets": [
+      "assets/simondev-05a96322.png",
+      "assets/cubes-b988636f.png",
+      "assets/I_AM_HOPE_LOGO_pink-f499ed30.webp"
+    ]
+  },
+  "src/routes/projects/lastslides.svelte": {
+    "file": "pages/projects/lastslides.svelte-305cf013.js",
+    "src": "src/routes/projects/lastslides.svelte",
+    "isEntry": true,
+    "isDynamicEntry": true,
+    "imports": [
+      "_index-deee8842.js"
+    ],
+    "css": [
+      "assets/pages/projects/lastslides.svelte-a58e7f20.css"
+    ]
+  },
+  "src/routes/projects/lavafloor.svelte": {
+    "file": "pages/projects/lavafloor.svelte-e9cca69f.js",
+    "src": "src/routes/projects/lavafloor.svelte",
+    "isEntry": true,
+    "isDynamicEntry": true,
+    "imports": [
+      "_index-deee8842.js"
+    ]
+  },
+  "src/routes/projects/parsingthreejs.svelte": {
+    "file": "pages/projects/parsingthreejs.svelte-0abe6f8d.js",
+    "src": "src/routes/projects/parsingthreejs.svelte",
+    "isEntry": true,
+    "isDynamicEntry": true,
+    "imports": [
+      "_index-deee8842.js",
+      "_Header-5af432b1.js",
+      "_WriteUp-a37e0515.js",
+      "_threejslogowhite-f8c556b8.js",
+      "_index-fe587174.js"
+    ]
+  },
+  "src/routes/projects/remake.svelte": {
+    "file": "pages/projects/remake.svelte-7c505bbe.js",
+    "src": "src/routes/projects/remake.svelte",
+    "isEntry": true,
+    "isDynamicEntry": true,
+    "imports": [
+      "_index-deee8842.js",
+      "_WriteUp-a37e0515.js"
+    ]
+  },
+  "src/routes/projects/storyaboutTUG.svelte": {
+    "file": "pages/projects/storyaboutTUG.svelte-f583086d.js",
+    "src": "src/routes/projects/storyaboutTUG.svelte",
+    "isEntry": true,
+    "isDynamicEntry": true,
+    "imports": [
+      "_index-deee8842.js",
+      "_WriteUp-a37e0515.js",
+      "_TUGconceptArtmini-7fd95fe9.js"
+    ],
+    "assets": [
+      "assets/TUGupdate-5f418ad7.jpg",
+      "assets/TUGupdatedart-28509285.jpg",
+      "assets/TUGmount-1bc56aa8.gif"
+    ]
+  },
+  "_index-deee8842.js": {
+    "file": "chunks/index-deee8842.js"
+  },
+  "_index-fe587174.js": {
+    "file": "chunks/index-fe587174.js",
+    "imports": [
+      "_index-deee8842.js"
+    ]
+  },
+  "_singletons-d1fb5791.js": {
+    "file": "chunks/singletons-d1fb5791.js"
+  },
+  "_Header-5af432b1.js": {
+    "file": "chunks/Header-5af432b1.js",
+    "imports": [
+      "_index-deee8842.js",
+      "_index-fe587174.js"
+    ]
+  },
+  "_010-falling-4efabf84.js": {
+    "file": "chunks/010-falling-4efabf84.js",
+    "assets": [
+      "assets/010-falling-343215c5.jpg"
+    ]
+  },
+  "_WriteUp-a37e0515.js": {
+    "file": "chunks/WriteUp-a37e0515.js",
+    "imports": [
+      "_index-deee8842.js"
+    ]
+  },
+  "_threejslogowhite-f8c556b8.js": {
+    "file": "chunks/threejslogowhite-f8c556b8.js",
+    "assets": [
+      "assets/threejslogodark-91e31d49.png",
+      "assets/threejslogowhite-39196387.png"
+    ]
+  },
+  "_TUGconceptArtmini-7fd95fe9.js": {
+    "file": "chunks/TUGconceptArtmini-7fd95fe9.js",
+    "assets": [
+      "assets/TUGconceptArtmini-d37a1636.jpg"
+    ]
+  }
+}
