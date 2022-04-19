@@ -24,8 +24,7 @@
 	}
 
 	a {
-		@apply text-[#0969da]
-			dark:text-[#539bf5];
+		@apply text-[#0969da] dark:text-[#539bf5];
 	}
 
 	p {
