@@ -5,8 +5,7 @@ import preprocess from 'svelte-preprocess';
 const config = {
 	kit: {
 		adapter: staticAdapter(),
-		appDir: 'app',
-		outDir: 'docs'
+		appDir: 'app'
 	},
 	preprocess: preprocess()
 };
