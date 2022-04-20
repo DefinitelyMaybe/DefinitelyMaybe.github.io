@@ -3,17 +3,13 @@
 ## Current focus
 
 - use svelte-cubed
-- Add https://kids-iah.deno.dev/ to projects!
 
 ## Next things to work on:
 
 1. Integrate <a href:external href="https://www.npmjs.com/package/seolint">seolint</a>
-2. Add a project
-   1. Show off an API
-3. Make use of icons? https://github.com/antfu/unplugin-icons
-4. Stylelint for Postcss? https://youtu.be/WhCXiEwdU1A?t=46
-5. Make a background like this one https://slinkity.dev/
-6. Try out some nice <a href:external href="https://www.youtube.com/watch?v=lPJVi797Uy0">curves</a>
+2. Stylelint for Postcss? https://youtu.be/WhCXiEwdU1A?t=46
+3. Make a background like this one https://slinkity.dev/
+4. Try out some nice <a href:external href="https://www.youtube.com/watch?v=lPJVi797Uy0">curves</a>
 
 # Tips for using tailwindcss
 
