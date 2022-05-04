@@ -29,12 +29,12 @@
 </svelte:head>
 
 <ul class="grid grid-cols-1 gap-4 sm:grid-cols-2 md:grid-cols-3  lg:grid-cols-4">
-	<Box src={iahImg} alt="I AM HOPE" href="https://kids-iah.deno.dev">
+	<Box src={iahImg} alt="I AM HOPE" href="https://kids.iamhope.org.nz/">
 		<div slot="desc">
 			<h2 class="font-bold">I AM HOPE</h2>
 			<p>My first IT contract! Brought some animals to life in a small scene for kids to engage with different emotions.</p>
 		</div>
-		<a slot="link" class="font-bold" href="https://kids-iah.deno.dev" external>Visit the site.</a>
+		<a slot="link" class="font-bold" href="https://kids.iamhope.org.nz/" external>Visit the site.</a>
 	</Box>
 	<Box src={fallingImg} alt="Falling 0's and 1's" href="/projects/remake/">
 		<div slot="desc">
