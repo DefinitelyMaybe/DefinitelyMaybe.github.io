@@ -32,7 +32,7 @@
 	<Box src={iahImg} alt="I AM HOPE" href="https://kids.iamhope.org.nz/">
 		<div slot="desc">
 			<h2 class="font-bold">I AM HOPE</h2>
-			<p>My first IT contract! Brought some animals to life in a small scene for kids to engage with different emotions.</p>
+			<p>A mini zoo of animals for kids to engage with and learn about emotions.</p>
 		</div>
 		<a slot="link" class="font-bold" href="https://kids.iamhope.org.nz/" external>Visit the site.</a>
 	</Box>
