@@ -28,26 +28,17 @@
 	<title>Aaron Dekker - Projects</title>
 </svelte:head>
 
-<!-- ,
-	// daisyUI config (optional)
-  daisyui: {
-    styled: true,
-    themes: ['dark', 'light'],
-    base: true,
-    utils: true,
-    logs: true,
-    rtl: false,
-    prefix: "",
-    darkTheme: "dark",
-  }, -->
-
 <ul class="grid grid-cols-1 gap-4 sm:grid-cols-2 md:grid-cols-3  lg:grid-cols-4">
 	<Box src={iahImg} alt="I AM HOPE" href="https://kids.iamhope.org.nz/">
 		<div slot="desc">
 			<h2 class="font-bold">I AM HOPE</h2>
-			<p>A mini zoo of animals for kids to engage with and learn about emotions. This project was made for the charity <a href="https://www.iamhope.org.nz/">I AM HOPE</a>.</p>
+			<p>
+				A mini zoo of animals for kids to engage with and learn about emotions. This project was
+				made for the charity <a href="https://www.iamhope.org.nz/">I AM HOPE</a>.
+			</p>
 		</div>
-		<a slot="link" class="font-bold" href="https://kids.iamhope.org.nz/" external>Visit the site.</a>
+		<a slot="link" class="font-bold" href="https://kids.iamhope.org.nz/" external
+			>Visit the site.</a>
 	</Box>
 	<Box src={fallingImg} alt="Falling 0's and 1's" href="/projects/remake/">
 		<div slot="desc">
