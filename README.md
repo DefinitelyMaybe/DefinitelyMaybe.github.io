@@ -2,6 +2,7 @@
 
 ## Current focus
 
+- Link to https://www.iamhope.org.nz/
 - use svelte-cubed
 
 ## Next things to work on:
