@@ -16,7 +16,14 @@
 </svelte:head>
 
 <WriteUp>
-	<section class="py-2 md:columns-2 lg:columns-3">
-		<p>hello world</p>
-	</section>
+	<!-- <section class="py-2 md:columns-2 lg:columns-3">
+    
+	</section> -->
+	<p>Structure will set you free</p>
+	<ul class="list-inside list-disc text-gray-400">
+		<li>Why</li>
+    <li>How</li>
+    <li>What</li>
+	</ul>
+  <p>...</p>
 </WriteUp>
