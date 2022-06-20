@@ -41,4 +41,11 @@
 	iframe {
 		@apply aspect-video w-full;
 	}
+
+	.big {
+		@apply sm:col-span-2 lg:col-span-3 lg:row-span-2;
+	}
+	.medium {
+		@apply lg:col-span-2
+	}
 }
