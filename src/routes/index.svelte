@@ -12,6 +12,8 @@
 	import lavaCubeImg from '$lib/assets/images/cubes.png';
 	import tugImg from '$lib/assets/images/TUG/TUGconceptArtmini.jpg';
 	import iahImg from '$lib/assets/images/I_AM_HOPE_LOGO_pink.webp';
+	import zooImg from '$lib/assets/images/Zoo.png';
+	import EditorImg from '$lib/assets/images/Editor.png';
 
 	let threeSrc = threejswhiteImg;
 
@@ -28,13 +30,37 @@
 	<title>Aaron Dekker - Projects</title>
 </svelte:head>
 
-<ul class="grid grid-cols-1 gap-4 sm:grid-cols-2 md:grid-cols-3  lg:grid-cols-4">
-	<Box src={iahImg} alt="I AM HOPE" href="https://kids.iamhope.org.nz/">
+<ul
+	class="grid grid-flow-row-dense grid-cols-1 gap-4 sm:grid-cols-2 md:grid-cols-3  lg:grid-cols-4">
+	<Box
+		src={EditorImg}
+		alt="My Editor"
+		href="https://fun-bit.vercel.app/demos/Editor"
+		type="big">
 		<div slot="desc">
-			<h2 class="font-bold">I AM HOPE</h2>
+			<h2 class="font-bold">Web Editor</h2>
+			<p>
+				A re-creation of the three.js web editor using svelte, svelte.kit and svelte-cubed. The
+				project conversion held most of the original editors functionality until transitioning into
+				svelte-cubed.
+			</p>
+		</div>
+		<a slot="link" class="font-bold" href="https://fun-bit.vercel.app/demos/Editor" external
+			>Visit the site.</a>
+	</Box>
+	<Box
+		src={zooImg}
+		alt="I AM HOPE"
+		href="https://kids.iamhope.org.nz/"
+		type="big"
+		additions="md:col-start-2">
+		<div slot="desc">
+			<h2 class="font-bold">Hope Zoo</h2>
 			<p>
 				A mini zoo of animals for kids to engage with and learn about emotions. This project was
-				made for the charity <a href="https://www.iamhope.org.nz/">I AM HOPE</a>.
+				made for the charity <a href="https://www.iamhope.org.nz/"
+					>I AM HOPE <img class="inline w-6" src={iahImg} alt="I AM HOPE Logo" /></a>
+				in collaboration with <a href="https://euclidean.co.nz/">Euclidean</a>.
 			</p>
 		</div>
 		<a slot="link" class="font-bold" href="https://kids.iamhope.org.nz/" external
@@ -104,14 +130,15 @@
 	<Box
 		alt="university lecture theatre"
 		href="/projects/lastslides/"
-		src="https://images.unsplash.com/photo-1519452575417-564c1401ecc0?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80">
+		src="https://images.unsplash.com/photo-1519452575417-564c1401ecc0?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80"
+		additions="lg:col-span-2">
 		<div slot="desc">
 			<h2 class="font-bold">University Lessons</h2>
 			<p>Surely there'd be large scale studies showing the importance of education... right?</p>
 		</div>
 		<a slot="link" class="font-bold" href="/projects/lastslides/">SlideShow</a>
 	</Box>
-	<Box src={tugImg} alt="TUG concept art of a golem" href="/projects/storyaboutTUG/">
+	<Box src={tugImg} alt="TUG concept art of a golem" href="/projects/storyaboutTUG/" type="medium">
 		<div slot="desc">
 			<h2 class="font-bold">The Untitled Game</h2>
 			<p>
