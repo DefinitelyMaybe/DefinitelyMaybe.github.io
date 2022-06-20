@@ -14,6 +14,7 @@
 	import iahImg from '$lib/assets/images/I_AM_HOPE_LOGO_pink.webp';
 	import zooImg from '$lib/assets/images/Zoo.png';
 	import EditorImg from '$lib/assets/images/Editor.png';
+	import CapImg from '$lib/assets/images/cap.png';
 
 	let threeSrc = threejswhiteImg;
 
@@ -32,6 +33,21 @@
 
 <ul
 	class="grid grid-flow-row-dense grid-cols-1 gap-4 sm:grid-cols-2 md:grid-cols-3  lg:grid-cols-4">
+	<Box
+		src={CapImg}
+		alt="The Story"
+		href="/projects/capInHand/"
+		type="medium"
+		additions="md:col-start-2">
+		<div slot="desc">
+			<h2 class="font-bold">Cap in Hand</h2>
+			<p>
+				A straving artist describes his work.
+			</p>
+		</div>
+		<a slot="link" class="font-bold" href="/projects/capInHand/"
+			>Read the article.</a>
+	</Box>
 	<Box
 		src={EditorImg}
 		alt="My Editor"
