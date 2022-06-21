@@ -48,11 +48,18 @@
 				>. I thoroughly enjoyed it as an audio book]</i>
 		</p>
 		<p>
-			Lots of people run into these two issues. Either they need it because change has great
+			Lots of people run into these two issues. Either they want it because change has great
 			potential or, they're afraid of the consequences of the wrong change. It's a slow, painful,
-			costly experience which equates to flipping the innovation coin once. Which end of the stick
-			you getIt's two sides of the same coin. No really.
+			costly experience which equates to flipping the innovation coin once. That potential gets
+			measured and the cost is paid along the way. Amoung the various kicker's of trying to innovate
+			is that commincating the problem can be very hard wheras an adequte solution could be
+			something your kid comes up with. It's the source of a good joke - depending on the day.
 		</p>
+		<p>
+			When and how does innovation happen anyway?
+		</p>
+		<p>Minecraft</p>
+		<p>Tiktok</p>
 		<p>IFC.js</p>
 		<p>
 			the amount of investment you made in making it a thing in the first place. You want other
