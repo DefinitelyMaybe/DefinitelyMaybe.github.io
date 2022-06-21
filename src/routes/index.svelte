@@ -36,16 +36,16 @@
 	<Box
 		src={CapImg}
 		alt="The Story"
-		href="/projects/capInHand/"
+		href="/projects/innovation/"
 		type="medium"
 		additions="md:col-start-2">
 		<div slot="desc">
-			<h2 class="font-bold">Cap in Hand</h2>
+			<h2 class="font-bold">The heART of Innovation</h2>
 			<p>
-				A straving artist describes his work.
+				Why minecraft missed what tiktok is.
 			</p>
 		</div>
-		<a slot="link" class="font-bold" href="/projects/capInHand/"
+		<a slot="link" class="font-bold" href="/projects/innovation/"
 			>Read the article.</a>
 	</Box>
 	<Box
