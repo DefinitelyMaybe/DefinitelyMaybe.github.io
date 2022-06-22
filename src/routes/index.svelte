@@ -48,11 +48,7 @@
 		<a slot="link" class="font-bold" href="/projects/innovation/"
 			>Read the article.</a>
 	</Box> -->
-	<Box
-		src={EditorImg}
-		alt="My Editor"
-		href="https://fun-bit.vercel.app/demos/Editor"
-		type="big">
+	<Box src={EditorImg} alt="My Editor" href="https://fun-bit.vercel.app/demos/Editor" type="medium">
 		<div slot="desc">
 			<h2 class="font-bold">Web Editor</h2>
 			<p>
@@ -68,7 +64,7 @@
 		src={zooImg}
 		alt="I AM HOPE"
 		href="https://kids.iamhope.org.nz/"
-		type="big"
+		type="medium"
 		additions="md:col-start-2">
 		<div slot="desc">
 			<h2 class="font-bold">Hope Zoo</h2>
@@ -147,14 +143,14 @@
 		alt="university lecture theatre"
 		href="/projects/lastslides/"
 		src="https://images.unsplash.com/photo-1519452575417-564c1401ecc0?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80"
-		additions="lg:col-span-2">
+		additions="">
 		<div slot="desc">
 			<h2 class="font-bold">University Lessons</h2>
 			<p>Surely there'd be large scale studies showing the importance of education... right?</p>
 		</div>
 		<a slot="link" class="font-bold" href="/projects/lastslides/">SlideShow</a>
 	</Box>
-	<Box src={tugImg} alt="TUG concept art of a golem" href="/projects/storyaboutTUG/" type="medium">
+	<Box src={tugImg} alt="TUG concept art of a golem" href="/projects/storyaboutTUG/" type="">
 		<div slot="desc">
 			<h2 class="font-bold">The Untitled Game</h2>
 			<p>
