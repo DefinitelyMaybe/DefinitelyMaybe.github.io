@@ -33,7 +33,7 @@
 
 <ul
 	class="grid grid-flow-row-dense grid-cols-1 gap-4 sm:grid-cols-2 md:grid-cols-3  lg:grid-cols-4">
-	<Box
+	<!-- <Box
 		src={CapImg}
 		alt="The Story"
 		href="/projects/innovation/"
@@ -47,7 +47,7 @@
 		</div>
 		<a slot="link" class="font-bold" href="/projects/innovation/"
 			>Read the article.</a>
-	</Box>
+	</Box> -->
 	<Box
 		src={EditorImg}
 		alt="My Editor"
