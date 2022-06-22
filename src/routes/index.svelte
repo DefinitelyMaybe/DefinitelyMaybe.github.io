@@ -52,9 +52,7 @@
 		<div slot="desc">
 			<h2 class="font-bold">Web Editor</h2>
 			<p>
-				A re-creation of the three.js web editor using svelte, svelte.kit and svelte-cubed. The
-				project conversion held most of the original editors functionality until transitioning into
-				svelte-cubed.
+				A re-creation of the three.js web editor using svelte-cubed.
 			</p>
 		</div>
 		<a slot="link" class="font-bold" href="https://fun-bit.vercel.app/demos/Editor" external
