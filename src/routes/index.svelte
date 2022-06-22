@@ -70,7 +70,7 @@
 				A mini zoo of animals for kids to engage with and learn about emotions. This project was
 				made for the charity <a href="https://www.iamhope.org.nz/"
 					>I AM HOPE <img class="inline w-6" src={iahImg} alt="I AM HOPE Logo" /></a>
-				in collaboration with <a href="https://euclidean.co.nz/">Euclidean</a>.
+				in collaboration with <a href="https://euclidean.co.nz/">Euclidean</a> and <a href="https://www.valerism.com/">Valerie</a>.
 			</p>
 		</div>
 		<a slot="link" class="font-bold" href="https://kids.iamhope.org.nz/" external
