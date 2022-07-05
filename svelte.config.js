@@ -8,7 +8,12 @@ const config = {
 			assets:"docs",
 			pages: "docs"
 		}),
-		appDir: 'app'
+		appDir: 'app',
+		vite: {
+			ssr: {
+				noExternal: ['three']
+			}
+		}
 	},
 	preprocess: preprocess()
 };

@@ -48,7 +48,7 @@
 		<a slot="link" class="font-bold" href="/projects/innovation/"
 			>Read the article.</a>
 	</Box> -->
-	<Box src={EditorImg} alt="My Editor" href="https://three-editor-remake.vercel.app/" type="medium">
+	<Box src={EditorImg} alt="My Editor" href="https://three-editor-remake.vercel.app/">
 		<div slot="desc">
 			<h2 class="font-bold">Web Editor</h2>
 			<p>
