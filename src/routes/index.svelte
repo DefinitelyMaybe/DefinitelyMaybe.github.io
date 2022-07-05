@@ -48,14 +48,14 @@
 		<a slot="link" class="font-bold" href="/projects/innovation/"
 			>Read the article.</a>
 	</Box> -->
-	<Box src={EditorImg} alt="My Editor" href="https://fun-bit.vercel.app/demos/Editor" type="medium">
+	<Box src={EditorImg} alt="My Editor" href="https://three-editor-remake.vercel.app/" type="medium">
 		<div slot="desc">
 			<h2 class="font-bold">Web Editor</h2>
 			<p>
-				A re-creation of the three.js web editor using svelte-cubed.
+				A re-creation of the three.js web editor using svelte (Work in progress).
 			</p>
 		</div>
-		<a slot="link" class="font-bold" href="https://fun-bit.vercel.app/demos/Editor" external
+		<a slot="link" class="font-bold" href="https://three-editor-remake.vercel.app/" external
 			>Visit the site.</a>
 	</Box>
 	<Box
