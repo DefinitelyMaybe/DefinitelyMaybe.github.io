@@ -6,10 +6,11 @@
 		DoubleSide,
 		FrontSide,
 		CapsuleBufferGeometry,
-		Vector2
+		Vector2,
+		PlaneBufferGeometry
 	} from 'three';
-	import { UnrealBloomPass } from "three/examples/jsm/postprocessing/UnrealBloomPass";
-	import { GlitchPass } from "three/examples/jsm/postprocessing/GlitchPass";
+	import { UnrealBloomPass } from 'three/examples/jsm/postprocessing/UnrealBloomPass';
+	import { GlitchPass } from 'three/examples/jsm/postprocessing/GlitchPass';
 	// import { ShaderPass } from "three/examples/jsm/postprocessing/ShaderPass.js";
 	// import { PixelShader } from "three/examples/jsm/shaders/PixelShader.js";
 	import { DEG2RAD } from 'three/src/math/MathUtils';
@@ -27,6 +28,7 @@
 	import { spring } from 'svelte/motion';
 
 	import Boxes from '$lib/objects/Boxes.svelte';
+	import Terrain from '$lib/terrain/Terrain.svelte';
 
 	const scale = spring(1);
 	const posX = spring(0);
@@ -35,7 +37,7 @@
 	let displayInfo = false;
 </script>
 
-<!-- <div class="absolute flex flex-col items-center justify-center">
+<div class="absolute flex flex-col items-center justify-center">
 	<p>scale - {Math.round($scale)}</p>
 	{#if camera}
 		<p>camera - {camera.position}</p>
@@ -45,7 +47,7 @@
 		on:click={() => {
 			console.log(camera.position);
 		}}>test</button>
-</div> -->
+</div>
 
 <div class="absolute h-full w-full">
 	<Canvas>
@@ -67,15 +69,15 @@
 					displayInfo = true;
 				}}
 				on:contextmenu={() => {
-					displayInfo = false
+					displayInfo = false;
 				}}
 				receiveShadow
 				castShadow
 				geometry={new CapsuleBufferGeometry(1, 3, 2, 10)}
 				material={new MeshStandardMaterial({ color: '#333333' })}
 				position={{ x: $posX, y: 2, z: $posZ }}>
-				<HTML position={{ x: $posX, y: 3, z: $posZ }}>
-					<div class={displayInfo ? '' : 'hidden'}>
+				<HTML center position={{ x: 0, y: 4, z: 0 }}>
+					<div>
 						<button
 							class="btn"
 							on:click={() => {
@@ -85,22 +87,16 @@
 				</HTML>
 			</Mesh>
 		</Group>
-
+		<Terrain
+			on:click={(event) => {
+				console.log(event.detail.point);
+			}}
+			on:contextmenu={(event) => {
+				const { x, z } = event.detail.point;
+				$posX = x;
+				$posZ = z;
+			}} />
 		<Group>
-			<Mesh
-				interactive
-				on:click={(event) => {
-					console.log(event.detail.point);
-				}}
-				on:contextmenu={(event) => {
-					const { x, z } = event.detail.point;
-					$posX = x;
-					$posZ = z;
-				}}
-				receiveShadow
-				rotation={{ x: -90 * (Math.PI / 180) }}
-				geometry={new CircleBufferGeometry(10, 72)}
-				material={new MeshStandardMaterial({ side: DoubleSide, color: 'white' })} />
 			<Mesh
 				castShadow
 				receiveShadow
