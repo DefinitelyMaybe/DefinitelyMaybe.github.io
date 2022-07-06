@@ -57,7 +57,7 @@
 			shadow={{ mapSize: [2048, 2048], camera: { bottom: -10, left: -10, right: 10, top: 10 } }}
 			position={{ x: 10, y: 10, z: 10 }} />
 		<AmbientLight intensity={0.2} />
-		<Pass pass={new UnrealBloomPass(new Vector2( window.innerWidth, window.innerHeight ), 1.5, 0.4, 0.698)}/>
+		<!-- <Pass pass={new UnrealBloomPass(new Vector2( window.innerWidth, window.innerHeight ), 1.5, 0.4, 0.698)}/> -->
 
 		<Group scale={$scale}>
 			<Mesh
