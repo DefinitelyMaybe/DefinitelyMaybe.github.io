@@ -48,7 +48,17 @@
 		<a slot="link" class="font-bold" href="/projects/innovation/"
 			>Read the article.</a>
 	</Box> -->
-	<Box src={EditorImg} alt="My Editor" href="https://three-editor-remake.vercel.app/">
+	<Box src={"https://developer.mozilla.org/en-US/docs/Web/JavaScript/Typed_arrays/typed_arrays.png"} alt="My Editor" href="/projects/TypedArrays">
+		<div slot="desc">
+			<h2 class="font-bold">Sorting out the Basics</h2>
+			<p>
+				Because learning about typed arrays and types of numbers is hard enough.
+			</p>
+		</div>
+		<a slot="link" class="font-bold" href="/projects/TypedArrays" external
+			>Playground</a>
+	</Box>
+	<Box src={EditorImg} alt="My Editor" href="/projects/TypedArrays">
 		<div slot="desc">
 			<h2 class="font-bold">Web Editor</h2>
 			<p>
@@ -56,7 +66,7 @@
 			</p>
 		</div>
 		<a slot="link" class="font-bold" href="https://three-editor-remake.vercel.app/" external
-			>Visit the site.</a>
+			>Visit the site</a>
 	</Box>
 	<Box
 		src={zooImg}
@@ -74,14 +84,14 @@
 			</p>
 		</div>
 		<a slot="link" class="font-bold" href="https://kids.iamhope.org.nz/" external
-			>Visit the site.</a>
+			>Visit the site</a>
 	</Box>
 	<Box src={fallingImg} alt="Falling 0's and 1's" href="/projects/remake/">
 		<div slot="desc">
 			<h2 class="font-bold">Remixing the Old</h2>
 			<p>A story about remaking this entire website.</p>
 		</div>
-		<a slot="link" class="font-bold" href="/projects/remake/">Read the article.</a>
+		<a slot="link" class="font-bold" href="/projects/remake/">Read the article</a>
 	</Box>
 	<Box
 		src={simonImg}
