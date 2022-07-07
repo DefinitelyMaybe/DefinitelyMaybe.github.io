@@ -58,7 +58,7 @@
 		<a slot="link" class="font-bold" href="/projects/TypedArrays" external
 			>Playground</a>
 	</Box>
-	<Box src={EditorImg} alt="My Editor" href="/projects/TypedArrays">
+	<Box src={EditorImg} alt="My Editor" href="https://three-editor-remake.vercel.app/">
 		<div slot="desc">
 			<h2 class="font-bold">Web Editor</h2>
 			<p>
@@ -72,8 +72,7 @@
 		src={zooImg}
 		alt="I AM HOPE"
 		href="https://kids.iamhope.org.nz/"
-		type="medium"
-		additions="md:col-start-2">
+		type="medium">
 		<div slot="desc">
 			<h2 class="font-bold">Hope Zoo</h2>
 			<p>
