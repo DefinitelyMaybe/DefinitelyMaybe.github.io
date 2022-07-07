@@ -3,5 +3,7 @@
 </script>
 
 <div class="flex grow">
-	<Portfolio/>
+	<div class="relative w-full">
+		<Portfolio/>
+	</div>
 </div>
