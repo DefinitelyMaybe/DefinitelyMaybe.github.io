@@ -37,7 +37,7 @@
 	let displayInfo = false;
 </script>
 
-<div class="absolute flex flex-col items-center justify-center">
+<div class="absolute z-10 flex flex-col items-center justify-center">
 	<p>scale - {Math.round($scale)}</p>
 	{#if camera}
 		<p>camera - {camera.position}</p>
@@ -49,18 +49,19 @@
 		}}>test</button>
 </div>
 
-<div class="absolute h-full w-full">
+
+<div class="w-full h-full">
 	<Canvas>
 		<PerspectiveCamera bind:camera position={{ x: 0, y: 20, z: 20 }} fov={90}>
 			<OrbitControls maxPolarAngle={DEG2RAD * 80} target={{ y: 0.5 }} enablePan={false} />
 		</PerspectiveCamera>
-
+	
 		<DirectionalLight
 			shadow={{ mapSize: [2048, 2048], camera: { bottom: -10, left: -10, right: 10, top: 10 } }}
 			position={{ x: 10, y: 10, z: 10 }} />
 		<AmbientLight intensity={0.2} />
 		<!-- <Pass pass={new UnrealBloomPass(new Vector2( window.innerWidth, window.innerHeight ), 1.5, 0.4, 0.698)}/> -->
-
+	
 		<Group scale={$scale}>
 			<Mesh
 				bind:mesh={player}
@@ -89,7 +90,7 @@
 		</Group>
 		<Terrain
 			on:click={(event) => {
-				console.log(event.detail.point);
+				// console.log(event.detail.point);
 			}}
 			on:contextmenu={(event) => {
 				const { x, z } = event.detail.point;
@@ -114,4 +115,5 @@
 			<Boxes position={{ x: -6, y: 0.5, z: 6 }} />
 		</Group>
 	</Canvas>
+	
 </div>
