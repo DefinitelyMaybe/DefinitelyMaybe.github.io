@@ -14,7 +14,8 @@
 	import iahImg from '$lib/assets/images/I_AM_HOPE_LOGO_pink.webp';
 	import zooImg from '$lib/assets/images/Zoo.png';
 	import EditorImg from '$lib/assets/images/Editor.png';
-	import CapImg from '$lib/assets/images/cap.png';
+	// import CapImg from '$lib/assets/images/cap.png';
+	// import CodeImg from "$lib/assets/images/code.jpg";
 
 	let threeSrc = threejswhiteImg;
 
@@ -48,6 +49,16 @@
 		<a slot="link" class="font-bold" href="/projects/innovation/"
 			>Read the article.</a>
 	</Box> -->
+	<Box src={"https://threlte.xyz/logo/threlte-logo.png"} alt="My Editor" href="/projects/threlte">
+		<div slot="desc">
+			<h2 class="font-bold">Trying out Threlte</h2>
+			<p>
+				Playing with declarative 3D programming for three.js
+			</p>
+		</div>
+		<a slot="link" class="font-bold" href="/projects/TypedArrays" external
+			>Tech Demo</a>
+	</Box>
 	<Box src={"https://developer.mozilla.org/en-US/docs/Web/JavaScript/Typed_arrays/typed_arrays.png"} alt="My Editor" href="/projects/TypedArrays">
 		<div slot="desc">
 			<h2 class="font-bold">Sorting out the Basics</h2>
