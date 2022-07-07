@@ -14,23 +14,14 @@
 	export let planeWidth = 100;
 	export let planeheight = 100;
 
-	let noise, geometry;
+	let noise = new simplex(seed);
+	let geometry = new PlaneBufferGeometry(planeWidth, planeheight, planeWidth, planeheight);;
 
-	$: {
-		noise = new simplex(seed);
-		geometry = new PlaneBufferGeometry(planeWidth, planeheight, planeWidth, planeheight);
-		const vertices = geometry.attributes.position.array
-		for ( let i = 0, j = 0, l = vertices.length; i < l; i ++, j += 3 ) {
-			vertices[ j + 2 ] = calc2DNoise(vertices[j], vertices[j+1]);
-		}
-		geometry.computeVertexNormals()
-		// for (let x = 0; x < planeWidth; x++) {
-		// 	for (let z = 0; z < planeheight; z++) {
-		// 		vertices.push(x, calc2DNoise(x, z), z)
-		// 	}
-		// }
-	  // geometry.setAttribute('position', new Float32BufferAttribute(vertices, 3));
+	const vertices = geometry.attributes.position.array
+	for ( let i = 0, j = 0, l = vertices.length; i < l; i ++, j += 3 ) {
+		vertices[ j + 2 ] = calc2DNoise(vertices[j], vertices[j+1]);
 	}
+	geometry.computeVertexNormals()
 
 	function calc2DNoise(x, y) {
 		const G = Math.pow(2, -persistence);
