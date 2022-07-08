@@ -9,6 +9,7 @@ const config = {
 			pages: "docs"
 		}),
 		appDir: 'app',
+		prerender: true,
 		vite: {
 			ssr: {
 				noExternal: ['three']
