@@ -49,7 +49,7 @@
 		<a slot="link" class="font-bold" href="/projects/innovation/"
 			>Read the article.</a>
 	</Box> -->
-	<Box src={"https://threlte.xyz/logo/threlte-logo.png"} alt="My Editor" href="/projects/threlte">
+	<!-- <Box src={"https://threlte.xyz/logo/threlte-logo.png"} alt="My Editor" href="/projects/threlte">
 		<div slot="desc">
 			<h2 class="font-bold">Trying out Threlte</h2>
 			<p>
@@ -78,7 +78,7 @@
 		</div>
 		<a slot="link" class="font-bold" href="https://three-editor-remake.vercel.app/" external
 			>Visit the site</a>
-	</Box>
+	</Box> -->
 	<Box
 		src={zooImg}
 		alt="I AM HOPE"
