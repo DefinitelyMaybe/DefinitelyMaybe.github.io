@@ -56,7 +56,7 @@
 				Playing with declarative 3D programming for three.js
 			</p>
 		</div>
-		<a slot="link" class="font-bold" href="/projects/TypedArrays" external
+		<a slot="link" class="font-bold" href="/projects/threlte"
 			>Tech Demo</a>
 	</Box> -->
 	<!-- <Box src={"https://developer.mozilla.org/en-US/docs/Web/JavaScript/Typed_arrays/typed_arrays.png"} alt="My Editor" href="/projects/TypedArrays">
