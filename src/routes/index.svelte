@@ -58,8 +58,8 @@
 		</div>
 		<a slot="link" class="font-bold" href="/projects/TypedArrays" external
 			>Tech Demo</a>
-	</Box>
-	<Box src={"https://developer.mozilla.org/en-US/docs/Web/JavaScript/Typed_arrays/typed_arrays.png"} alt="My Editor" href="/projects/TypedArrays">
+	</Box> -->
+	<!-- <Box src={"https://developer.mozilla.org/en-US/docs/Web/JavaScript/Typed_arrays/typed_arrays.png"} alt="My Editor" href="/projects/TypedArrays">
 		<div slot="desc">
 			<h2 class="font-bold">Sorting out the Basics</h2>
 			<p>
@@ -68,8 +68,8 @@
 		</div>
 		<a slot="link" class="font-bold" href="/projects/TypedArrays" external
 			>Playground</a>
-	</Box>
-	<Box src={EditorImg} alt="My Editor" href="https://three-editor-remake.vercel.app/">
+	</Box> -->
+	<!-- <Box src={EditorImg} alt="My Editor" href="https://three-editor-remake.vercel.app/">
 		<div slot="desc">
 			<h2 class="font-bold">Web Editor</h2>
 			<p>
