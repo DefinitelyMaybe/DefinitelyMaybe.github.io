@@ -32,6 +32,7 @@
 
 	const scale = spring(1);
 	const posX = spring(0);
+	const posY = spring(0);
 	const posZ = spring(0);
 	let camera, player;
 	let displayInfo = false;
@@ -50,7 +51,7 @@
 </div>
 
 
-<div class="w-full h-full">
+<div class="w-full h-full overflow-clip">
 	<Canvas>
 		<PerspectiveCamera bind:camera position={{ x: 0, y: 20, z: 20 }} fov={90}>
 			<OrbitControls maxPolarAngle={DEG2RAD * 80} target={{ y: 0.5 }} enablePan={false} />
@@ -62,7 +63,7 @@
 		<AmbientLight intensity={0.2} />
 		<!-- <Pass pass={new UnrealBloomPass(new Vector2( window.innerWidth, window.innerHeight ), 1.5, 0.4, 0.698)}/> -->
 	
-		<Group scale={$scale}>
+		<Group scale={$scale} position={{ x: $posX, y: $posY, z: $posZ }}>
 			<Mesh
 				bind:mesh={player}
 				interactive
@@ -76,7 +77,7 @@
 				castShadow
 				geometry={new CapsuleBufferGeometry(1, 3, 2, 10)}
 				material={new MeshStandardMaterial({ color: '#333333' })}
-				position={{ x: $posX, y: 2, z: $posZ }}>
+				position={{ y: 2 }}>
 				<HTML center position={{ x: 0, y: 4, z: 0 }}>
 					<div>
 						<button
@@ -93,10 +94,13 @@
 				// console.log(event.detail.point);
 			}}
 			on:contextmenu={(event) => {
-				const { x, z } = event.detail.point;
+				const { x, y, z } = event.detail.point;
 				$posX = x;
+				$posY = y;
 				$posZ = z;
-			}} />
+			}} >
+			
+		</Terrain>
 		<Group>
 			<Mesh
 				castShadow
