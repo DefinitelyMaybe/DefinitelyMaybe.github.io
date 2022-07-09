@@ -1,5 +1,4 @@
 <script context="module">
-	import { theme } from '$lib/Header.svelte';
 	export const prerender = true;
 </script>
 
@@ -17,15 +16,7 @@
 	// import CapImg from '$lib/assets/images/cap.png';
 	// import CodeImg from "$lib/assets/images/code.jpg";
 
-	let threeSrc = threejswhiteImg;
-
-	theme.subscribe((val) => {
-		if (val === 'light') {
-			threeSrc = threejswhiteImg;
-		} else {
-			threeSrc = threejsdarkImg;
-		}
-	});
+	let threeSrc = threejsdarkImg;
 </script>
 
 <svelte:head>
@@ -33,7 +24,7 @@
 </svelte:head>
 
 <ul
-	class="grid grid-flow-row-dense grid-cols-1 gap-4 sm:grid-cols-2 md:grid-cols-3  lg:grid-cols-4">
+	class="grid gap-4">
 	<!-- <Box
 		src={CapImg}
 		alt="The Story"
@@ -83,7 +74,7 @@
 		src={zooImg}
 		alt="I AM HOPE"
 		href="https://kids.iamhope.org.nz/"
-		type="medium">
+		type="col-span-2">
 		<div slot="desc">
 			<h2 class="font-bold">Hope Zoo</h2>
 			<p>

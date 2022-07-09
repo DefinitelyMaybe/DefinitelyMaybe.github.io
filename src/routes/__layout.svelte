@@ -15,10 +15,9 @@
 	<link rel="shortcut icon" href="/favicon.ico" type="image/x-icon" />
 </svelte:head>
 
-<Header />
-
-<main
-	class="dark:border-b-black; flex
- grow flex-col px-4 py-4 dark:bg-[#22272e]">
-	<slot />
+<main class="mx-auto flex grow flex-col pt-20 sm:max-w-screen-sm bg-blend-">
+	<Header />
+	<div class="p-2">
+		<slot />
+	</div>
 </main>
