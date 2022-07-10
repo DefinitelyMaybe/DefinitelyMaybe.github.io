@@ -72,13 +72,13 @@
 </div> -->
 <div class="flex">
 	<div class="avatar px-2 pl-10">
-		<div class="w-24 rounded-full">
+		<div class="w-24 rounded-full border-black outline outline-4 outline-base-200">
 			<img src={avatarUrl} alt="avatar" />
 		</div>
 	</div>
 	<div class="flex flex-col justify-center p-2">
 		<span class="text-xl">Aaron Dekker</span>
-		<span>Javascript Developer </span>
+		<span class="text-info">Javascript Developer </span>
 	</div>
 </div>
 <div class="p-4">

@@ -24,7 +24,7 @@
 </svelte:head>
 
 <ul
-	class="grid gap-4">
+	class="flex flex-col gap-4">
 	<!-- <Box
 		src={CapImg}
 		alt="The Story"
