@@ -1,7 +1,3 @@
-<script context="module">
-	export const prerender = true;
-</script>
-
 <script>
 	import Box from '$lib/Box.svelte';
 	import fallingImg from '$lib/assets/images/010-falling.jpg';
