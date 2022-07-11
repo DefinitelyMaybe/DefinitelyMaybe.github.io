@@ -4,6 +4,7 @@
 	import leadSrc from '$lib/assets/images/010-falling.jpg';
 	import { tweened } from 'svelte/motion';
 	import { quintOut } from 'svelte/easing';
+	import { onMount } from "svelte";
 
 	const posRedX = tweened(0, { duration: 10000, easing: quintOut });
 	const posRedY = tweened(0, { duration: 10000, easing: quintOut });
@@ -16,11 +17,6 @@
 
 	let mainEl;
 	let contentEl;
-	let bodyEl;
-
-	$: if (bodyEl) {
-		console.log(mainEl, contentEl, bodyEl);
-	}
 
 	function updateBlobs(params) {
 		const { x, y } = params;
@@ -33,27 +29,36 @@
 		$posBlueX = x;
 		$posBlueY = y;
 	}
+
+	onMount(()=> {
+		console.log(document.body.scrollTop);
+		document.body.addEventListener("scroll", ()=>{
+			console.log("hello world");
+		})
+	})
 </script>
 
 <svelte:head>
-	<meta property="og:title" content="Aaron Dekker - Developer" />
+	<meta property="og:title" content="Aaron Dekker" />
 	<meta property="og:image" content={leadSrc} />
 	<meta
 		property="og:description"
-		content="@DefinitelyMaybe | BSc Graduate | Open-Source Contributor" />
+		content="@DefinitelyMaybe | Javascript Developer | BSc Graduate | Open-Source Contributor" />
 	<meta property="og:url" content="https://definitelymaybe.github.io/" />
 
 	<link rel="shortcut icon" href="/favicon.ico" type="image/x-icon" />
 </svelte:head>
 
 <svelte:body
-	bind:this="{bodyEl}"
+	on:scroll={() => {
+		console.log('yea!');
+	}}
 	on:click={(event) => {
 		const { x, y } = event;
 		updateBlobs({ x, y });
-		console.log(bodyEl.scrollTop);
-		console.log(mainEl.scrollTop);
+		console.log(mainEl.clientHeight);
 		console.log(contentEl.scrollTop);
+		console.log(document.body.scrollTop);
 		// console.log(x,y);
 		// console.log(test);
 		// console.log(mainEl.clientHeight);
@@ -70,7 +75,7 @@
 	class="mx-auto flex grow flex-col pt-20 text-lg font-medium sm:max-w-screen-sm"
 	bind:this={mainEl}>
 	<Header />
-	<div class="p-2" bind:this={contentEl}>
+	<div class="flex flex-col gap-4 p-2" bind:this={contentEl}>
 		<slot />
 	</div>
 </main>
