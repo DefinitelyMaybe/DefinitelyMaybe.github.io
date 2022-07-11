@@ -5,14 +5,14 @@
 	import { tweened } from 'svelte/motion';
 	import { quintOut } from 'svelte/easing';
 
-	const posRedX = tweened(0, { duration: 40000, easing: quintOut });
-	const posRedY = tweened(0, { duration: 40000, easing: quintOut });
+	const posRedX = tweened(0, { duration: 10000, easing: quintOut });
+	const posRedY = tweened(0, { duration: 10000, easing: quintOut });
 
-	const posGreenX = tweened(0, { duration: 10000, easing: quintOut });
-	const posGreenY = tweened(0, { duration: 10000, easing: quintOut });
+	const posGreenX = tweened(0, { duration: 20000, easing: quintOut });
+	const posGreenY = tweened(0, { duration: 20000, easing: quintOut });
 
-	const posBlueX = tweened(0, { duration: 20000, easing: quintOut });
-	const posBlueY = tweened(0, { duration: 20000, easing: quintOut });
+	const posBlueX = tweened(0, { duration: 40000, easing: quintOut });
+	const posBlueY = tweened(0, { duration: 40000, easing: quintOut });
 
 	let mainEl;
 	let contentEl;
