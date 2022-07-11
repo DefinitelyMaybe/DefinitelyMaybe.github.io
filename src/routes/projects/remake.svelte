@@ -44,7 +44,7 @@
 	<hr class="my-2" />
 	<p>July 2022</p>
 	<p>
-		Update: I felt like the site need a better design pass. I took inspiration from nice looking
+		Update: I felt like the site needed a design pass. I took inspiration from nice looking
 		website's like <a class="link link-primary" href="https://delba.dev/">delba's</a>.
 	</p>
 </section>
