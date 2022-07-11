@@ -4,7 +4,6 @@
 	import leadSrc from '$lib/assets/images/010-falling.jpg';
 	import { tweened } from 'svelte/motion';
 	import { quintOut } from 'svelte/easing';
-	import { onMount } from "svelte";
 
 	const posRedX = tweened(0, { duration: 10000, easing: quintOut });
 	const posRedY = tweened(0, { duration: 10000, easing: quintOut });
@@ -15,11 +14,11 @@
 	const posBlueX = tweened(0, { duration: 40000, easing: quintOut });
 	const posBlueY = tweened(0, { duration: 40000, easing: quintOut });
 
-	let mainEl;
-	let contentEl;
+	let scrolledY = 0
 
 	function updateBlobs(params) {
-		const { x, y } = params;
+		let { x, y } = params;
+		y += scrolledY
 		$posRedX = x;
 		$posRedY = y;
 
@@ -29,13 +28,6 @@
 		$posBlueX = x;
 		$posBlueY = y;
 	}
-
-	onMount(()=> {
-		console.log(document.body.scrollTop);
-		document.body.addEventListener("scroll", ()=>{
-			console.log("hello world");
-		})
-	})
 </script>
 
 <svelte:head>
@@ -49,28 +41,24 @@
 	<link rel="shortcut icon" href="/favicon.ico" type="image/x-icon" />
 </svelte:head>
 
+<svelte:window on:scroll="{()=> {
+	scrolledY = window.scrollY
+}}"/>
+
 <svelte:body
-	on:scroll={() => {
-		console.log('yea!');
-	}}
 	on:click={(event) => {
 		const { x, y } = event;
 		updateBlobs({ x, y });
-		console.log(mainEl.scrollTop);
-		console.log(contentEl.scrollTop);
-		console.log(document.body.scrollTop);
 	}}
 	on:mousemove={(event) => {
 		const { x, y } = event;
 		updateBlobs({ x, y });
-		// console.log(x,y);
 	}} />
 
 <main
-	class="mx-auto flex grow flex-col pt-20 text-lg font-medium sm:max-w-screen-sm"
-	bind:this={mainEl}>
+	class="mx-auto flex grow flex-col pt-20 text-lg font-medium sm:max-w-screen-sm">
 	<Header />
-	<div class="flex flex-col gap-4 p-2" bind:this={contentEl}>
+	<div class="flex flex-col gap-4 p-2">
 		<slot />
 	</div>
 </main>
