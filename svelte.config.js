@@ -10,11 +10,11 @@ const config = {
     }),
     appDir: "app",
     prerender: { default: true },
-    vite: {
-      ssr: {
-        noExternal: ["three"],
-      },
-    },
+    // vite: {
+    //   ssr: {
+    //     noExternal: ["three"],
+    //   },
+    // },
   },
   preprocess: preprocess(),
 };
