@@ -46,7 +46,7 @@
 	on:mousemove={(event) => {
 		const { x, y } = event;
 		updateBlobs({x,y})
-	}} />
+	}}/>
 
 
 <main class="mx-auto flex grow flex-col pt-20 text-lg font-medium sm:max-w-screen-sm overflow-clip">
