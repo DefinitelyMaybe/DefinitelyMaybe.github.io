@@ -3,6 +3,6 @@
 @import 'tailwindcss/utilities';
 
 
-/* html, body {
-	@apply h-full overflow-x-clip overflow-y-visible;
-} */
+html, body {
+	@apply overflow-x-clip;
+}
