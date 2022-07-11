@@ -73,10 +73,10 @@
 		type="col-span-2">
 		<p slot="desc">
 			A mini zoo of animals for kids to engage with and learn about emotions. This project was made
-			for the charity <a href="https://www.iamhope.org.nz/"
+			for the charity <a class="link link-primary" href="https://www.iamhope.org.nz/"
 				>I AM HOPE <img class="inline w-6" src={iahImg} alt="I AM HOPE Logo" /></a>
-			in collaboration with <a href="https://euclidean.co.nz/">Euclidean</a> and
-			<a href="https://www.valerism.com/">Valerie</a>.
+			in collaboration with <a class="link link-primary" href="https://euclidean.co.nz/">Euclidean</a> and
+			<a class="link link-primary" href="https://www.valerism.com/">Valerie</a>.
 		</p>
 	</Box>
 	<Box
@@ -94,12 +94,12 @@
 		alt="Simon Dev thumbnail"
 		href="https://wonderful-stonebraker-0b161a.netlify.app/">
 		<p slot="desc">
-			A 5 week sprint refactoring a huge proportion of simondev's original <a
+			A 5 week sprint refactoring a huge proportion of simondev's original <a class="link link-primary"
 				href="https://github.com/simondevyoutube/Quick_3D_MMORPG">source code</a
 			>. My remixed source code is
-			<a href="https://github.com/DefinitelyMaybe/Not_So_Quick_3D_MMORPG_The_Remix">here</a>. Simon
+			<a class="link link-primary" href="https://github.com/DefinitelyMaybe/Not_So_Quick_3D_MMORPG_The_Remix">here</a>. Simon
 			made a
-			<a href="https://www.youtube.com/watch?v=IptkgFOoci0"> great video explaining the project</a>.
+			<a class="link link-primary" href="https://www.youtube.com/watch?v=IptkgFOoci0"> great video explaining the project</a>.
 		</p>
 	</Box>
 	<Box
@@ -110,7 +110,7 @@
 		href="https://github.com/mrdoob/three.js/pull/22510">
 		<p slot="desc">
 			Another good effort to bring three.js up to speed with modern javascript. specifically by
-			implementing the <a href="https://developer.mozilla.org/en-US/docs/Web/API/Fetch_API"
+			implementing the <a class="link link-primary" href="https://developer.mozilla.org/en-US/docs/Web/API/Fetch_API"
 				>fetch API</a> within the file loader. Previously it was using XMLHttpRequest which added complexity
 			to the process.
 		</p>
