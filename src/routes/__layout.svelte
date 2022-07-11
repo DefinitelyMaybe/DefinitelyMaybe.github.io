@@ -15,6 +15,7 @@
 	const posBlueY = tweened(0, { duration: 40000, easing: quintOut });
 
 	let scrolledY = 0
+	const circleRadius = 192
 
 	function updateBlobs(params) {
 		let { x, y } = params;
@@ -43,6 +44,17 @@
 
 <svelte:window on:scroll="{()=> {
 	scrolledY = window.scrollY
+	if (window.innerWidth <= 640) {
+		if (screen) {
+			if (scrolledY == 0) {
+				updateBlobs({x:192,y:0})
+			} else {
+				updateBlobs({x:192,y:screen.height/2})
+			}
+		} else {
+			// updateBlobs({x:0,y:screen.height/2})	
+		}
+	}
 }}"/>
 
 <svelte:body
@@ -52,7 +64,9 @@
 	}}
 	on:mousemove={(event) => {
 		const { x, y } = event;
-		updateBlobs({ x, y });
+		if (window.innerWidth > 640) {
+			updateBlobs({ x, y });	
+		}
 	}} />
 
 <main
@@ -64,13 +78,13 @@
 </main>
 <div
 	class="absolute -z-10 h-96 w-96 rounded-full bg-red-600/10 blur"
-	style:top={$posRedY - 192 + `px`}
-	style:left={$posRedX - 192 + `px`} />
+	style:top={`${$posRedY - circleRadius}px`}
+	style:left={`${$posRedX - circleRadius}px`} />
 <div
 	class="absolute -z-10 h-96 w-96 rounded-full bg-green-600/10 blur"
-	style:top={$posGreenY - 192 + `px`}
-	style:left={$posGreenX - 192 + `px`} />
+	style:top={`${$posGreenY - circleRadius}px`}
+	style:left={`${$posGreenX - circleRadius}px`} />
 <div
 	class="absolute -z-10 h-96 w-96 rounded-full bg-blue-600/10 blur"
-	style:top={$posBlueY - 192 + `px`}
-	style:left={$posBlueX - 192 + `px`} />
+	style:top={`${$posBlueY - circleRadius}px`}
+	style:left={`${$posBlueX - circleRadius}px`} />
