@@ -26,7 +26,7 @@
 		on:click={handleForward}
 		class="absolute bottom-0 right-0 font-mono text-8xl opacity-20 sm:hover:opacity-100"
 		>&gt</button>
-	<div bind:this={slides} class="flex snap-x snap-mandatory overflow-x-scroll">
+	<div bind:this={slides} class="flex snap-x snap-mandatory overflow-x-scroll bg-base-300 rounded-xl">
 		<Slide>
 			<p class="text-xs">to</p>
 			<h1 class="font-bold">Sir Ken Robinson</h1>
