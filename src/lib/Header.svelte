@@ -6,7 +6,7 @@
 
 
 <div class="flex">
-	<div class="avatar px-2 pl-10">
+	<div class="avatar px-2">
 		<div class="w-24 rounded-full border-black outline outline-4 outline-base-200">
 			<img src={avatarUrl} alt="avatar" />
 		</div>
@@ -24,11 +24,11 @@
 	Howdy! Here you'll find some of my projects - usually centered around web graphics, maths and
 	games.
 </div>
-<div class="flex pb-20 text-base">
-	<a class="flex flex-col link link-primary p-2 items-center" href="https://github.com/DefinitelyMaybe">
+<div class="flex pb-14 text-base items-center">
+	<a class="flex flex-col link link-primary px-4" href="https://github.com/DefinitelyMaybe">
 		<img src="{ghLogo}" alt="github logo" class="w-10">
 	</a>
-	<a class="link link-secondary p-2" href="https://twitter.com/0Rawr">
+	<a class="link link-secondary px-4" href="https://twitter.com/0Rawr">
 		<img src="{twitterLogo}" alt="github logo" class="w-10">
 	</a>
 </div>
