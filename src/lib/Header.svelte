@@ -21,7 +21,7 @@
 	</div>
 </div>
 <div class="p-4">
-	Howdy! Here you'll find some of my projects - usually centered around web graphics, maths and
+	Howdy! Here you'll find some of my projects - usually centered around web dev, graphics, maths and
 	games.
 </div>
 <div class="flex pb-14 text-base items-center">
