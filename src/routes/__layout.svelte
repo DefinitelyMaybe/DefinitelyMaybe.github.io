@@ -56,14 +56,9 @@
 	on:click={(event) => {
 		const { x, y } = event;
 		updateBlobs({ x, y });
-		console.log(mainEl.clientHeight);
+		console.log(mainEl.scrollTop);
 		console.log(contentEl.scrollTop);
 		console.log(document.body.scrollTop);
-		// console.log(x,y);
-		// console.log(test);
-		// console.log(mainEl.clientHeight);
-		// console.log(mainEl.scrollHeight);
-		// console.log(test);
 	}}
 	on:mousemove={(event) => {
 		const { x, y } = event;
