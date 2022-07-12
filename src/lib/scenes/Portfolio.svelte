@@ -50,19 +50,18 @@
 		}}>test</button>
 </div>
 
-
-<div class="w-full h-full overflow-clip">
+<div class="h-full w-full overflow-clip">
 	<Canvas>
 		<PerspectiveCamera bind:camera position={{ x: 0, y: 20, z: 20 }} fov={90}>
 			<OrbitControls maxPolarAngle={DEG2RAD * 80} target={{ y: 0.5 }} enablePan={false} />
 		</PerspectiveCamera>
-	
+
 		<DirectionalLight
 			shadow={{ mapSize: [2048, 2048], camera: { bottom: -10, left: -10, right: 10, top: 10 } }}
 			position={{ x: 10, y: 10, z: 10 }} />
 		<AmbientLight intensity={0.2} />
 		<!-- <Pass pass={new UnrealBloomPass(new Vector2( window.innerWidth, window.innerHeight ), 1.5, 0.4, 0.698)}/> -->
-	
+
 		<Group scale={$scale} position={{ x: $posX, y: $posY, z: $posZ }}>
 			<Mesh
 				bind:mesh={player}
@@ -98,9 +97,7 @@
 				$posX = x;
 				$posY = y;
 				$posZ = z;
-			}} >
-			
-		</Terrain>
+			}} />
 		<Group>
 			<Mesh
 				castShadow
@@ -119,5 +116,4 @@
 			<Boxes position={{ x: -6, y: 0.5, z: 6 }} />
 		</Group>
 	</Canvas>
-	
 </div>
