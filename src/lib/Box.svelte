@@ -7,14 +7,11 @@
 	export let href;
 	export let title = '';
 	export let action ='';
-	export let type = '';
-	export let additions = '';
-	// TODO-DefinitelyMaybe: Instead of literal tailwindcss additions, maybe make some classes like: big, medium, long, wide etc...
 </script>
 
 <div
 	on:click={goto(href)}
-	class="card bg-base-300 shadow-xl image-full cursor-pointer {type} {additions}">
+	class="card bg-base-300 shadow-xl image-full cursor-pointer">
 	<figure><img {src} {alt} class="w-full" /></figure>
 	<div class="card-body">
 		<h1 class="card-title text-2xl">{title}</h1>
