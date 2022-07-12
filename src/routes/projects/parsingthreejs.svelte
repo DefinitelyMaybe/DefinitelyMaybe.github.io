@@ -1,5 +1,5 @@
 <svelte:head>
-	<title>Three.js, Regular Expressions and me</title>
+	<title>Three.js, Regular Expressions and Me</title>
 </svelte:head>
 
 <section class="flex flex-col">

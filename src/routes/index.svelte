@@ -7,15 +7,10 @@
 	import tugImg from '$lib/assets/images/TUG/TUGconceptArtmini.jpg';
 	import iahImg from '$lib/assets/images/I_AM_HOPE_LOGO_pink.webp';
 	import zooImg from '$lib/assets/images/Zoo.png';
-	import EditorImg from '$lib/assets/images/Editor.png';
-	// import CapImg from '$lib/assets/images/cap.png';
-	// import CodeImg from "$lib/assets/images/code.jpg";
-
-	let threeSrc = threejsdarkImg;
 </script>
 
 <svelte:head>
-	<title>Aaron Dekker - Projects</title>
+	<title>Aaron Dekker | Portfolio</title>
 </svelte:head>
 
 <!-- <Box
@@ -97,10 +92,10 @@
 		A 5 week sprint refactoring a huge proportion of simondev's original <a
 			class="link link-primary"
 			href="https://github.com/simondevyoutube/Quick_3D_MMORPG">source code</a
-		>. My remixed source code is
+		>. My remixed 
 		<a
 			class="link link-primary"
-			href="https://github.com/DefinitelyMaybe/Not_So_Quick_3D_MMORPG_The_Remix">here</a
+			href="https://github.com/DefinitelyMaybe/Not_So_Quick_3D_MMORPG_The_Remix">source code is here</a
 		>. Simon made a
 		<a class="link link-primary" href="https://www.youtube.com/watch?v=IptkgFOoci0">
 			great video explaining the project</a
@@ -110,7 +105,7 @@
 <Box
 	title={'Go Fetch!'}
 	action={'Github Pull Request'}
-	src={threeSrc}
+	src={threejsdarkImg}
 	alt="threejs logo"
 	href="https://github.com/mrdoob/three.js/pull/22510">
 	<p slot="desc">
@@ -124,7 +119,7 @@
 <Box
 	title={'Styling with Class'}
 	action={'Github Issue'}
-	src={threeSrc}
+	src={threejsdarkImg}
 	alt="threejs logo"
 	href="https://github.com/mrdoob/three.js/issues/19986">
 	<p slot="desc">
@@ -135,7 +130,7 @@
 <Box
 	title={'Javascript and Three.js'}
 	action={'Read the Article'}
-	src={threeSrc}
+	src={threejsdarkImg}
 	alt="threejs logo"
 	href="/projects/parsingthreejs/">
 	<p slot="desc">

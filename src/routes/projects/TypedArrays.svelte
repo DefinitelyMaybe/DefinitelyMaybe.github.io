@@ -4,6 +4,10 @@
 	let typedArray;
 </script>
 
+<svelte:head>
+	<title>Typed Arrays and You</title>
+</svelte:head>
+
 <div class="flex grow flex-col bg-base-300">
 	<div>Numbers</div>
 	<div>Arrays</div>
