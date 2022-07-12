@@ -6,8 +6,6 @@
 	<title>Once Upon a Threlte</title>
 </svelte:head>
 
-<div class="flex grow">
-	<div class="relative w-full">
-		<Portfolio/>
-	</div>
+<div class="relative h-screen w-screen">
+	<Portfolio/>
 </div>
