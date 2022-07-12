@@ -41,7 +41,7 @@
 <div class="absolute z-10 flex flex-col items-center justify-center">
 	<p>scale - {Math.round($scale)}</p>
 	{#if camera}
-		<p>camera - {camera.position}</p>
+		<p>camera - {camera.position.x}, {Math.round(camera.position.y)}, {Math.round(camera.position.z)}</p>
 	{/if}
 	<button
 		class="btn"
@@ -75,9 +75,9 @@
 				receiveShadow
 				castShadow
 				geometry={new CapsuleBufferGeometry(1, 3, 2, 10)}
-				material={new MeshStandardMaterial({ color: '#333333' })}
+				material={new MeshStandardMaterial({ color: 'white' })}
 				position={{ y: 2 }}>
-				<HTML center position={{ x: 0, y: 4, z: 0 }}>
+				<HTML occlude distanceFactor={50} center position={{ x: 0, y: 4, z: 0 }}>
 					<div>
 						<button
 							class="btn"
