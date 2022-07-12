@@ -14,11 +14,17 @@
 </svelte:head>
 
 <!-- <Box
+	src={tugImg}
+	title="Playing the Court"
+	action="Play the game"
+	alt="Game - Playing the Court"
+	href="/projects/playing-the-court/">
+	<p slot="desc">A remake of coup.</p>
+</Box> -->
+<!-- <Box
 		src={CapImg}
 		alt="The Story"
-		href="/projects/innovation/"
-		type="medium"
-		additions="md:col-start-2">
+		href="/projects/innovation/">
 		<div slot="desc">
 			<h2 class="font-bold">The heART of Innovation</h2>
 			<p>
@@ -63,8 +69,7 @@
 	action={'Visit the site'}
 	src={zooImg}
 	alt="I AM HOPE"
-	href="https://kids.iamhope.org.nz/"
-	type="col-span-2">
+	href="https://kids.iamhope.org.nz/">
 	<p slot="desc">
 		A mini zoo of animals for kids to engage with and learn about emotions. This project was made
 		for the charity <a class="link link-primary" href="https://www.iamhope.org.nz/"
@@ -92,10 +97,11 @@
 		A 5 week sprint refactoring a huge proportion of simondev's original <a
 			class="link link-primary"
 			href="https://github.com/simondevyoutube/Quick_3D_MMORPG">source code</a
-		>. My remixed 
+		>. My remixed
 		<a
 			class="link link-primary"
-			href="https://github.com/DefinitelyMaybe/Not_So_Quick_3D_MMORPG_The_Remix">source code is here</a
+			href="https://github.com/DefinitelyMaybe/Not_So_Quick_3D_MMORPG_The_Remix"
+			>source code is here</a
 		>. Simon made a
 		<a class="link link-primary" href="https://www.youtube.com/watch?v=IptkgFOoci0">
 			great video explaining the project</a
@@ -142,8 +148,7 @@
 	action={'SlideShow'}
 	alt="university lecture theatre"
 	href="/projects/lastslides/"
-	src="https://images.unsplash.com/photo-1519452575417-564c1401ecc0?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80"
-	additions="">
+	src="https://images.unsplash.com/photo-1519452575417-564c1401ecc0?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80">
 	<p slot="desc">
 		Surely there'd be large scale studies showing the importance of education... right?
 	</p>
@@ -153,8 +158,7 @@
 	action={'Read the Article'}
 	src={tugImg}
 	alt="TUG concept art of a golem"
-	href="/projects/storyaboutTUG/"
-	type="">
+	href="/projects/storyaboutTUG/">
 	<p slot="desc">
 		A highly ambitious 3D sandbox game, aiming at being a better minecraft. It was a huge
 		undertaking but fell apart in the end.
