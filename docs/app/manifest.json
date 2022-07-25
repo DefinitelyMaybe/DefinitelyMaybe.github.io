@@ -1,6 +1,6 @@
 {
   ".svelte-kit/runtime/client/start.js": {
-    "file": "immutable/start-66cfd012.js",
+    "file": "immutable/start-1b96da3e.js",
     "src": ".svelte-kit/runtime/client/start.js",
     "isEntry": true,
     "imports": [
@@ -16,11 +16,11 @@
       "src/routes/projects/TypedArrays.svelte",
       "src/routes/projects/innovation.svelte",
       "src/routes/projects/lastslides.svelte",
-      "src/routes/projects/lavafloor.svelte",
+      "src/routes/projects/lavafloor@root.svelte",
       "src/routes/projects/parsingthreejs.svelte",
       "src/routes/projects/remake.svelte",
       "src/routes/projects/storyaboutTUG.svelte",
-      "src/routes/projects/threlte.svelte"
+      "src/routes/projects/threlte@root.svelte"
     ]
   },
   "src/routes/__layout.svelte": {
@@ -35,7 +35,7 @@
       "_index-a97c2f54.js"
     ],
     "css": [
-      "immutable/assets/pages/__layout.svelte-cb13e7ce.css"
+      "immutable/assets/pages/__layout.svelte-8b57cca2.css"
     ],
     "assets": [
       "immutable/assets/avatar-65b799cf.png",
@@ -61,7 +61,7 @@
     ]
   },
   "src/routes/index.svelte": {
-    "file": "immutable/pages/index.svelte-739c41ed.js",
+    "file": "immutable/pages/index.svelte-f80e49df.js",
     "src": "src/routes/index.svelte",
     "isEntry": true,
     "isDynamicEntry": true,
@@ -109,14 +109,14 @@
       "immutable/assets/pages/projects/lastslides.svelte-a58e7f20.css"
     ]
   },
-  "src/routes/projects/lavafloor.svelte": {
-    "file": "immutable/pages/projects/lavafloor.svelte-e88bb016.js",
-    "src": "src/routes/projects/lavafloor.svelte",
+  "src/routes/projects/lavafloor@root.svelte": {
+    "file": "immutable/pages/projects/lavafloor@root.svelte-e1b5202a.js",
+    "src": "src/routes/projects/lavafloor@root.svelte",
     "isEntry": true,
     "isDynamicEntry": true,
     "imports": [
       "_index-269e7057.js",
-      "_OrbitControls-fa0eed82.js"
+      "_OrbitControls-e571d827.js"
     ]
   },
   "src/routes/projects/parsingthreejs.svelte": {
@@ -138,7 +138,7 @@
     ]
   },
   "src/routes/projects/storyaboutTUG.svelte": {
-    "file": "immutable/pages/projects/storyaboutTUG.svelte-998bd6fb.js",
+    "file": "immutable/pages/projects/storyaboutTUG.svelte-603a184e.js",
     "src": "src/routes/projects/storyaboutTUG.svelte",
     "isEntry": true,
     "isDynamicEntry": true,
@@ -146,25 +146,28 @@
       "_index-269e7057.js",
       "_TUGconceptArtmini-e50cbb6b.js"
     ],
+    "css": [
+      "immutable/assets/pages/projects/storyaboutTUG.svelte-46d809f4.css"
+    ],
     "assets": [
       "immutable/assets/TUGupdate-5f418ad7.jpg",
       "immutable/assets/TUGupdatedart-28509285.jpg",
       "immutable/assets/TUGmount-1bc56aa8.gif"
     ]
   },
-  "src/routes/projects/threlte.svelte": {
-    "file": "immutable/pages/projects/threlte.svelte-83a18920.js",
-    "src": "src/routes/projects/threlte.svelte",
+  "src/routes/projects/threlte@root.svelte": {
+    "file": "immutable/pages/projects/threlte@root.svelte-711746a5.js",
+    "src": "src/routes/projects/threlte@root.svelte",
     "isEntry": true,
     "isDynamicEntry": true,
     "imports": [
       "_index-269e7057.js",
-      "_OrbitControls-fa0eed82.js",
+      "_OrbitControls-e571d827.js",
       "_index-a97c2f54.js",
       "_index-fba0100c.js"
     ],
     "css": [
-      "immutable/assets/pages/projects/threlte.svelte-45532d86.css"
+      "immutable/assets/pages/projects/threlte@root.svelte-1f239a00.css"
     ]
   },
   "_index-269e7057.js": {
@@ -198,7 +201,7 @@
       "immutable/assets/TUGconceptArtmini-d37a1636.jpg"
     ]
   },
-  "_OrbitControls-fa0eed82.js": {
-    "file": "immutable/chunks/OrbitControls-fa0eed82.js"
+  "_OrbitControls-e571d827.js": {
+    "file": "immutable/chunks/OrbitControls-e571d827.js"
   }
 }
