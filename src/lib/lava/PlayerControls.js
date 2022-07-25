@@ -118,7 +118,7 @@ class PlayerControls {
     this.spherical.phi -= this.sphericalDelta.phi;
 
     // restrict phi to be between desired limits
-    this.spherical.phi = Math.max(0, Math.min(Math.PI, this.spherical.phi));
+    this.spherical.phi = Math.max(0, Math.min(Math.PI*0.51, this.spherical.phi));
 
     this.spherical.makeSafe();
 
