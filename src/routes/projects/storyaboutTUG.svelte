@@ -9,9 +9,10 @@
 	<title>A Story about TUG</title>
 </svelte:head>
 
-<h1 class="text-center">Introducing TUG</h1>
+<h1 class="text-center text-2xl">Introducing T.U.G.</h1>
+<h2 class="text-center text-sm">The Untitled Game</h2>
 <section class="py-2">
-	<p>August 2016</p>
+	<p class="text-sm">August 2016</p>
 	<h3>Where to begin?</h3>
 	<p>
 		We'll approach T.U.G. by circling around at the distance, gaining perspective as we go and then
@@ -38,7 +39,7 @@
 		be noted that even with the restriction, Minecraft’s community has built tons on-top of and
 		around the game to the point where one would call it a feature rather than anything else.
 	</p>
-	<h3 class="lg:break-before-column">What's TUG like at the moment?</h3>
+	<h3>What's TUG like at the moment?</h3>
 	<p>
 		It’s a sandbox like minecraft. You can explore an infinite world, craft weapons, tools and
 		armour, build castles, hunt down animals and more. I’m a huge fan of the subtleties that come
@@ -54,7 +55,7 @@
 	</p>
 </section>
 <img src={golemImg} alt="TUG concept art of a golem" />
-<section class="py-2 md:columns-2 lg:columns-3">
+<section class="py-2">
 	<h3>Where do I come into the story?</h3>
 	<p>
 		Well, I had somehow managed to bump into NK’s Kickstarter campaign back in 2013. It caught my
@@ -91,7 +92,7 @@
 	<a href="https://github.com/DefinitelyMaybe/DarkAges">DarkAges</a>.
 </p>
 <hr class="py-2" />
-<section class="py-2 md:columns-2 lg:columns-3">
+<section>
 	<p>December 2021</p>
 	<p>
 		This is one of those somber moments looking back on a game I believed in. Now TUG is nothing.
@@ -102,3 +103,15 @@
 </section>
 <img class="py-2" src={tug2Img} alt="TUG updated artwork style" />
 <img class="py-2" src={tug3Img} alt="TUG mount artwork" />
+
+<style>
+	p {
+		@apply py-2;
+	}
+	h3 {
+		@apply text-gray-400;
+	}
+	a {
+		@apply link link-primary;
+	}
+</style>

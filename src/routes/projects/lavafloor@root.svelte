@@ -17,7 +17,8 @@
 		Box,
 		NaiveBroadphase,
 		Vec3,
-		World
+		World,
+		FogExp2
 	} from '$lib/lava/deps.js';
 	import { PlayerControls } from '$lib/lava/PlayerControls.js';
 	import { spawnCubes } from '$lib/lava/helpers.js';
@@ -42,6 +43,7 @@
 
 	const scene = new Scene();
 	scene.background = new Color(0xaaaaaa);
+	scene.fog = new FogExp2(0xaaaaaa, 0.04);
 
 	// lighting
 	const directionalLight = new DirectionalLight();
@@ -222,7 +224,7 @@
 			highscore = localStorage.getItem('highscore');
 		}
 
-		renderer = new WebGLRenderer({ canvas: canvas, logarithmicDepthBuffer: true });
+		renderer = new WebGLRenderer({ canvas: canvas, antialias: true, logarithmicDepthBuffer: true });
 		renderer.shadowMap.enabled = true;
 		renderer.setSize(window.innerWidth, window.innerHeight);
 
@@ -239,12 +241,9 @@
 		animate();
 
 		return () => {
-			// controls.dispose()
 			document.removeEventListener('player', handlePlayerEvent);
-			camera = null;
 			renderer.forceContextLoss();
 			renderer.dispose();
-			cancelAnimationFrame(animate);
 		};
 	});
 </script>
@@ -272,13 +271,23 @@
 	}} />
 
 <canvas bind:this={canvas} />
-<div class="absolute top-0">
-	<h1>Highscore: {highscore}</h1>
-	<h1>Score: {score}</h1>
-	<p>Use the 'wasd' keys to move around</p>
-	<p>Press space to jump</p>
-	<p>Press 'r' to restart</p>
-	{#if dead}
-		<h1 class="text-red-800">Dead.</h1>
-	{/if}
+<div class="absolute top-0 z-10 h-full w-full">
+	<div class="flex h-full grow flex-col items-center pt-4">
+		<h1 class="text-6xl">Highscore: {highscore}</h1>
+		<h1 class="text-2xl">Score: {score}</h1>
+	</div>
+</div>
+<div class="absolute top-0 z-10 h-full w-full">
+	<div class="flex h-full grow items-center justify-center">
+		{#if dead}
+			<h1 class="text-6xl font-bold text-red-800">Dead.</h1>
+		{/if}
+	</div>
+</div>
+<div class="absolute top-0 z-10 h-full w-full">
+	<div class="flex flex-col items-end pr-4 pt-4 text-gray-700">
+		<p>Use the 'wasd' keys to move around</p>
+		<p>Press space to jump</p>
+		<p>Press 'r' to restart</p>
+	</div>
 </div>
