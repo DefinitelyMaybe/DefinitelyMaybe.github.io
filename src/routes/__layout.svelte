@@ -14,12 +14,12 @@
 	const posBlueX = tweened(0, { duration: 40000, easing: quintOut });
 	const posBlueY = tweened(0, { duration: 40000, easing: quintOut });
 
-	let scrolledY = 0
-	const circleRadius = 192
+	let scrolledY = 0;
+	const circleRadius = 192;
 
 	function updateBlobs(params) {
 		let { x, y } = params;
-		y += scrolledY
+		y += scrolledY;
 		$posRedX = x;
 		$posRedY = y;
 
@@ -32,7 +32,7 @@
 </script>
 
 <svelte:head>
-	<meta name="description" content="Aaron Dekker | Portfolio">
+	<meta name="description" content="Aaron Dekker | Portfolio" />
 	<meta property="og:title" content="Aaron Dekker | @DefinitelyMaybe" />
 	<meta property="og:image" content={leadSrc} />
 	<meta
@@ -42,20 +42,21 @@
 	<link rel="shortcut icon" href="/favicon.ico" type="image/x-icon" />
 </svelte:head>
 
-<svelte:window on:scroll="{()=> {
-	scrolledY = window.scrollY
-	if (window.innerWidth <= 640) {
-		if (screen) {
-			if (scrolledY == 0) {
-				updateBlobs({x:192,y:0})
+<svelte:window
+	on:scroll={() => {
+		scrolledY = window.scrollY;
+		if (window.innerWidth <= 640) {
+			if (screen) {
+				if (scrolledY == 0) {
+					updateBlobs({ x: 192, y: 0 });
+				} else {
+					updateBlobs({ x: 192, y: screen.height / 2 });
+				}
 			} else {
-				updateBlobs({x:192,y:screen.height/2})
+				// updateBlobs({x:0,y:screen.height/2})
 			}
-		} else {
-			// updateBlobs({x:0,y:screen.height/2})	
 		}
-	}
-}}"/>
+	}} />
 
 <svelte:body
 	on:click={(event) => {
@@ -65,12 +66,11 @@
 	on:mousemove={(event) => {
 		const { x, y } = event;
 		if (window.innerWidth > 640) {
-			updateBlobs({ x, y });	
+			updateBlobs({ x, y });
 		}
 	}} />
 
-<main
-	class="mx-auto flex grow flex-col pt-20 text-lg font-medium sm:max-w-screen-sm">
+<main class="mx-auto flex grow flex-col pt-20 text-lg font-medium sm:max-w-screen-sm">
 	<Header />
 	<div class="flex flex-col gap-4 p-2">
 		<slot />
