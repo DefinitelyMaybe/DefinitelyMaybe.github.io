@@ -11,7 +11,7 @@
 
 <div
 	on:click={goto(href)}
-	class="card bg-base-300 shadow-xl image-full cursor-pointer">
+	class="card shadow-xl image-full cursor-pointer">
 	<figure><img {src} {alt} class="w-full" /></figure>
 	<div class="card-body">
 		<h1 class="card-title text-2xl">{title}</h1>
