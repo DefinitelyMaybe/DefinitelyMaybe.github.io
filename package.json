@@ -10,7 +10,7 @@
 		"format": "prettier --write src"
 	},
 	"devDependencies": {
-		"@sveltejs/adapter-static": "1.0.0-next.35",
+		"@sveltejs/adapter-static": "1.0.0-next.39",
 		"@sveltejs/kit": "1.0.0-next.428",
 		"@tailwindcss/forms": "^0.5.2",
 		"@tailwindcss/typography": "^0.5.4",
