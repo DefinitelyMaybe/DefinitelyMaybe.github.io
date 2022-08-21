@@ -4,13 +4,13 @@
 		<meta charset="utf-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1" />
 		<meta http-equiv="content-security-policy" content=""><title>The Floor is Lava!</title>
-	<link rel="modulepreload" href="/app/immutable/start-325694ed.js">
-	<link rel="modulepreload" href="/app/immutable/chunks/index-269e7057.js">
-	<link rel="modulepreload" href="/app/immutable/chunks/index-a97c2f54.js">
-	<link rel="modulepreload" href="/app/immutable/chunks/singletons-cdeec3fd.js">
-	<link rel="modulepreload" href="/app/immutable/pages/__layout-root.svelte-b9c43753.js">
-	<link rel="modulepreload" href="/app/immutable/pages/projects/lavafloor@root.svelte-e1b5202a.js">
-	<link rel="modulepreload" href="/app/immutable/chunks/OrbitControls-e571d827.js">
+	<link rel="modulepreload" href="../app/immutable/start-5c46eba4.js">
+	<link rel="modulepreload" href="../app/immutable/chunks/index-8c8034ba.js">
+	<link rel="modulepreload" href="../app/immutable/chunks/singletons-416e737f.js">
+	<link rel="modulepreload" href="../app/immutable/chunks/index-f1450eca.js">
+	<link rel="modulepreload" href="../app/immutable/components/pages/_layout-root.svelte-04b938aa.js">
+	<link rel="modulepreload" href="../app/immutable/components/pages/projects/lavafloor/_page@root.svelte-2785a413.js">
+	<link rel="modulepreload" href="../app/immutable/chunks/OrbitControls-48ea929b.js">
 	</head>
 	<body>
 		
@@ -30,22 +30,25 @@
 
 
 		<script type="module" data-sveltekit-hydrate="3pyw9r">
-		import { start } from "/app/immutable/start-325694ed.js";
+		import { set_public_env, start } from "../app/immutable/start-5c46eba4.js";
+
+		set_public_env({});
+
 		start({
 			target: document.querySelector('[data-sveltekit-hydrate="3pyw9r"]').parentNode,
 			paths: {"base":"","assets":""},
-			session: {},
 			route: true,
 			spa: false,
 			trailing_slash: "never",
 			hydrate: {
 				status: 200,
 				error: null,
-				nodes: [2, 7],
+				node_ids: [2, 7],
 				params: {},
-				routeId: "projects/lavafloor@root"
+				routeId: "projects/lavafloor"
 			}
 		});
 	</script>
+	
 	</body>
 </html>
