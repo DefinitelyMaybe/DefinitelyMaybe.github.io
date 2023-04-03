@@ -1,17 +1,14 @@
 <script>
-	import { goto } from '$app/navigation';
 	/** @type {string} */
 	export let src;
 	/** @type {string} */
 	export let alt;
 	export let href;
 	export let title = '';
-	export let action ='';
+	export let action = '';
 </script>
 
-<div
-	on:click={goto(href)}
-	class="card shadow-xl image-full cursor-pointer">
+<a {href} class="card image-full cursor-pointer shadow-xl">
 	<figure><img {src} {alt} class="w-full" /></figure>
 	<div class="card-body">
 		<h1 class="card-title text-2xl">{title}</h1>
@@ -19,7 +16,7 @@
 			<slot name="desc" />
 		</div>
 		<div class="card-actions justify-end">
-			<button class="btn glass">{action}</button>
+			<button class="glass btn">{action}</button>
 		</div>
 	</div>
-</div>
+</a>

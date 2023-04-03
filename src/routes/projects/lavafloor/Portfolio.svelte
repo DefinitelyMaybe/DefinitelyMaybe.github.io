@@ -27,7 +27,7 @@
 	import { HTML } from 'threlte/extras';
 	import { spring } from 'svelte/motion';
 
-	import Boxes from '$lib/objects/Boxes.svelte';
+	import Boxes from 'src/routes/projects/lavafloor/Boxes.svelte';
 	import Terrain from '$lib/terrain/Terrain.svelte';
 
 	const scale = spring(1);

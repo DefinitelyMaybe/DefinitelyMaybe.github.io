@@ -1,22 +1,16 @@
-import adapter from "@sveltejs/adapter-static";
-import preprocess from "svelte-preprocess";
+import adapter from '@sveltejs/adapter-static';
+import preprocess from 'svelte-preprocess';
 
 /** @type {import('@sveltejs/kit').Config} */
 const config = {
-  kit: {
-    adapter: adapter({
-      assets: "docs",
-      pages: "docs",
-    }),
-    appDir: "app",
-    prerender: { default: true },
-    // vite: {
-    //   ssr: {
-    //     noExternal: ["three"],
-    //   },
-    // },
-  },
-  preprocess: preprocess(),
+	kit: {
+		adapter: adapter({
+			assets: 'docs',
+			pages: 'docs'
+		}),
+		appDir: 'app'
+	},
+	preprocess: preprocess()
 };
 
 export default config;

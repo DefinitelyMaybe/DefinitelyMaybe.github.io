@@ -19,7 +19,7 @@
 		Vec3,
 		World,
 		FogExp2
-	} from '$lib/lava/deps.js';
+	} from 'src/routes/projects/lavafloor/deps.js';
 	import { PlayerControls } from '$lib/lava/PlayerControls.js';
 	import { spawnCubes } from '$lib/lava/helpers.js';
 	import { onMount } from 'svelte';
