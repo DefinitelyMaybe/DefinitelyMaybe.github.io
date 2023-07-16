@@ -1,1 +1,0 @@
-import{default as e}from"../components/pages/projects/storyaboutTUG/_page.svelte-3f3dc0d8.js";import"./index-8c8034ba.js";import"./Writeup-d5138601.js";import"./TUGconceptArtmini-56c0d1f8.js";export{e as component};

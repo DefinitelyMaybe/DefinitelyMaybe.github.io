@@ -2,117 +2,35 @@
 <html lang="en">
 	<head>
 		<meta charset="utf-8" />
+		<link rel="icon" href="../favicon.ico" />
 		<meta name="viewport" content="width=device-width, initial-scale=1" />
-		<meta http-equiv="content-security-policy" content=""><title>Three.js, Regular Expressions and Me</title><meta name="description" content="Aaron Dekker | Portfolio" data-svelte="svelte-7pn9tz"><meta property="og:title" content="Aaron Dekker | @DefinitelyMaybe" data-svelte="svelte-7pn9tz"><meta property="og:image" content="/app/immutable/assets/010-falling-343215c5.jpg" data-svelte="svelte-7pn9tz"><meta property="og:description" content="Javascript Developer | BSc Graduate | Open-Source Contributor" data-svelte="svelte-7pn9tz"><meta property="og:url" content="https://definitelymaybe.github.io/" data-svelte="svelte-7pn9tz"><link rel="shortcut icon" href="/favicon.ico" type="image/x-icon" data-svelte="svelte-7pn9tz">
-	<link href="../app/immutable/assets/+layout-1fc0ff07.css" rel="stylesheet">
-	<link rel="modulepreload" href="../app/immutable/start-5c46eba4.js">
-	<link rel="modulepreload" href="../app/immutable/chunks/index-8c8034ba.js">
-	<link rel="modulepreload" href="../app/immutable/chunks/singletons-416e737f.js">
-	<link rel="modulepreload" href="../app/immutable/chunks/index-f1450eca.js">
-	<link rel="modulepreload" href="../app/immutable/components/pages/_layout.svelte-716a56c2.js">
-	<link rel="modulepreload" href="../app/immutable/chunks/010-falling-3f83ba93.js">
-	<link rel="modulepreload" href="../app/immutable/chunks/index-bbc19d4c.js">
-	<link rel="modulepreload" href="../app/immutable/components/pages/projects/parsingthreejs/_page.svelte-1446b0fb.js">
-	</head>
-	<body>
 		
+		<link rel="modulepreload" href="../app/immutable/entry/start.a3d5f57f.js">
+		<link rel="modulepreload" href="../app/immutable/chunks/scheduler.eb511182.js">
+		<link rel="modulepreload" href="../app/immutable/chunks/singletons.7427c9aa.js">
+		<link rel="modulepreload" href="../app/immutable/chunks/index.ba664f07.js">
+		<link rel="modulepreload" href="../app/immutable/entry/app.a533a740.js">
+		<link rel="modulepreload" href="../app/immutable/chunks/index.5942d4f5.js">
+	</head>
+	<body data-sveltekit-preload-data="hover" class="min-h-screen overflow-x-hidden">
+		<div style="display: contents">
+			<script>
+				{
+					__sveltekit_f3849j = {
+						base: new URL("..", location).pathname.slice(0, -1),
+						env: {}
+					};
 
+					const element = document.currentScript.parentElement;
 
-
-
-
-
-
-
-<main class="mx-auto flex grow flex-col pt-20 text-lg font-medium sm:max-w-screen-sm"><div class="flex"><div class="avatar px-2"><div class="w-24 rounded-full border-black outline outline-4 outline-base-200"><img src="/app/immutable/assets/avatar-65b799cf.png" alt="avatar"></div></div>
-	<div class="flex flex-col justify-center p-2"><span class="text-3xl">Aaron Dekker</span>
-		<span class="text-info">Javascript Developer </span>
-		<a class="text-accent text-sm" href="https://www.auckland.ac.nz/en/for/current-students/cs-academic-information/cs-graduation-information/cs-graduation-search-and-confirmation.html">Bachelor of Science Graduate</a></div></div>
-<div class="p-4">Howdy! Here you&#39;ll find some of my projects - usually centered around web dev, graphics, maths and
-	games.
-</div>
-<div class="flex pb-14 text-base items-center"><a class="flex flex-col link link-primary px-4" href="https://github.com/DefinitelyMaybe"><img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAAyRpVFh0WE1MOmNvbS5hZG9iZS54bXAAAAAAADw/eHBhY2tldCBiZWdpbj0i77u/IiBpZD0iVzVNME1wQ2VoaUh6cmVTek5UY3prYzlkIj8+IDx4OnhtcG1ldGEgeG1sbnM6eD0iYWRvYmU6bnM6bWV0YS8iIHg6eG1wdGs9IkFkb2JlIFhNUCBDb3JlIDUuNS1jMDIxIDc5LjE1NDkxMSwgMjAxMy8xMC8yOS0xMTo0NzoxNiAgICAgICAgIj4gPHJkZjpSREYgeG1sbnM6cmRmPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5LzAyLzIyLXJkZi1zeW50YXgtbnMjIj4gPHJkZjpEZXNjcmlwdGlvbiByZGY6YWJvdXQ9IiIgeG1sbnM6eG1wTU09Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC9tbS8iIHhtbG5zOnN0UmVmPSJodHRwOi8vbnMuYWRvYmUuY29tL3hhcC8xLjAvc1R5cGUvUmVzb3VyY2VSZWYjIiB4bWxuczp4bXA9Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC8iIHhtcE1NOkRvY3VtZW50SUQ9InhtcC5kaWQ6RERCMUIwOUY4NkNFMTFFM0FBNTJFRTMzNTJEMUJDNDYiIHhtcE1NOkluc3RhbmNlSUQ9InhtcC5paWQ6RERCMUIwOUU4NkNFMTFFM0FBNTJFRTMzNTJEMUJDNDYiIHhtcDpDcmVhdG9yVG9vbD0iQWRvYmUgUGhvdG9zaG9wIENTNiAoTWFjaW50b3NoKSI+IDx4bXBNTTpEZXJpdmVkRnJvbSBzdFJlZjppbnN0YW5jZUlEPSJ4bXAuaWlkOkU1MTc4QTJBOTlBMDExRTI5QTE1QkMxMDQ2QTg5MDREIiBzdFJlZjpkb2N1bWVudElEPSJ4bXAuZGlkOkU1MTc4QTJCOTlBMDExRTI5QTE1QkMxMDQ2QTg5MDREIi8+IDwvcmRmOkRlc2NyaXB0aW9uPiA8L3JkZjpSREY+IDwveDp4bXBtZXRhPiA8P3hwYWNrZXQgZW5kPSJyIj8+jUqS1wAAApVJREFUeNq0l89rE1EQx3e3gVJoSPzZeNEWPKgHoa0HBak0iHiy/4C3WvDmoZ56qJ7txVsPQu8qlqqHIhRKJZceesmhioQEfxTEtsoSpdJg1u/ABJ7Pmc1m8zLwgWTmzcw3L+/te+tHUeQltONgCkyCi2AEDHLsJ6iBMlgHL8FeoqokoA2j4CloRMmtwTmj7erHBXPgCWhG6a3JNXKdCiDl1cidVbXZkJoXQRi5t5BrxwoY71FzU8S4JuAIqFkJ2+BFSlEh525b/hr3+k/AklDkNsf6wTT4yv46KIMNpsy+iMdMc47HNWxbsgVcUn7FmLAzzoFAWDsBx+wVP6bUpp5ewI+DOeUx0Wd9D8F70BTGNjkWtqnhmT1JQAHcUgZd8Lo3rQb1LAT8eJVUfgGvHQigGp+V2Z0iAUUl8QH47kAA1XioxIo+bRN8OG8F/oBjwv+Z1nJgX5jpdzQDw0LCjsPmrcW7I/iHScCAEDj03FtD8A0EyuChHgg4KTlJQF3wZ7WELppnBX+dBFSVpJsOBWi1qiRgSwnOgoyD5hmuJdkWCVhTgnTvW3AgYIFrSbZGh0UW/Io5Vp+DQoK7o80pztWMemZbgxeNwCNwDbw1fIfgGZjhU6xPaJgBV8BdsMw5cbZoHsenwYFxkZzl83xTSKTiviCAfCsJLysH3POfC8m8NegyGAGfLP/VmGmfSChgXroR0RSWjEFv2J/nG84cuKFMf4sTCZqXuJd4KaXFVjEG3+tw4eXbNK/YC9oXXs3O8NY8y99L4BXY5cvLY/Bb2VZ58EOJVcB18DHJq9lRsKr8inyKGVjlmh29mtHs3AHfuhCwy1vXT/Nu2GKQt+UHsGdctyX6eQyNvc+5sfX9Dl7Pe2J/BRgAl2CpwmrsHR0AAAAASUVORK5CYII=" alt="github logo" class="w-10"></a>
-	<a class="link link-secondary px-4" href="https://twitter.com/0Rawr"><img src="/app/immutable/assets/2021 Twitter logo - blue-2596d8f6.png" alt="github logo" class="w-10"></a></div>
-	<div class="flex flex-col gap-4 p-2">
-
-<section class="flex flex-col"><p>Feb 2020</p>
-	<p>Before going into details about what I’ve been working on for the last month or so, I’m going to
-		preempt this text with an assumption that you, dear reader, know about javascript and node.js.
-		Even still, some extra research may be required, don’t just take my word for it.
-	</p>
-	<p>Nobody had predicted that javascript would end up where it is today but now everybody wants in.
-		Web development was completely separate from the native world until about 10 years ago when
-		Nodejs came along. Up until that point, nobody in their right mind was writing anything half
-		decent in the mess of a language that is javascript. Let’s do a brief history recap. IT
-		development of the past 20+ years has been dominated by two great languages. C and C++. These
-		two languages have been the tools of choice for two main reasons. One, developers have to work
-		within the boundaries of most people’s computer’s compute and memory capabilities. And two,
-		libraries, tools and help was around because everyone else was using it. Browsers, applications,
-		games, you name it, 9/10 times C or C++ was behind it. Javascript was a joke.
-	</p>
-	<p>But javascript had the internet. Fast forward to today and javascript is top of the
-		stackexchange survey as the most used language and still growing. What changed in between? Tons.
-		Google&#39;s V8 engine for javascript came along. V8’s sole purpose is the performance of
-		javascript. Nodejs went and opened up native level programming to a language. WebGL and
-		Webassembly gave compute power to web development like no other. Electron made it possible to
-		deploy to all platforms using only javascript. Actually, hold on, I don’t think I can do the
-		history of javascript enough justice. If you’ve got the time have a look into this video:
-	</p>
-	<iframe title="A fireship.io youtube video talking about the history of javascript" src="https://www.youtube.com/embed/Sh6lK57Cuk4" class="py-4 aspect-video"></iframe>
-	<p>So where is C and C++ in all of this? Well, still back in system land. People were not about to
-		jump up and down to rewrite all of their code in javascript. That would be silly. Instead, those
-		languages saw their target - Webassembly. To the old and new, welcome to today&#39;s web.
-	</p>
-	<p>Right so what am I working on? Threejs is one of the biggest and best javascript libraries for
-		those who want to work with graphics. If you want to create something 3D, threejs is where it&#39;s
-		at. The library started purely in javascript but over recent years has adopted type support for
-		typescript. As far as development is concerned, types are a boon like no other. “What was the
-		name of that function I made in this other module?”, “Where did all of these errors come from?”,
-		“Is it ok for me to set this variable to x, y, z?”. But type support is not typescript. The
-		underlying code is still javascript and is staying there to maintain compatibility with older
-		browser versions. New features like classes are never going to arrive. When people come along
-		and want to adjust things to suit their needs, their options are rather limited.
-	</p>
-	<p>I’m one of those people. I wanted to add something in. Instead of throwing my hands up in the
-		air, I thought “surely I could just parse threejs into typescript, I mean the types are already
-		there so it couldn’t be that hard ”. Problem number one. Threejs has a monthly rolling release
-		cycle. If your typescript conversion is a manual process, you’ll basically constantly be playing
-		catch up with the main library or separating the codebase into two. Both bad ideas and both as
-		bad as each other. Problem number two. Threejs is big enough that parsing incorrectly will take
-		too long. Thank goodness my BSc is becoming useful. In short, my first attempt was linearly
-		scanning through strings to match brackets to pick out sections of code. After getting it to
-		work nicely on a single file, I ran my script on the entire library. Minutes went by. Ok, I’ll
-		go have some lunch. An hour or so went by. Still going. No good. Regular expressions and other
-		tricks must be used. Finally problem number three comes in two parts. Part A is that I actually
-		don’t know whether this can be done. If there’s some section of the code that assumes x, y, z
-		and my parser breaks that, it’s done for. Part B is that I may send weeks on this project before
-		realizing part A. Here’s to being a young developer everybody. Progress is hard.
-	</p></section></div></main>
-<div class="absolute -z-10 h-96 w-96 rounded-full bg-red-600/10 blur" style="top: -192px; left: -192px;"></div>
-<div class="absolute -z-10 h-96 w-96 rounded-full bg-green-600/10 blur" style="top: -192px; left: -192px;"></div>
-<div class="absolute -z-10 h-96 w-96 rounded-full bg-blue-600/10 blur" style="top: -192px; left: -192px;"></div>
-
-
-		<script type="module" data-sveltekit-hydrate="yqz3an">
-		import { set_public_env, start } from "../app/immutable/start-5c46eba4.js";
-
-		set_public_env({});
-
-		start({
-			target: document.querySelector('[data-sveltekit-hydrate="yqz3an"]').parentNode,
-			paths: {"base":"","assets":""},
-			route: true,
-			spa: false,
-			trailing_slash: "never",
-			hydrate: {
-				status: 200,
-				error: null,
-				node_ids: [0, 8],
-				params: {},
-				routeId: "projects/parsingthreejs"
-			}
-		});
-	</script>
-	
+					Promise.all([
+						import("../app/immutable/entry/start.a3d5f57f.js"),
+						import("../app/immutable/entry/app.a533a740.js")
+					]).then(([kit, app]) => {
+						kit.start(app, element);
+					});
+				}
+			</script>
+		</div>
 	</body>
 </html>

@@ -1,1 +1,0 @@
-import{default as e}from"../components/pages/projects/threlte/_page@root.svelte-3e32e8fd.js";import"./index-8c8034ba.js";import"./OrbitControls-48ea929b.js";import"./index-f1450eca.js";import"./index-bbc19d4c.js";export{e as component};

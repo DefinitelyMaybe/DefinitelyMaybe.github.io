@@ -1,0 +1,40 @@
+import{s as O,c as J,u as X,g as Y,d as Q,f as L,n as V}from"../chunks/scheduler.eb511182.js";import{S as z,i as R,g as u,h as m,j as Z,f as i,k as l,a as n,d as F,t as B,s as p,r as ee,x as te,c as d,u as ae,v as se,w as ie,z as G}from"../chunks/index.5942d4f5.js";function ne(f){let s,r;const c=f[1].default,t=J(c,f,f[0],null);return{c(){s=u("article"),t&&t.c(),this.h()},l(a){s=m(a,"ARTICLE",{class:!0});var h=Z(s);t&&t.l(h),h.forEach(i),this.h()},h(){l(s,"class","prose bg-base-200 rounded-xl p-2 shadow-lg")},m(a,h){n(a,s,h),t&&t.m(s,null),r=!0},p(a,[h]){t&&t.p&&(!r||h&1)&&X(t,c,a,a[0],r?Q(c,a[0],h,null):Y(a[0]),null)},i(a){r||(F(t,a),r=!0)},o(a){B(t,a),r=!1},d(a){a&&i(s),t&&t.d(a)}}}function oe(f,s,r){let{$$slots:c={},$$scope:t}=s;return f.$$set=a=>{"$$scope"in a&&r(0,t=a.$$scope)},[t,c]}class re extends z{constructor(s){super(),R(this,s,oe,ne,O,{})}}function le(f){let s,r="Introducing T.U.G.",c,t,a="The Untitled Game",h,g,W=`<p class="text-sm">August 2016</p> <h3>Where to begin?</h3> <p>We&#39;ll approach T.U.G. by circling around at the distance, gaining perspective as we go and
+			then dive on in.</p> <p>Right, but where to begin? Probably with Minecraft. For the uninitiated, Minecraft is a
+			procedurally generated block game. Procedural means that aspects of the game are not strictly
+			pre-defined. The classic example is terrain. When the player starts a game there is not a
+			pre-made map designed from head to toe. Instead, an algorithm executes a series of
+			instructions building up a random map layer by layer.</p> <p>The next unique thing about Minecraft is that there is no story, no narrator, no objective, no
+			tutorial - nothing. Naturally this stumps a lot of people. Why would people play a game that
+			has no point to it? I could try to give a reason to this but instead let&#39;s point out a fun
+			fact on sales: Minecraft has sold a total of 24 million copies since it&#39;s release in 2009, 10
+			million more than it&#39;s closest runner up - World of Warcraft.</p> <p>Now, onto the most notable thing about Minecraft - the blocks. How did that become a thing?
+			Simply put, this is because behind the scenes terrain is explicitly coupled with grid
+			coordinates. Hugely easier to implement in code but does restrict terrain aesthetics. It
+			should be noted that even with the restriction, Minecraft&#39;s community has built tons on-top of
+			and around the game to the point where one would call it a feature rather than anything else.</p> <h3>What&#39;s TUG like at the moment?</h3> <p>It&#39;s a sandbox like minecraft. You can explore an infinite world, craft weapons, tools and
+			armour, build castles, hunt down animals and more. I&#39;m a huge fan of the subtleties that come
+			with the voxels - super nice curves in terrain when digging out caves and of course the 3D
+			modeled objects populating that terrain are a big plus.</p> <p>Game development is like a long roller coaster ride and Nerd Kingdom has had it&#39;s fair share
+			of ups and downs. In brief, TUG was at an early stage of development. Nerd Kingdom is
+			preparing to release version 2 around the end of 2016. With it will be a lessening of the
+			hardware restrictions due to OpenGL, the introduction of Javascript for scripting, node.js
+			integration, a new art style and much more.</p>`,k,v,j,M,w,D=`<h3>Where do I come into the story?</h3> <p>Well, I had somehow managed to bump into NK&#39;s Kickstarter campaign back in 2013. It caught my
+			eye for a number of reasons among which was their simple approach to “we want to be bigger and
+			better than Minecraft”. In plain, start where Minecraft should have - with the community and
+			grow with them.</p> <p>I was a star grazer for at least a year. See, DirectX11 was a hardware requirement of the
+			first version. I built myself a computer when I finally had the opportunity (#PoorStudent).
+			After a while of playing the game normally I decided to give modding a go. I had heard of
+			modders before but it had always been a black-box. Luckily for me, there were other members
+			within the community for me to engage with and learn from.</p> <p>My Mods that I&#39;ve put the most work into would be Portal Stones and Dark Ages. Both mods had
+			elements of 3D model manipulation, GIMP image editing, scripting and MATHS! Forgive me but I&#39;m
+			the kind of person who gets super excited the intersections between maths and computer
+			science. Portal Stones was all about quaternions - how to rotate objects in 3D space and Dark
+			Ages was all about simplex noise - how to procedurally generate terrain.</p> <p>There is more to come for the future of TUG, namely neural networks/AI however that story is
+			one that we should not speculate on. As a small teaser, here&#39;s a render of the art direction
+			for TUG v2.</p>`,$,T,N,U,b,P=`If you&#39;re interest here is a link to one of the <a href="https://cdn.akamai.steamstatic.com/steam/apps/256657525/movie480.webm?t=1447378587">original videos talking about TUG</a>
+		and as well as a mod that I developed for the game called
+		<a href="https://github.com/DefinitelyMaybe/DarkAges">DarkAges</a>.`,C,x,H,I,E=`<p>December 2021</p> <p>This is one of those somber moments looking back on a game I believed in. Now TUG is nothing.
+			Apparantly there was a lot of tension between @ino and another director within the company.
+			@ino stepped down, communication with the commuinity was cut and nobody&#39;s heard anything
+			since. The communitty deserved better than this and the game itself was heading in the right
+			direction.</p>`,A,y,q,S,_,K;return{c(){s=u("h1"),s.textContent=r,c=p(),t=u("h2"),t.textContent=a,h=p(),g=u("section"),g.innerHTML=W,k=p(),v=u("img"),M=p(),w=u("section"),w.innerHTML=D,$=p(),T=u("img"),U=p(),b=u("p"),b.innerHTML=P,C=p(),x=u("hr"),H=p(),I=u("section"),I.innerHTML=E,A=p(),y=u("img"),S=p(),_=u("img"),this.h()},l(e){s=m(e,"H1",{class:!0,"data-svelte-h":!0}),G(s)!=="svelte-1ydjlkg"&&(s.textContent=r),c=d(e),t=m(e,"H2",{class:!0,"data-svelte-h":!0}),G(t)!=="svelte-mr6jiu"&&(t.textContent=a),h=d(e),g=m(e,"SECTION",{class:!0,"data-svelte-h":!0}),G(g)!=="svelte-pod4g8"&&(g.innerHTML=W),k=d(e),v=m(e,"IMG",{src:!0,alt:!0}),M=d(e),w=m(e,"SECTION",{class:!0,"data-svelte-h":!0}),G(w)!=="svelte-1pikztg"&&(w.innerHTML=D),$=d(e),T=m(e,"IMG",{src:!0,alt:!0}),U=d(e),b=m(e,"P",{class:!0,"data-svelte-h":!0}),G(b)!=="svelte-eomnyy"&&(b.innerHTML=P),C=d(e),x=m(e,"HR",{class:!0}),H=d(e),I=m(e,"SECTION",{"data-svelte-h":!0}),G(I)!=="svelte-1sxepks"&&(I.innerHTML=E),A=d(e),y=m(e,"IMG",{class:!0,src:!0,alt:!0}),S=d(e),_=m(e,"IMG",{class:!0,src:!0,alt:!0}),this.h()},h(){l(s,"class","text-center text-2xl"),l(t,"class","text-center text-sm"),l(g,"class","py-2"),L(v.src,j="images/TUG/TUGconceptArtmini.jpg")||l(v,"src",j),l(v,"alt","TUG concept art of a golem"),l(w,"class","py-2"),L(T.src,N="images/TUG/TUGupdate.jpg")||l(T,"src",N),l(T,"alt","The feet of an TUG avatar surrounding by seedlings"),l(b,"class","py-4"),l(x,"class","py-2"),l(y,"class","py-2"),L(y.src,q="images/TUG/TUGupdatedart.jpg")||l(y,"src",q),l(y,"alt","TUG updated artwork style"),l(_,"class","py-2"),L(_.src,K="images/TUG/TUGmount.gif")||l(_,"src",K),l(_,"alt","TUG mount artwork")},m(e,o){n(e,s,o),n(e,c,o),n(e,t,o),n(e,h,o),n(e,g,o),n(e,k,o),n(e,v,o),n(e,M,o),n(e,w,o),n(e,$,o),n(e,T,o),n(e,U,o),n(e,b,o),n(e,C,o),n(e,x,o),n(e,H,o),n(e,I,o),n(e,A,o),n(e,y,o),n(e,S,o),n(e,_,o)},p:V,d(e){e&&(i(s),i(c),i(t),i(h),i(g),i(k),i(v),i(M),i(w),i($),i(T),i(U),i(b),i(C),i(x),i(H),i(I),i(A),i(y),i(S),i(_))}}}function ce(f){let s,r,c;return r=new re({props:{$$slots:{default:[le]},$$scope:{ctx:f}}}),{c(){s=p(),ee(r.$$.fragment),this.h()},l(t){te("svelte-9p4hp",document.head).forEach(i),s=d(t),ae(r.$$.fragment,t),this.h()},h(){document.title="A Story about TUG"},m(t,a){n(t,s,a),se(r,t,a),c=!0},p(t,[a]){const h={};a&1&&(h.$$scope={dirty:a,ctx:t}),r.$set(h)},i(t){c||(F(r.$$.fragment,t),c=!0)},o(t){B(r.$$.fragment,t),c=!1},d(t){t&&i(s),ie(r,t)}}}class me extends z{constructor(s){super(),R(this,s,null,ce,O,{})}}export{me as component};
