@@ -1,5 +1,6 @@
-module.exports = {
-	content: ['./src/**/*.{svelte,css,html}'],
+/** @type {import('tailwindcss').Config} */
+export default {
+	content: ['./src/**/*.{html,js,svelte,ts}'],
 	daisyui: {
 		themes: [
 			{
@@ -17,8 +18,7 @@ module.exports = {
 			}
 		]
 	},
-	darkMode: 'class',
-	variants: {
+	theme: {
 		extend: {}
 	},
 	plugins: [require('@tailwindcss/typography'), require('@tailwindcss/forms'), require('daisyui')]
