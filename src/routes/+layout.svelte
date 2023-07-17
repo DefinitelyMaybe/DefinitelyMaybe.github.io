@@ -3,6 +3,7 @@
 </script>
 
 <svelte:head>
+	<link rel="icon" href="./favicon.ico" />
 	<meta name="description" content="Aaron Dekker | Portfolio" />
 	<meta property="og:title" content="Aaron Dekker | @DefinitelyMaybe" />
 	<meta property="og:image" content="images/010-falling.jpg" />
