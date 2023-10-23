@@ -1,4 +1,4 @@
-import{s as h,n as s}from"../chunks/scheduler.eb511182.js";import{S as p,i as d,s as c,g as m,x as u,f as n,c as g,h as y,z as b,k as w,a as r}from"../chunks/index.5942d4f5.js";function f(l){let o,e,i=`<p>Feb 2020</p> <p>Before going into details about what I’ve been working on for the last month or so, I’m going to
+import{s as h,n as s}from"../chunks/scheduler.eb511182.js";import{S as p,i as d,s as c,g as m,x as u,f as n,c as g,h as y,z as b,k as w,a as r}from"../chunks/index.f83243e3.js";function f(l){let o,e,i=`<p>Feb 2020</p> <p>Before going into details about what I’ve been working on for the last month or so, I’m going to
 		preempt this text with an assumption that you, dear reader, know about javascript and node.js.
 		Even still, some extra research may be required, don’t just take my word for it.</p> <p>Nobody had predicted that javascript would end up where it is today but now everybody wants in.
 		Web development was completely separate from the native world until about 10 years ago when

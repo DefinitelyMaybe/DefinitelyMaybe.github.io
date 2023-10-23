@@ -69,6 +69,21 @@
 	<Header />
 	<div class="flex flex-col gap-4 p-2">
 		<Box
+			title="Fun Bit!"
+			action="Visit the site"
+			src="images/fun-bit.png"
+			alt="funbit"
+			href="https://fun-bit.vercel.app/">
+			<p slot="desc">
+				Browse through and preview <a
+					class="link-primary link"
+					href="https://quaternius.com/index.html">quaternius's</a>
+				assets in realtime. Copy-paste anything into your
+				<a class="link-primary link" href="https://threlte.xyz/">threlte</a> project! More assets to
+				come!
+			</p>
+		</Box>
+		<Box
 			title="Gumboot Friday"
 			action="Visit the site"
 			src="images/gumbootfriday.png"
